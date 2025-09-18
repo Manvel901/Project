@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "D:\\Diplom\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\services\\bookautorservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:services\\bookautorservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\controllers\\authorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:controllers\\authorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\services\\authorservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:services\\authorservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\controllers\\bookautorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:controllers\\bookautorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\controllers\\bookcontrollercs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:controllers\\bookcontrollercs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\services\\bookautorservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:services\\bookautorservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\abstract\\ibookautor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,10 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\abstract\\iauthorsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:abstract\\iauthorsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\controllers\\bookautorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:controllers\\bookautorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\services\\bookservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -33,10 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\models\\autors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:models\\autors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\controllers\\bookcontrollercs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:controllers\\bookcontrollercs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\models\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -170,7 +174,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 21,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -186,20 +190,33 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthorsController.cs",
+              "DocumentMoniker": "D:\\Diplom\\Controllers\\AuthorsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthorsController.cs",
+              "ToolTip": "D:\\Diplom\\Controllers\\AuthorsController.cs",
+              "RelativeToolTip": "Controllers\\AuthorsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T17:54:25.097Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "AuthorServices.cs",
               "DocumentMoniker": "D:\\Diplom\\Services\\AuthorServices.cs",
               "RelativeDocumentMoniker": "Services\\AuthorServices.cs",
               "ToolTip": "D:\\Diplom\\Services\\AuthorServices.cs",
               "RelativeToolTip": "Services\\AuthorServices.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAAAGMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-18T12:57:24.548Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "IAuthorsService.cs",
               "DocumentMoniker": "D:\\Diplom\\Abstract\\IAuthorsService.cs",
               "RelativeDocumentMoniker": "Abstract\\IAuthorsService.cs",
@@ -207,12 +224,11 @@
               "RelativeToolTip": "Abstract\\IAuthorsService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-18T12:54:17.897Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-18T12:54:17.897Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "MuppingProfile.cs",
               "DocumentMoniker": "D:\\Diplom\\Repo\\MuppingProfile.cs",
               "RelativeDocumentMoniker": "Repo\\MuppingProfile.cs",
@@ -224,7 +240,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "Diplom.csproj",
               "DocumentMoniker": "D:\\Diplom\\Diplom.csproj",
               "RelativeDocumentMoniker": "Diplom.csproj",
@@ -236,7 +252,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Diplom\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -248,7 +264,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Diplom\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -260,7 +276,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "EmailController.cs",
               "DocumentMoniker": "D:\\Diplom\\Controllers\\EmailController.cs",
               "RelativeDocumentMoniker": "Controllers\\EmailController.cs",
@@ -272,7 +288,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "EmailServices.cs",
               "DocumentMoniker": "D:\\Diplom\\Services\\EmailServices.cs",
               "RelativeDocumentMoniker": "Services\\EmailServices.cs",
@@ -284,7 +300,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "IEmailService.cs",
               "DocumentMoniker": "D:\\Diplom\\Abstract\\IEmailService.cs",
               "RelativeDocumentMoniker": "Abstract\\IEmailService.cs",
@@ -296,7 +312,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "AnalyticsController.cs",
               "DocumentMoniker": "D:\\Diplom\\Controllers\\AnalyticsController.cs",
               "RelativeDocumentMoniker": "Controllers\\AnalyticsController.cs",
@@ -308,7 +324,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "AnaliticService.cs",
               "DocumentMoniker": "D:\\Diplom\\Services\\AnaliticService.cs",
               "RelativeDocumentMoniker": "Services\\AnaliticService.cs",
@@ -320,7 +336,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "IAnalyticsService.cs",
               "DocumentMoniker": "D:\\Diplom\\Abstract\\IAnalyticsService.cs",
               "RelativeDocumentMoniker": "Abstract\\IAnalyticsService.cs",
@@ -332,7 +348,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "BookStatistic.cs",
               "DocumentMoniker": "D:\\Diplom\\Models\\BookStatistic.cs",
               "RelativeDocumentMoniker": "Models\\BookStatistic.cs",
@@ -344,20 +360,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "BookAutorController.cs",
               "DocumentMoniker": "D:\\Diplom\\Controllers\\BookAutorController.cs",
               "RelativeDocumentMoniker": "Controllers\\BookAutorController.cs",
               "ToolTip": "D:\\Diplom\\Controllers\\BookAutorController.cs",
               "RelativeToolTip": "Controllers\\BookAutorController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-01T18:07:50.109Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "ReversitionConyroller.cs",
               "DocumentMoniker": "D:\\Diplom\\Controllers\\ReversitionConyroller.cs",
               "RelativeDocumentMoniker": "Controllers\\ReversitionConyroller.cs",
@@ -369,19 +385,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 3,
               "Title": "BookControllercs.cs",
               "DocumentMoniker": "D:\\Diplom\\Controllers\\BookControllercs.cs",
               "RelativeDocumentMoniker": "Controllers\\BookControllercs.cs",
               "ToolTip": "D:\\Diplom\\Controllers\\BookControllercs.cs",
               "RelativeToolTip": "Controllers\\BookControllercs.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAEwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T18:06:55.965Z"
+              "WhenOpened": "2025-05-01T18:06:55.965Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "ResrvirionsServices.cs",
               "DocumentMoniker": "D:\\Diplom\\Services\\ResrvirionsServices.cs",
               "RelativeDocumentMoniker": "Services\\ResrvirionsServices.cs",
@@ -393,7 +410,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "PenaltyesServices.cs",
               "DocumentMoniker": "D:\\Diplom\\Services\\PenaltyesServices.cs",
               "RelativeDocumentMoniker": "Services\\PenaltyesServices.cs",
@@ -405,20 +422,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "BookAutorServices.cs",
               "DocumentMoniker": "D:\\Diplom\\Services\\BookAutorServices.cs",
               "RelativeDocumentMoniker": "Services\\BookAutorServices.cs",
               "ToolTip": "D:\\Diplom\\Services\\BookAutorServices.cs",
               "RelativeToolTip": "Services\\BookAutorServices.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAAAFwAAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAABYAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-01T17:12:50.729Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "IPenaltyes.cs",
               "DocumentMoniker": "D:\\Diplom\\Abstract\\IPenaltyes.cs",
               "RelativeDocumentMoniker": "Abstract\\IPenaltyes.cs",
@@ -430,7 +447,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 35,
               "Title": "IReversition.cs",
               "DocumentMoniker": "D:\\Diplom\\Abstract\\IReversition.cs",
               "RelativeDocumentMoniker": "Abstract\\IReversition.cs",
@@ -442,7 +459,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "IBookAutor.cs",
               "DocumentMoniker": "D:\\Diplom\\Abstract\\IBookAutor.cs",
               "RelativeDocumentMoniker": "Abstract\\IBookAutor.cs",
@@ -450,12 +467,11 @@
               "RelativeToolTip": "Abstract\\IBookAutor.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T17:11:16.76Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-01T17:11:16.76Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "BookServices.cs",
               "DocumentMoniker": "D:\\Diplom\\Services\\BookServices.cs",
               "RelativeDocumentMoniker": "Services\\BookServices.cs",
@@ -463,12 +479,11 @@
               "RelativeToolTip": "Services\\BookServices.cs",
               "ViewState": "AgIAAHAAAAAAAAAAAAAAAKkAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T16:23:31.68Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-01T16:23:31.68Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "IBookServicrs.cs",
               "DocumentMoniker": "D:\\Diplom\\Abstract\\IBookServicrs.cs",
               "RelativeDocumentMoniker": "Abstract\\IBookServicrs.cs",
@@ -480,7 +495,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 36,
               "Title": "PenaltyDto.cs",
               "DocumentMoniker": "D:\\Diplom\\Models\\dto\\PenaltyDto.cs",
               "RelativeDocumentMoniker": "Models\\dto\\PenaltyDto.cs",
@@ -492,7 +507,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "AutorDto.cs",
               "DocumentMoniker": "D:\\Diplom\\Models\\dto\\AutorDto.cs",
               "RelativeDocumentMoniker": "Models\\dto\\AutorDto.cs",
@@ -500,12 +515,11 @@
               "RelativeToolTip": "Models\\dto\\AutorDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T12:47:30.435Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-01T12:47:30.435Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 37,
               "Title": "GenresDto.cs",
               "DocumentMoniker": "D:\\Diplom\\Models\\dto\\GenresDto.cs",
               "RelativeDocumentMoniker": "Models\\dto\\GenresDto.cs",
@@ -517,7 +531,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "Penalties.cs",
               "DocumentMoniker": "D:\\Diplom\\Models\\Penalties.cs",
               "RelativeDocumentMoniker": "Models\\Penalties.cs",
@@ -529,7 +543,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "Autors.cs",
               "DocumentMoniker": "D:\\Diplom\\Models\\Autors.cs",
               "RelativeDocumentMoniker": "Models\\Autors.cs",
@@ -537,12 +551,11 @@
               "RelativeToolTip": "Models\\Autors.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T11:55:38.453Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-01T11:55:38.453Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "Genres.cs",
               "DocumentMoniker": "D:\\Diplom\\Models\\Genres.cs",
               "RelativeDocumentMoniker": "Models\\Genres.cs",
@@ -554,7 +567,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 38,
               "Title": "UserController.cs",
               "DocumentMoniker": "D:\\Diplom\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Controllers\\UserController.cs",
@@ -566,7 +579,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 39,
               "Title": "UserServices.cs",
               "DocumentMoniker": "D:\\Diplom\\Services\\UserServices.cs",
               "RelativeDocumentMoniker": "Services\\UserServices.cs",
@@ -578,7 +591,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "ApDbContext.cs",
               "DocumentMoniker": "D:\\Diplom\\Models\\ApDbContext.cs",
               "RelativeDocumentMoniker": "Models\\ApDbContext.cs",
@@ -590,7 +603,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 40,
               "Title": "IUserServices.cs",
               "DocumentMoniker": "D:\\Diplom\\Abstract\\IUserServices.cs",
               "RelativeDocumentMoniker": "Abstract\\IUserServices.cs",
@@ -602,7 +615,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "ReservationDto.cs",
               "DocumentMoniker": "D:\\Diplom\\Models\\dto\\ReservationDto.cs",
               "RelativeDocumentMoniker": "Models\\dto\\ReservationDto.cs",
@@ -614,7 +627,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "UserDto.cs",
               "DocumentMoniker": "D:\\Diplom\\Models\\dto\\UserDto.cs",
               "RelativeDocumentMoniker": "Models\\dto\\UserDto.cs",
@@ -626,7 +639,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "BookDto.cs",
               "DocumentMoniker": "D:\\Diplom\\Models\\dto\\BookDto.cs",
               "RelativeDocumentMoniker": "Models\\dto\\BookDto.cs",
@@ -638,7 +651,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Reservation.cs",
               "DocumentMoniker": "D:\\Diplom\\Models\\Reservation.cs",
               "RelativeDocumentMoniker": "Models\\Reservation.cs",
@@ -650,7 +663,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "User.cs",
               "DocumentMoniker": "D:\\Diplom\\Models\\User.cs",
               "RelativeDocumentMoniker": "Models\\User.cs",
@@ -662,7 +675,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "Book.cs",
               "DocumentMoniker": "D:\\Diplom\\Models\\Book.cs",
               "RelativeDocumentMoniker": "Models\\Book.cs",
