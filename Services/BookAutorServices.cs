@@ -20,7 +20,7 @@ namespace Diplom.Services
             _mupper = mapper;
             _cache = cache;
         }
-        public void AddAuthorToBook(BookDto bookDto,  AutorDto autorDto)
+        public int AddAuthorToBook(BookDto bookDto,  AutorDto autorDto)
         {
             using (_context)
             {
@@ -41,86 +41,55 @@ namespace Diplom.Services
                 
                 _context.SaveChanges();
                 _cache.Remove("autors");
+                return book.Id;
             }
         }
 
-        public AutorDto CreateAuthor(string firstname, string surname, string lastname, string bio)
-        {
-            if (_context.Authors.Any(a => a.FirstName == firstname && a.SurName == surname && a.LastName == lastname))
-                throw new ArgumentException("Автор с таким именем уже существует.");
-
-            var author = new Autors { FirstName = firstname, SurName = surname, LastName= lastname, Bio = bio };
-            _context.Authors.Add(author);
-            _context.SaveChanges();
-            return author;
-        }
-
-        public void DeleteAuthor(int authorId)
-        {
-            var author = _context.Authors
-            .Include(a => a.BookAuthors)
-            .FirstOrDefault(a => a.Id == authorId);
-
-            if (author == null) return;
-
-            if (author.BookAuthors.Any())
-                throw new InvalidOperationException("Нельзя удалить автора с привязанными книгами.");
-
-            _context.Authors.Remove(author);
-            _context.SaveChanges();
-        }
-
-        public IEnumerable<AutorDto> GetAllAuthors()
-        {
-            return _context.Authors.ToList();
-        }
-
-        public AutorDto GetAuthorById(int authorId)
-        {
-            return _context.Authors
-            .Include(a => a.BookAuthors)
-            .FirstOrDefault(a => a.Id == authorId);
-        }
-
+       
         public IEnumerable<AutorDto> GetAuthorsByBook(int bookId)
         {
-            return _context.BookAuthors
-            .Where(ba => ba.BookId == bookId)
-            .Select(ba => ba.Autor)
-            .ToList();
+            using (_context)
+            {
+                return _context.Books
+                .Where(ba => ba.Id == bookId)
+                .Select(ba => _mupper.Map<AutorDto>(ba.Authors))
+                .ToList();
+            }
+
+            
         }
 
         public IEnumerable<BookDto> GetBooksByAuthor(int authorId)
         {
-            return _context.BookAuthors
-            .Where(ba => ba.AuthorId == authorId)
-            .Select(ba => ba.Book)
-            .ToList();
+            using (_context)
+            {
+                return _context.Authors
+                .Where(ba => ba.Id == authorId)
+                .Select(ba => _mupper.Map<BookDto>(ba.Books))
+                .ToList();
+            }
         }
 
-        public void RemoveAuthorFromBook(int bookId, int authorId)
+        public int RemoveAuthorFromBook(int bookId, int authorId)
         {
-            var link = _context.BookAuthors
-            .FirstOrDefault(ba => ba.BookId == bookId && ba.AuthorId == authorId);
+            using (_context)
+            {
+                var link = _context.Books.Include(a => a.Authors).
+                    FirstOrDefault(b => b.Id == bookId && b.Authors.Any(a => a.Id == authorId));
 
-            if (link == null) return;
 
-            _context.BookAuthors.Remove(link);
-            _context.SaveChanges();
+                if (link != null)
+                {
+
+                    _context.Books.Remove(link);
+                    _context.SaveChanges();
+                    _cache.Remove("authors");
+                }
+                return link.Id;
+            }
+
         }
 
-        public AutorDto UpdateAuthor(int authorId, string newFirstName, string newSurName, string newLastName, string newBio)
-        {
-            var author = _context.Authors.Find(authorId);
-            if (author == null)
-                throw new KeyNotFoundException("Автор не найден.");
-
-            author.FirstName = newFirstName;
-            author.SurName = newSurName;
-            author.LastName = newLastName;
-            author.Bio = newBio;
-            _context.SaveChanges();
-            return author;
-        }
+       
     }
 }
