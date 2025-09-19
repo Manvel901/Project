@@ -3,6 +3,7 @@ using Diplom.Abstract;
 using Diplom.Models;
 using Diplom.Models.dto;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.IdentityModel.Tokens;
 using Org.BouncyCastle.Crypto.Generators;
 using System.IdentityModel.Tokens.Jwt;
@@ -17,43 +18,58 @@ namespace Diplom.Services
 
         private readonly AppDbContext _context;
         private readonly IMapper _mapper;
+        private readonly IMemoryCache _cache;
 
-        public UserServices(AppDbContext context, IMapper mapper)
+        public UserServices(AppDbContext context, IMapper mapper, IMemoryCache cache)
         {
             _context = context;
             _mapper = mapper;
+            _cache = cache;
         }
         public void DeleteUser(int adminUserId, int targetUserId)
         {
-            var admin = _context.Users.Find(adminUserId);
-            if (admin?.Role != "Admin")
-                throw new UnauthorizedAccessException("Доступ запрещён.");
+            using (_context)
+            {
+                var admin = _context.Users.Find(adminUserId);
+                if (admin?.Role != "Admin")
+                    throw new UnauthorizedAccessException("Доступ запрещён.");
 
-            var user = _context.Users.Find(targetUserId);
-            if (user == null) return;
+                var user = _context.Users.Find(targetUserId);
+                if (user == null) return;
 
-            _context.Users.Remove(user);
-            _context.SaveChanges();
+                _context.Users.Remove(user);
+                _context.SaveChanges();
+                _cache.Remove("users");
+            }
         }
 
-        public List<User> GetAllUsers(int adminUserId)
+        public IEnumerable<UserDto> GetAllUsers(int adminUserId)
         {
-            var admin = _context.Users.Find(adminUserId);
-            if (admin?.Role != "Admin")
-                throw new UnauthorizedAccessException("Доступ запрещён.");
+            if(_cache.TryGetValue("users", out List<UserDto> usersDto))
+            {
+                return usersDto;
+            }
 
-            return _context.Users.ToList();
+            using (_context)
+            {
+
+                var admin = _context.Users.Find(adminUserId);
+                if (admin?.Role != "Admin")
+                    throw new UnauthorizedAccessException("Доступ запрещён.");
+
+                return _context.Users.Select(x=> _mapper.Map<UserDto>(x)).ToList();
+            }
         }
 
        
 
-        public User? GetUserById(int userId)
+        public UserDto? GetUserById(int userId)
         {
             var user = _context.Users.Find(userId);
             return user == null ? null : _mapper.Map<User>(user);
         }
 
-        public List<Reservation> GetUserReservations(int userId)
+        public IEnumerable<ReservationDto> GetUserReservations(int userId)
         {
             return _context.Reserv
             .Include(r => r.Book)
@@ -61,7 +77,7 @@ namespace Diplom.Services
             .ToList();
         }
 
-        public string Login(string email, string password)
+        public string Login(UserDto userDto)
         {
             var user = _context.Users.FirstOrDefault(u => u.Email == email);
             if (user == null || user.PasswordHash != password) // Сравнение открытого пароля
@@ -72,13 +88,13 @@ namespace Diplom.Services
             return GenerateJwtToken(user);
         }
 
-        private string GenerateJwtToken(User user)
+        private string GenerateJwtToken(UserDto userDto)
         {
             var claims = new[]
         {
-            new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-            new Claim(ClaimTypes.Email, user.Email),
-            new Claim(ClaimTypes.Role, user.Role)
+            new Claim(ClaimTypes.NameIdentifier, userDto.Id.ToString()),
+            new Claim(ClaimTypes.Email, userDto.Email),
+            new Claim(ClaimTypes.Role, userDto.Role)
         };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("your-secret-key"));
@@ -95,7 +111,7 @@ namespace Diplom.Services
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
-        public User Register(string fullName, string email, string password)
+        public int Register(UserDto userDto)
         {
             if (_context.Users.Any(u => u.Email == email))
                 throw new ArgumentException("Email уже занят.");
@@ -129,7 +145,7 @@ namespace Diplom.Services
             _context.SaveChanges();
         }
 
-        public User UpdateUser(int userId, string newFullName)
+        public int UpdateUser(UserDto userDto)
         {
             var user = _context.Users.Find(userId);
             if (user == null) throw new KeyNotFoundException("Пользователь не найден.");
