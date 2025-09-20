@@ -15,7 +15,7 @@ namespace Diplom.Abstract
         UserDto GetUserById(int userId);
 
         // Обновление данных пользователя
-        int UpdateUser(UserDto userDto);
+        int UpdateUser(int userId, UserDto userDto);
 
         // Удаление пользователя (администратором)
         void DeleteUser(int adminUserId, int targetUserId);

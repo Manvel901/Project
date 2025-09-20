@@ -19,12 +19,14 @@ namespace Diplom.Services
         private readonly AppDbContext _context;
         private readonly IMapper _mapper;
         private readonly IMemoryCache _cache;
+        private readonly IConfiguration _config; 
 
-        public UserServices(AppDbContext context, IMapper mapper, IMemoryCache cache)
+        public UserServices(AppDbContext context, IMapper mapper, IMemoryCache cache, IConfiguration config)
         {
             _context = context;
             _mapper = mapper;
             _cache = cache;
+            _config = config;
         }
         public void DeleteUser(int adminUserId, int targetUserId)
         {
@@ -65,44 +67,56 @@ namespace Diplom.Services
 
         public UserDto? GetUserById(int userId)
         {
-            var user = _context.Users.Find(userId);
-            return user == null ? null : _mapper.Map<User>(user);
+            using (_context)
+            {
+                var user = _context.Users.Find(userId);
+                return user == null ? null : _mapper.Map<UserDto>(user);
+            }
         }
 
         public IEnumerable<ReservationDto> GetUserReservations(int userId)
         {
-            return _context.Reserv
-            .Include(r => r.Book)
-            .Where(r => r.UserId == userId)
-            .ToList();
+            using (_context)
+            {
+                var list = _context.Reserv
+                .Include(r => r.Book)
+                .Where(r => r.UserId == userId);
+
+                return list.Select(x => _mapper.Map<ReservationDto>(x)).ToList();
+            }
+            
         }
 
         public string Login(UserDto userDto)
         {
-            var user = _context.Users.FirstOrDefault(u => u.Email == email);
-            if (user == null || user.PasswordHash != password) // Сравнение открытого пароля
-                throw new UnauthorizedAccessException("Неверный email или пароль.");
+            using (_context)
+            {
+                var user = _context.Users.FirstOrDefault(u => u.Email == userDto.Email);
+                if (user == null || user.PasswordHash != userDto.PasswordHash) // Сравнение открытого пароля
+                    throw new UnauthorizedAccessException("Неверный email или пароль.");
 
-            
 
-            return GenerateJwtToken(user);
+
+
+                return GenerateJwtToken(_mapper.Map<UserDto>(user));
+            }
         }
 
         private string GenerateJwtToken(UserDto userDto)
         {
             var claims = new[]
-        {
+            {
             new Claim(ClaimTypes.NameIdentifier, userDto.Id.ToString()),
             new Claim(ClaimTypes.Email, userDto.Email),
             new Claim(ClaimTypes.Role, userDto.Role)
-        };
+            };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("your-secret-key"));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
             var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
             var token = new JwtSecurityToken(
-                issuer: "LibraryApp",
-                audience: "LibraryAppUsers",
+                issuer: _config["Jwt:Issuer"],
+                audience: _config["Jwt:Audience"],
                 claims: claims,
                 expires: DateTime.UtcNow.AddDays(7),
                 signingCredentials: credentials
@@ -111,48 +125,62 @@ namespace Diplom.Services
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
+       
+
         public int Register(UserDto userDto)
         {
-            if (_context.Users.Any(u => u.Email == email))
-                throw new ArgumentException("Email уже занят.");
-
-            var user = new User
+            using (_context)
             {
-                FullName = fullName,
-                Email = email,
-                PasswordHash = password,
-                RegistrationDate = DateTime.UtcNow,
-                Role = "Reader",
-                IsBlocked = false
-               
-            };
+                var userEntity = (_context.Users.FirstOrDefault(u => u.Email.ToLower().Equals(userDto.Email.ToLower())));
 
-            _context.Users.Add(user);
-            _context.SaveChanges();
-            return user;
+                if (userEntity != null)
+                {
+                    userEntity = _mapper.Map<User>(userEntity);
+                    _context.Users.Add(userEntity);
+                    _context.SaveChanges();
+                    _cache.Remove("users");
+
+                }
+                return userEntity.Id;
+            }
+
         }
 
         public void ToggleUserBlock(int adminUserId, int targetUserId, bool isBlocked)
         {
-            var admin = _context.Users.Find(adminUserId);
-            if (admin?.Role != "Admin")
-                throw new UnauthorizedAccessException("Доступ запрещён.");
+            using (_context)
+            {
+                var admin = _context.Users.Find(adminUserId);
+                if (admin?.Role != "Admin")
+                    throw new UnauthorizedAccessException("Доступ запрещён.");
 
-            var user = _context.Users.Find(targetUserId);
-            if (user == null) return;
+                var user = _context.Users.Find(targetUserId);
+                if (user == null) return;
 
-            user.IsBlocked = isBlocked;
-            _context.SaveChanges();
+                user.IsBlocked = isBlocked;
+                _context.SaveChanges();
+            }
         }
 
-        public int UpdateUser(UserDto userDto)
+        public int UpdateUser(int userId, UserDto userDto)
         {
-            var user = _context.Users.Find(userId);
-            if (user == null) throw new KeyNotFoundException("Пользователь не найден.");
+            using (_context)
+            {
+                var user = _context.Users.Find(userId);
+                if (user != null)
+                {
+                 user.Id = userId;
+                 user.FullName = userDto.FullName;
+                 user.Email = userDto.Email;
+                 user.Role = userDto.Role;
+                 user.PasswordHash = userDto.PasswordHash;
 
-            user.FullName = newFullName;
-            _context.SaveChanges();
-            return user;
+                 _context.SaveChanges();
+                    _cache.Remove("users");
+
+                }
+                return user.Id;
+            }
         }
     }
 }

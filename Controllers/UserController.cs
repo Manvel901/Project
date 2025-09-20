@@ -1,5 +1,6 @@
 ﻿using Diplom.Abstract;
 using Diplom.Models;
+using Diplom.Models.dto;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
@@ -23,15 +24,15 @@ namespace Diplom.Controllers
         // Регистрация пользователя (доступно без авторизации)
         [AllowAnonymous]
         [HttpPost("register")]
-        public ActionResult<User> Register([FromBody] UserRegistrationRequest request)
+        public IActionResult Register([FromBody] UserDto userDto)
         {
             try
             {
                 if (!ModelState.IsValid)
                     return BadRequest("Некорректные данные");
 
-                var user = _userService.Register(request.FullName, request.Email, request.Password);
-                _logger.LogInformation("Пользователь {Email} зарегистрирован", user.Email);
+                var user = _userService.Register(userDto);
+                _logger.LogInformation("Пользователь {Email} зарегистрирован", userDto.Email);
                 return Ok(user);
             }
             catch (ArgumentException ex)
@@ -44,17 +45,17 @@ namespace Diplom.Controllers
         // Вход в систему (доступно без авторизации)
         [AllowAnonymous]
         [HttpPost("login")]
-        public ActionResult<string> Login([FromBody] UserLoginRequest request)
+        public IActionResult Login([FromBody] UserDto userDto)
         {
             try
             {
-                var token = _userService.Login(request.Email, request.Password);
-                _logger.LogInformation("Пользователь {Email} вошёл в систему", request.Email);
+                var token = _userService.Login(userDto);
+                _logger.LogInformation("Пользователь {Email} вошёл в систему", userDto.Email);
                 return Ok(token);
             }
             catch (UnauthorizedAccessException ex)
             {
-                _logger.LogWarning("Неудачная попытка входа для {Email}", request.Email);
+                _logger.LogWarning("Неудачная попытка входа для {Email}", userDto.Email);
                 return Unauthorized(ex.Message);
             }
             catch (InvalidOperationException ex)
@@ -66,7 +67,7 @@ namespace Diplom.Controllers
         // Получить текущего пользователя (требуется авторизация)
         [Authorize]
         [HttpGet("me")]
-        public ActionResult<User> GetCurrentUser()
+        public IActionResult GetCurrentUser()
         {
             var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
             var user = _userService.GetUserById(userId);
@@ -76,7 +77,7 @@ namespace Diplom.Controllers
         // Получить пользователя по ID (только для администратора)
         [Authorize(Roles = "Admin")]
         [HttpGet("{id}")]
-        public ActionResult<User> GetUser(int id)
+        public IActionResult GetUser(int id)
         {
             var user = _userService.GetUserById(id);
             return user == null ? NotFound() : Ok(user);
@@ -85,12 +86,12 @@ namespace Diplom.Controllers
         // Обновить данные пользователя (только сам пользователь или администратор)
         [Authorize]
         [HttpPut("me")]
-        public ActionResult<User> UpdateCurrentUser([FromBody] UserUpdateRequest request)
+        public IActionResult UpdateCurrentUser(int userId, [FromBody] UserDto userDto)
         {
-            var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+            
             try
             {
-                var user = _userService.UpdateUser(userId, request.FullName);
+                var user = _userService.UpdateUser(userId, userDto);
                 return Ok(user);
             }
             catch (KeyNotFoundException ex)
@@ -102,7 +103,7 @@ namespace Diplom.Controllers
         // Удалить пользователя (только администратор)
         [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
-        public ActionResult DeleteUser(int id)
+        public IActionResult DeleteUser(int id)
         {
             try
             {
