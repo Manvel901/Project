@@ -10,7 +10,7 @@ namespace Diplom.Abstract
         int CreateAuthor(AutorDto autorDto);
 
         // Обновление информации об авторе
-        int UpdateAuthor(AutorDto autorDto);
+        int UpdateAuthor(int authorId, AutorDto autorDto);
 
         // Удаление автора (если нет связанных книг)
         void DeleteAuthor(int authorId);

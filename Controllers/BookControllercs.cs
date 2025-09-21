@@ -38,20 +38,19 @@ namespace Diplom.Controllers
             // POST: api/books
             [Authorize(Roles = "Admin")]
             [HttpPost]
-            public IActionResult AddBook(BookDto bookDto)
+            public IActionResult AddBook([FromBody] BookDto bookDto)
             {
-                var createdBook = _bookService.AddBook(bookDto
-                );
+                var createdBook = _bookService.AddBook(bookDto);
                 return Ok(createdBook);
             }
 
             // PUT: api/books/5
             [Authorize(Roles = "Admin")]
             [HttpPut("{id}")]
-            public IActionResult UpdateBook(int id, BookDto book)
+            public IActionResult UpdateBook(int id,[FromBody] BookDto bookdto)
             {
-                if (id != book.Id) return BadRequest();
-                var updatedBook = _bookService.UpdateBook( book);
+            if (bookdto == null || id != bookdto.Id) return BadRequest(); 
+                var updatedBook = _bookService.UpdateBook(id, bookdto);
                 return Ok(updatedBook);
             }
 

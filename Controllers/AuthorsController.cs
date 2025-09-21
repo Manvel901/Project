@@ -62,7 +62,7 @@ namespace Diplom.Controllers
 
             try
             {
-                var updatedId = _authorsService.UpdateAuthor(autorDto);
+                var updatedId = _authorsService.UpdateAuthor(id,autorDto);
                 return Ok(updatedId);
             }
             catch (KeyNotFoundException e)

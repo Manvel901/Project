@@ -83,11 +83,11 @@ namespace Diplom.Services
                 return _mupper.Map<AutorDto>(authorEntity);
             }
         }
-        public int UpdateAuthor(AutorDto autorDto)
+        public int UpdateAuthor(int authorId, AutorDto autorDto)
         {
             using (_context)
             {
-                var author = _context.Authors.Find(autorDto.Id);
+                var author = _context.Authors.Find(authorId);
                 if (author == null)
                     throw new KeyNotFoundException("Автор не найден.");
 

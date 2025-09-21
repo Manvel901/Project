@@ -13,7 +13,7 @@ namespace Diplom.Abstract
         void DeleteBook(int bookId);
 
         // Обновление информации о книге
-        int UpdateBook(BookDto bookDto);
+        int UpdateBook(int bookId, BookDto bookDto);
 
         // Получение книги по ID
         BookDto GetBookById(int bookId);
