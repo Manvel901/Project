@@ -22,4 +22,4 @@ namespace Diplom.Abstract
         IEnumerable<AutorDto> GetAllAuthors();
     }
 }
-}
+

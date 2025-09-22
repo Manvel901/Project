@@ -12,6 +12,6 @@
 
         // Связь с бронированием
         public int ReservationId { get; set; }
-        public Reservation? Reservation { get; set; }
+        public virtual Reservation? Reservation { get; set; }
     }
 }

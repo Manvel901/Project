@@ -2,8 +2,7 @@
 
 namespace Diplom.Models
 {
-    public class ApDbContext : DbContext
-    {
+  
         public class AppDbContext : DbContext
         {
             private string _conectionstring;
@@ -17,19 +16,19 @@ namespace Diplom.Models
                 _conectionstring = conectionstring;
             }
 
-            public DbSet<User> Users { get; set; }
-            public DbSet<Book> Books { get; set; }
-            public DbSet<Reservation> Reserv { get; set; }
+            public virtual DbSet<User> Users { get; set; }
+            public virtual DbSet<Book> Books { get; set; }
+            public virtual DbSet<Reservation> Reserv { get; set; }
 
-            public DbSet<Genres> Genres { get; set; }
-            public DbSet<Autors> Authors { get; set; }
-            public DbSet<Penalties> Penalties { get; set; }
+            public virtual DbSet<Genres> Genres { get; set; }
+            public virtual DbSet<Autors> Authors { get; set; }
+            public virtual DbSet<Penalties> Penalties { get; set; }
            
            
 
             protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
             {
-                optionsBuilder.UseLazyLoadingProxies().UseNpgsql(_conectionstring);
+                optionsBuilder.UseNpgsql(_conectionstring);
             }
 
             protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -50,7 +49,7 @@ namespace Diplom.Models
 
 
                     
-                    entity.HasMany(res => res.Reservations).WithOne(e => e.User);
+                    entity.HasMany(res => res.Reservations).WithOne(e => e.User).HasForeignKey(x=> x.UserId);
                 });
 
 
@@ -69,7 +68,7 @@ namespace Diplom.Models
 
                     entity.HasMany(bo => bo.Authors).WithMany(b => b.Books).UsingEntity(x => x.ToTable("AuthorBooks"));
 
-                    entity.HasMany(rv => rv.Reservations).WithOne(b => b.Book);
+                    entity.HasMany(rv => rv.Reservations).WithOne(b => b.Book).HasForeignKey(x => x.BookId);
 
                    
 
@@ -90,8 +89,11 @@ namespace Diplom.Models
                     entity.Property(b => b.Status).HasColumnName("ResrvStatusId");
                     entity.Property(b => b.Comment).HasColumnName("Comment");
                     entity.Property(b => b.IsBlocked).HasColumnName("ISblocked");
+                   ;
 
                     entity.HasOne(p => p.Penalty).WithOne(rev => rev.Reservation);
+                    entity.HasOne(p => p.Book).WithMany(rev => rev.Reservations).HasForeignKey(x=>x.BookId);
+                    entity.HasOne(p => p.User).WithMany(rev => rev.Reservations).HasForeignKey(x => x.UserId);
 
                 });
 
@@ -132,10 +134,13 @@ namespace Diplom.Models
                     entity.Property(p => p.Id).HasColumnName("Penaltiesid");
                     entity.Property(p => p.Amount).HasColumnName("Amount");
                     entity.Property(p => p.IssueDate).HasColumnName("IssueDate");
+                    entity.Property(p => p.AmountPaid).HasColumnName("AmountPaid");
+                    entity.Property(p => p.IsCancelled).HasColumnName("IsCancelled");
+                    entity.Property(p => p.PaidAtUtc).HasColumnName("PaidAtUtc");
 
                     entity.HasOne(rev => rev.Reservation).WithOne(p => p.Penalty);
                 });
             }
         }
     }
-}
+

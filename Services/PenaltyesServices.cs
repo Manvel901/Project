@@ -3,7 +3,7 @@ using Diplom.Abstract;
 using Diplom.Models;
 using Diplom.Models.dto;
 using Microsoft.Extensions.Caching.Memory;
-using static Diplom.Models.ApDbContext;
+using static Diplom.Models.AppDbContext;
 
 namespace Diplom.Services
 {

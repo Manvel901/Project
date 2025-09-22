@@ -9,7 +9,7 @@ using Org.BouncyCastle.Crypto.Generators;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using static Diplom.Models.ApDbContext;
+using static Diplom.Models.AppDbContext;
 
 namespace Diplom.Services
 {

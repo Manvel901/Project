@@ -17,9 +17,9 @@ namespace Diplom.Models
         public Book? Book { get; set; }
 
         public int UserId { get; set; }
-        public User? User { get; set; }
+        public virtual User? User { get; set; }
        
-        public Penalties? Penalty { get; set; }
+        public virtual Penalties? Penalty { get; set; }
        
     }
 }

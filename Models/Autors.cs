@@ -10,6 +10,6 @@
         public string Bio { get; set; }
 
         // Связь многие-ко-многим с книгами
-        public ICollection<Book>? Books { get; set; }
+        public virtual ICollection<Book>? Books { get; set; }
     }
 }

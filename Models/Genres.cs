@@ -6,6 +6,6 @@
         public string Name { get; set; }
 
         // Связь с книгами (одна категория → много книг)
-        public ICollection<Book>? Books { get; set; }
+        public virtual ICollection<Book>? Books { get; set; }
     }
 }

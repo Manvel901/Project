@@ -1,7 +1,7 @@
 ﻿using Diplom.Abstract;
 using Diplom.Models;
 using Microsoft.EntityFrameworkCore;
-using static Diplom.Models.ApDbContext;
+using static Diplom.Models.AppDbContext;
 
 namespace Diplom.Services
 {
