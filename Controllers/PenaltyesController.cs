@@ -24,9 +24,9 @@ namespace Diplom.Controllers
         }
 
         [HttpPost("{penaltyId}/pay")]
-        public IActionResult Pay(int penaltyId, [FromBody] PenaltyDto penaltyDto)
+        public IActionResult Pay( [FromBody] PenaltyDto penaltyDto)
         {
-            var ok = _penaltyService.PayPenalty(penaltyDto.Id, penaltyDto.AmountPaid, penaltyDto.PaidAtUtc);
+            var ok = _penaltyService.PayPenalty(penaltyDto);
             if (!ok) return BadRequest();
             return NoContent();
         }

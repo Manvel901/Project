@@ -162,14 +162,14 @@ namespace Diplom.Services
             }
         }
 
-        public int UpdateUser(int userId, UserDto userDto)
+        public int UpdateUser(UserDto userDto)
         {
             using (_context)
             {
-                var user = _context.Users.Find(userId);
+                var user = _context.Users.Find(userDto.Id);
                 if (user != null)
                 {
-                 user.Id = userId;
+                 user.Id = userDto.Id;
                  user.FullName = userDto.FullName;
                  user.Email = userDto.Email;
                  user.Role = userDto.Role;

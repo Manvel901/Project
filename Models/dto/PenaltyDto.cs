@@ -14,5 +14,6 @@
 
         // Связь с бронированием
         public int ReservationId { get; set; }
+
     }
 }

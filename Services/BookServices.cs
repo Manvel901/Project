@@ -148,12 +148,12 @@ namespace Diplom.Services
            
         }
 
-        public int UpdateBook(int bookId, BookDto bookDto)
+        public int UpdateBook( BookDto bookDto)
         {
             using (_context)
             {
 
-                var book = _context.Books.Find(bookId);
+                var book = _context.Books.Find(bookDto.Id);
                 if (book == null) throw new KeyNotFoundException("Книга не найдена.");
 
                 // Обновление доступных экземпляров

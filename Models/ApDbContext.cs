@@ -140,7 +140,12 @@ namespace Diplom.Models
 
                     entity.HasOne(rev => rev.Reservation).WithOne(p => p.Penalty);
                 });
-            }
+
+                 base.OnModelCreating(modelBuilder);
+
+        }
+       
+        
         }
     }
 

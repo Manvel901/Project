@@ -42,20 +42,20 @@ namespace Diplom.Services
             }
         }
 
-        public bool PayPenalty(int penaltyId, decimal amountPaid, DateTime? paidAt = null)
+        public bool PayPenalty(PenaltyDto penaltyDto)
         {
             using (_context)
             {
-                if (amountPaid <= 0) throw new ArgumentException("Payment must be positive.");
-                var penal = _context.Penalties.FirstOrDefault(x => x.Id == penaltyId || x.IsCancelled);
+                if (penaltyDto.AmountPaid <= 0) throw new ArgumentException("Payment must be positive.");
+                var penal = _context.Penalties.FirstOrDefault(x => x.Id == penaltyDto.Id || x.IsCancelled);
                 if (penal == null) return false;
 
                 var remaining = penal.Amount - penal.AmountPaid;
-                var toApply = Math.Min(remaining, amountPaid);
+                var toApply = Math.Min(remaining, penaltyDto.AmountPaid);
                 if (toApply <= 0) return false;
 
                 penal.AmountPaid += toApply;
-                if (penal.AmountPaid >= penal.Amount) penal.PaidAtUtc = (paidAt?.ToUniversalTime() ?? DateTime.UtcNow);
+                if (penal.AmountPaid >= penal.Amount) penal.PaidAtUtc = (penaltyDto.PaidAtUtc?.ToUniversalTime() ?? DateTime.UtcNow);
                 _context.SaveChanges();
                 return true;
             }
@@ -112,20 +112,20 @@ namespace Diplom.Services
             return 0;
         }
 
-        public bool CancelPenalty(int penaltyId, string? reason = null)
-        {
-            using (_context)
-            {
-                var penal = _context.Penalties.FirstOrDefault(x => x.Id == penaltyId);
-                if (penal == null) return false;
-                if (penal.IsCancelled) return false;
-                penal.IsCancelled = true;
-                if (!string.IsNullOrWhiteSpace(reason))
-                    penal.BookTitle = $"{penal.BookTitle} (Cancelled: {reason})";
-                _context.SaveChanges();
-                return true;
-            }
-        }
+        //public bool CancelPenalty(PenaltyDto penaltyDto)
+        //{
+        //    using (_context)
+        //    {
+        //        var penal = _context.Penalties.FirstOrDefault(x => x.Id == penaltyDto.Id);
+        //        if (penal == null) return false;
+        //        if (penal.IsCancelled) return false;
+        //        penal.IsCancelled = true;
+        //        if (!string.IsNullOrWhiteSpace(penaltyDto.))
+        //            penal.BookTitle = $"{penal.BookTitle} (Cancelled: {reason})";
+        //        _context.SaveChanges();
+        //        return true;
+        //    }
+        //}
 
         public bool HasOutstandingPenaltiesByReservation(int reservationId)
         {

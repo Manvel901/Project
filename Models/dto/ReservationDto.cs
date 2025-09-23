@@ -9,5 +9,6 @@
         public string Status { get; set; }
         public int BookId { get; set; }
         public int UserId { get; set; }
+        public int PenaltyId { get; set; }
     }
 }

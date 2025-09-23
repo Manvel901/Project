@@ -86,12 +86,12 @@ namespace Diplom.Controllers
         // Обновить данные пользователя (только сам пользователь или администратор)
         [Authorize]
         [HttpPut("me")]
-        public IActionResult UpdateCurrentUser(int userId, [FromBody] UserDto userDto)
+        public IActionResult UpdateCurrentUser( [FromBody] UserDto userDto)
         {
             
             try
             {
-                var user = _userService.UpdateUser(userId, userDto);
+                var user = _userService.UpdateUser (userDto);
                 return Ok(user);
             }
             catch (KeyNotFoundException ex)

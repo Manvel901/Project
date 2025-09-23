@@ -113,11 +113,11 @@ namespace Diplom.Controllers
         // Обновить статус бронирования (администратор)
         [Authorize(Roles = "Admin")]
         [HttpPatch("{id}/status")]
-        public IActionResult UpdateStatus(int id, [FromBody] string status)
+        public IActionResult UpdateStatus( [FromBody] ReservationDto reservationDto)
         {
             try
             {
-                _reservationService.UpdateReservationStatus(id, status);
+                _reservationService.UpdateReservationStatus(reservationDto);
                 return NoContent();
             }
             catch (KeyNotFoundException ex)

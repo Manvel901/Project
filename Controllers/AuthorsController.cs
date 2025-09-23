@@ -56,13 +56,13 @@ namespace Diplom.Controllers
         // PUT: /Authors/5
         [Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
-        public IActionResult UpdateAuthor(int id, [FromBody] AutorDto autorDto)
+        public IActionResult UpdateAuthor( [FromBody] AutorDto autorDto)
         {
-            if (autorDto == null || id != autorDto.Id) return BadRequest();
+            
 
             try
             {
-                var updatedId = _authorsService.UpdateAuthor(id,autorDto);
+                var updatedId = _authorsService.UpdateAuthor(autorDto);
                 return Ok(updatedId);
             }
             catch (KeyNotFoundException e)

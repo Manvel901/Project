@@ -47,11 +47,19 @@ namespace Diplom.Controllers
             // PUT: api/books/5
             [Authorize(Roles = "Admin")]
             [HttpPut("{id}")]
-            public IActionResult UpdateBook(int id,[FromBody] BookDto bookdto)
+            public IActionResult UpdateBook([FromBody] BookDto bookdto)
             {
-            if (bookdto == null || id != bookdto.Id) return BadRequest(); 
-                var updatedBook = _bookService.UpdateBook(id, bookdto);
+
+            try
+            {
+                var updatedBook = _bookService.UpdateBook(bookdto);
                 return Ok(updatedBook);
+
+            }
+            catch (KeyNotFoundException ex)
+               {
+                return NotFound(ex.Message);
+                }
             }
 
             // DELETE: api/books/5

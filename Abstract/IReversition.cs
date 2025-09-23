@@ -1,5 +1,6 @@
 ﻿using Diplom.Models;
 using Diplom.Models.dto;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Diplom.Abstract
 {
@@ -20,7 +21,7 @@ namespace Diplom.Abstract
         IEnumerable<ReservationDto> GetOverdueReservations();
 
         // Обновить статус бронирования (например, при возврате книги)
-        void UpdateReservationStatus(int reservationId, string status);
+        void UpdateReservationStatus( ReservationDto reservationDto);
 
         // Рассчитать штраф за просрочку
         decimal CalculatePenalty(int reservationId);

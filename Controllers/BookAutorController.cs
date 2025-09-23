@@ -24,7 +24,7 @@ namespace Diplom.Controllers
         // Добавить автора к книге
         [Authorize(Roles = "Admin")]
         [HttpPost]
-        public IActionResult AddAuthorToBook(BookDto bookDto, AutorDto autorDto)
+        public IActionResult AddAuthorToBook([FromQuery] BookDto bookDto, [FromBody] AutorDto autorDto)
         {
             
             try

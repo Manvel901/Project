@@ -107,21 +107,16 @@ namespace Diplom
                 app.UseSwaggerUI();
             }
 
-            app.UseHttpsRedirection();
+           
 
             app.UseHttpsRedirection();
             app.UseAuthentication();
             app.UseAuthorization();
 
 
-            app.MapControllers();
+           
 
-            // Автоматическое применение миграций БД
-            using (var scope = app.Services.CreateScope())
-            {
-                var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-                dbContext.Database.Migrate();
-            }
+          
 
             app.Run();
         }

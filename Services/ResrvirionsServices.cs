@@ -2,6 +2,7 @@
 using Diplom.Abstract;
 using Diplom.Models;
 using Diplom.Models.dto;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 using static Diplom.Models.AppDbContext;
@@ -183,12 +184,12 @@ namespace Diplom.Services
             }
         }
 
-        public void UpdateReservationStatus(int reservationId, string status)
+        public void UpdateReservationStatus( ReservationDto reservationDto)
         {
-            var reservation = _context.Reserv.Find(reservationId);
+            var reservation = _context.Reserv.Find(reservationDto.Id);
             if (reservation == null) return;
 
-            reservation.Status = status;
+            reservation.Status = reservationDto.Status;
             _context.SaveChanges();
         }
     }
