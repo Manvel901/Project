@@ -133,9 +133,9 @@ namespace Diplom.Services
             {
                 var userEntity = (_context.Users.FirstOrDefault(u => u.Email.ToLower().Equals(userDto.Email.ToLower())));
 
-                if (userEntity != null)
+                if (userEntity == null)
                 {
-                    userEntity = _mapper.Map<User>(userEntity);
+                    userEntity = _mapper.Map<User>(userDto);
                     _context.Users.Add(userEntity);
                     _context.SaveChanges();
                     _cache.Remove("users");

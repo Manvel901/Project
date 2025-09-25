@@ -4,6 +4,7 @@ using Diplom.Models;
 using Diplom.Models.dto;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
+using System.Collections.Generic;
 using static Diplom.Models.AppDbContext;
 
 namespace Diplom.Services
@@ -13,32 +14,47 @@ namespace Diplom.Services
         private readonly AppDbContext _context;
         private readonly IMapper _mupper;
         private readonly IMemoryCache _cache;
+        private readonly ILogger<AuthorServices> _logger;
 
-        public AuthorServices(AppDbContext context, IMapper mapper, IMemoryCache cache)
+        public AuthorServices(AppDbContext context, IMapper mapper, IMemoryCache cache, ILogger<AuthorServices> logger)
         {
             _context = context;
             _mupper = mapper;
             _cache = cache;
+            _logger = logger;
         }
         public int CreateAuthor(AutorDto autorDto)
         {
             using (_context)
             {
-                var authorEntity = _context.Authors.FirstOrDefault(a => a.FirstName.ToLower().Equals(autorDto.FirstName.ToLower())
-                && a.SurName.ToLower().Equals(autorDto.SurName.ToLower())
-                && a.LastName.ToLower().Equals(autorDto.LastName.ToLower()));
-
-                if (authorEntity != null)
+                try
                 {
+                    // Нормализация входных данных
+                    var author = _context.Authors
+                       .FirstOrDefault(a =>
+                         a.FullName.ToLower().Equals(autorDto.FullName.ToLower()));
 
-                    _context.Authors.Add(_mupper.Map<Autors>(authorEntity));
-                    _context.SaveChanges();
-                    _cache.Remove("authors");
+                    if (author == null)
+                    {
+                        author = _mupper.Map<Autors>(autorDto);
+                        _context.Authors.Add(author);
+                        _context.SaveChanges();
 
+                        // Сброс кэша после сохранения
+                        _cache.Remove("authors");
+                    }
+
+                    return author.Id;
                 }
-                return authorEntity.Id;
+                catch (DbUpdateException ex)
+                {
+                    var details = ex.InnerException?.Message ?? ex.Message;
+                    _logger.LogError(ex, "Save failed: {Details}", details);
+                    throw;
+                }
             }
         }
+        
 
         public void DeleteAuthor(int authorId)
         {
@@ -91,9 +107,8 @@ namespace Diplom.Services
                 if (author == null)
                     throw new KeyNotFoundException("Автор не найден.");
 
-                author.FirstName = autorDto.FirstName;
-                author.SurName = autorDto.SurName;
-                author.LastName = autorDto.LastName;
+                author.FullName = autorDto.FullName;
+                
                 author.Bio = autorDto.Bio;
                 _context.SaveChanges();
                 _cache.Remove("authors");

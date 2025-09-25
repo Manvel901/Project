@@ -3,6 +3,7 @@ using Diplom.Models.dto;
 using Diplom.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Diplom.Controllers
 {
@@ -11,11 +12,13 @@ namespace Diplom.Controllers
     public class AuthorsController : ControllerBase
     {
         private readonly IAuthorsService _authorsService;
-        public AuthorsController() { }
+        private readonly ILogger _logger;
+      
 
-        public AuthorsController(IAuthorsService authorsService)
+        public AuthorsController(IAuthorsService authorsService, ILogger logger)
         {
             _authorsService = authorsService;
+            _logger = logger;
         }
         // GET: /Authors
         [AllowAnonymous]
@@ -40,18 +43,22 @@ namespace Diplom.Controllers
         [HttpPost]
         public IActionResult CreateAuthor([FromBody] AutorDto autorDto)
         {
-            if (autorDto == null) return BadRequest();
+            
             try
             {
                 var createdId = _authorsService.CreateAuthor(autorDto);
                 return Ok(createdId);
             }
-            catch (Exception e)
-            {
+           
                 // При необходимости можно уточнить исключения в сервисе и вернуть более точные коды
-                return BadRequest(e.Message);
+                catch (DbUpdateException ex)
+            {
+                var details = ex.InnerException?.Message ?? ex.Message;
+                _logger.LogError(ex, "Save failed: {Details}", details);
+                throw;
             }
         }
+        
 
         // PUT: /Authors/5
         [Authorize(Roles = "Admin")]

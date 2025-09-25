@@ -1,4 +1,5 @@
 using Autofac;
+using Autofac.Core;
 using Autofac.Extensions.DependencyInjection;
 using Diplom.Abstract;
 using Diplom.Models;
@@ -22,14 +23,32 @@ namespace Diplom
             // Добавление сервисов в контейнер
             builder.Services.AddControllers();
             builder.Services.AddAutoMapper(typeof(MuppingProfile));
-          
+            builder.Services.AddLogging();
+
 
             // Регистрация БД
             builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
             builder.Host.ConfigureContainer<ContainerBuilder>(cb =>
             {
-                cb.Register(c => new AppDbContext(builder.Configuration.GetConnectionString("db"))).InstancePerDependency();
+                // Регистрация DbContext (если не используете AddDbContext)
+                cb.Register(c => new AppDbContext(builder.Configuration.GetConnectionString("db")))
+                  .InstancePerDependency();
+
+                // Регистрация не-дженерик ILogger
+                cb.Register(c =>
+                {
+                    var resolver = c.Resolve<IServiceProvider>(); // Autofac разрешит IServiceProvider из интеграции
+                    var factory = resolver.GetService(typeof(ILoggerFactory)) as ILoggerFactory;
+                    // Или напрямую: c.Resolve<ILoggerFactory>() если он популярен в контейнере
+                    return factory.CreateLogger("Diplom.Services.AuthorServices");
+                })
+                .As<Microsoft.Extensions.Logging.ILogger>()
+                .InstancePerDependency();
+                cb.RegisterType<Diplom.Services.AuthorServices>().AsSelf().InstancePerLifetimeScope();
             });
+
+
+
 
             var config = new ConfigurationBuilder();
             config.AddJsonFile("appsettings.json");
@@ -40,6 +59,7 @@ namespace Diplom
             builder.Services.AddScoped<IBookServicrs, BookServices>();
             builder.Services.AddScoped<IReversition, ResrvirionsServices>();
             builder.Services.AddScoped<IBookAutor, BookAutorServices>();
+            builder.Services.AddScoped<IAuthorsService, AuthorServices>();
             builder.Services.AddScoped<IAnalyticsService, AnaliticService>();
             builder.Services.AddScoped<IEmailService, EmailServices>();
 
@@ -48,12 +68,13 @@ namespace Diplom
             {
                 o.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
                 {
-                    ValidateIssuer = true,
+                    ValidateIssuer = true, 
                     ValidateAudience = true,
                     ValidateLifetime = true,
 
                     ValidateIssuerSigningKey = true,
-                    ValidIssuer = builder.Configuration["Jwt:Isuer"],
+                    ValidIssuer = builder.Configuration["Jwt:Issuer"],
+                    
                     ValidAudience = builder.Configuration["Jwt:Audience"],
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
 
@@ -107,16 +128,21 @@ namespace Diplom
                 app.UseSwaggerUI();
             }
 
+            
+            app.UseRouting();
+         
            
 
-            app.UseHttpsRedirection();
+         
             app.UseAuthentication();
             app.UseAuthorization();
 
+            app.UseEndpoints(endpoints => endpoints.MapControllers());
 
-           
 
-          
+
+
+
 
             app.Run();
         }

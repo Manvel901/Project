@@ -448,3 +448,4 @@ D:\Diplom\obj\Debug\net9.0\staticwebassets.build.endpoints.json
 D:\Diplom\obj\Debug\net9.0\Diplom.csproj.Up2Date
 D:\Diplom\obj\Debug\net9.0\Diplom.genruntimeconfig.cache
 D:\Diplom\obj\Debug\net9.0\ref\Diplom.dll
+D:\Diplom\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

@@ -89,9 +89,9 @@ namespace Diplom.Models
                     entity.Property(b => b.Status).HasColumnName("ResrvStatusId");
                     entity.Property(b => b.Comment).HasColumnName("Comment");
                     entity.Property(b => b.IsBlocked).HasColumnName("ISblocked");
-                   ;
+                    
 
-                    entity.HasOne(p => p.Penalty).WithOne(rev => rev.Reservation);
+                    entity.HasOne(r => r.Penalty).WithOne(p => p.Reservation).HasForeignKey<Penalties>(p => p.ReservationId);
                     entity.HasOne(p => p.Book).WithMany(rev => rev.Reservations).HasForeignKey(x=>x.BookId);
                     entity.HasOne(p => p.User).WithMany(rev => rev.Reservations).HasForeignKey(x => x.UserId);
 
@@ -101,11 +101,11 @@ namespace Diplom.Models
                 {
                     entity.ToTable("Autors");
                     entity.HasKey(a => a.Id).HasName("autor_key");
-
+                    entity.HasIndex(a => a.FullName).IsUnique();
+                    
                     entity.Property(a => a.Id).HasColumnName("AutorId");
-                    entity.Property(a => a.FirstName).HasColumnName("AutorName");
-                    entity.Property(a => a.SurName).HasColumnName("AutorSurname");
-                    entity.Property(a => a.LastName).HasColumnName("AutorLastname");
+                    entity.Property(a => a.FullName).HasColumnName("AutorName");
+                   
                     entity.Property(a => a.Bio).HasColumnName("AutorBio");
 
                     entity.HasMany(bo => bo.Books).WithMany(b => b.Authors).UsingEntity(x => x.ToTable("AuthorBooks"));
@@ -138,7 +138,7 @@ namespace Diplom.Models
                     entity.Property(p => p.IsCancelled).HasColumnName("IsCancelled");
                     entity.Property(p => p.PaidAtUtc).HasColumnName("PaidAtUtc");
 
-                    entity.HasOne(rev => rev.Reservation).WithOne(p => p.Penalty);
+                    entity.HasOne(rev => rev.Reservation).WithOne(p => p.Penalty).HasForeignKey<Reservation>(x=>x.PenaltyId);
                 });
 
                  base.OnModelCreating(modelBuilder);
