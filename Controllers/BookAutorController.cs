@@ -11,10 +11,7 @@ namespace Diplom.Controllers
     public class BookAutorController:ControllerBase
     {
         private readonly IBookAutor _bookAutor;
-        public BookAutorController()
-        {
-            
-        }
+        
         public BookAutorController(IBookAutor bookAutor)
         {
             _bookAutor = bookAutor;
@@ -24,12 +21,12 @@ namespace Diplom.Controllers
         // Добавить автора к книге
         [Authorize(Roles = "Admin")]
         [HttpPost]
-        public IActionResult AddAuthorToBook([FromQuery] BookDto bookDto, [FromBody] AutorDto autorDto)
+        public IActionResult AddAuthorToBook(int  bookDtoId,  int autorDtoId)
         {
             
             try
             {
-                var bookId = _bookAutor.AddAuthorToBook(bookDto, autorDto);
+                var bookId = _bookAutor.AddAuthorToBook(bookDtoId, autorDtoId);
                 return Ok(bookId);
             }
             catch (KeyNotFoundException e)

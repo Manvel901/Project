@@ -57,6 +57,7 @@ namespace Diplom
             // Регистрация сервисов
             builder.Services.AddScoped<IUserServices, UserServices>();
             builder.Services.AddScoped<IBookServicrs, BookServices>();
+            builder.Services.AddScoped<IGenresServices, GenresServices>();
             builder.Services.AddScoped<IReversition, ResrvirionsServices>();
             builder.Services.AddScoped<IBookAutor, BookAutorServices>();
             builder.Services.AddScoped<IAuthorsService, AuthorServices>();

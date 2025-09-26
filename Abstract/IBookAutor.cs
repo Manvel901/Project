@@ -7,7 +7,7 @@ namespace Diplom.Abstract
     public interface IBookAutor
     {
         // Добавление автора к книге
-        int AddAuthorToBook(BookDto bookDto, AutorDto autorDto);
+        int AddAuthorToBook(int bookDtoId, int autorDtoId);
 
         // Удаление автора из книги
         int RemoveAuthorFromBook(int bookId, int authorId);

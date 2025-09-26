@@ -72,7 +72,7 @@ namespace Diplom.Models
 
                    
 
-                    entity.HasOne(g => g.Genre).WithMany(b => b.Books);
+                    entity.HasOne(g => g.Genre).WithMany(b => b.Books).HasForeignKey(x=> x.GenreId);
 
                 });
 
@@ -120,7 +120,7 @@ namespace Diplom.Models
                     entity.Property(g => g.Id).HasColumnName("GenresId");
                     entity.Property(g => g.Name).HasColumnName("GenresName");
 
-                    entity.HasMany(b => b.Books).WithOne(g => g.Genre);
+                    entity.HasMany(b => b.Books).WithOne(g => g.Genre).HasForeignKey(x => x.GenreId); 
    
                 });
 

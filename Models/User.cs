@@ -6,7 +6,7 @@
         public string FullName { get; set; }
         public string Email { get; set; }
         public string PasswordHash { get; set; }
-        public DateTime RegistrationDate { get; set; } = DateTime.Now;
+        public DateTime? RegistrationDate { get; set; } = DateTime.Now;
         public string Role { get; set; }
 
        public bool IsBlocked { get; set; }

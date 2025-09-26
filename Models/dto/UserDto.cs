@@ -8,7 +8,7 @@
         public string PasswordHash { get; set; }
         public string Role { get; set; }
 
-        public DateTime RegistrationDate { get; set; } = DateTime.Now;
+        public DateTime? RegistrationDate { get; set; } = DateTime.Now;
         public bool IsBlocked { get; set; }
 
 

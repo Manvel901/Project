@@ -39,7 +39,7 @@ namespace Diplom.Services
                 
 
                
-                return bookDto.Id;
+                return entity.Id;
             }
         }
 
@@ -95,31 +95,38 @@ namespace Diplom.Services
             
         }
 
-       
+
 
         public void ReserveBook(BookDto bookDto, UserDto userDto)
         {
-            using (_context)
+            // не disopose контекст из DI
+            var book = _context.Books.Find(bookDto.Id);
+            if (book == null) throw new Exception("Книга не найдена.");
+            if (book.AvailableCopies < 1) throw new InvalidOperationException("Нет доступных экземпляров.");
+
+            var nowUtc = DateTime.UtcNow;
+
+            var reservation = new ReservationDto
             {
-                var book = _context.Books.Find(bookDto.Id);
-                if (book == null) throw new Exception("Книга не найдена.");
-                if (book.AvailableCopies < 1) throw new InvalidOperationException("Нет доступных экземпляров.");
+                BookId = bookDto.Id,
+                UserId = userDto.Id,
+                ReservationDate = nowUtc,
+                DueDate = nowUtc.AddDays(14),
+                Status = "Active"
+            };
 
-                // Создание бронирования
-                var reservation = new ReservationDto
-                {
-                    BookId = bookDto.Id,
-                    UserId = userDto.Id,
-                    ReservationDate = DateTime.Now,
-                    DueDate = DateTime.Now.AddDays(14),
-                    Status = "Active"
-                };
+            book.AvailableCopies--;
 
-                book.AvailableCopies--;
-                var res = _mapper.Map<Reservation>(reservation);
-                _context.Reserv.Add(res);
-                _context.SaveChanges();
-            }
+            var res = _mapper.Map<Reservation>(reservation);
+
+            // Если AutoMapper не устанавливает Kind, убедитесь, что в сущности даты тоже имеют Kind = Utc:
+            if (res.ReservationDate.Kind != DateTimeKind.Utc)
+                res.ReservationDate = DateTime.SpecifyKind(res.ReservationDate, DateTimeKind.Utc);
+            if (res.DueDate.Kind != DateTimeKind.Utc)
+                res.DueDate = DateTime.SpecifyKind(res.DueDate, DateTimeKind.Utc);
+
+            _context.Reserv.Add(res);
+            _context.SaveChanges();
         }
 
         public void ReturnBook(int bookId)

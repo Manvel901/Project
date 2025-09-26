@@ -20,32 +20,36 @@ namespace Diplom.Services
             _mupper = mapper;
             _cache = cache;
         }
-        public int AddAuthorToBook(BookDto bookDto,  AutorDto autorDto)
+        public int AddAuthorToBook(int bookId, int authorId)
         {
             using (_context)
             {
-                var book = _context.Books.Find(bookDto.Id);
-                var author = _context.Authors.Find(autorDto.Id);
-
-                if (book == null || author == null)
-                    throw new KeyNotFoundException("Книга или автор не найдены.");
-                if (_context.Books
+                // не диспоузим _context, если он из DI
+                var book = _context.Books
                     .Include(b => b.Authors)
-                    .FirstOrDefault(b => b.Id == bookDto.Id)?
-                    .Authors.Any(a => a.Id == autorDto.Id) == true)
-                {
-                    throw new InvalidOperationException("Автор уже связан с этой книгой.");
-                }
+                    .FirstOrDefault(b => b.Id == bookId);
 
-                book.Authors.Add(new Autors { Id = autorDto.Id });
-                
+                if (book == null) throw new KeyNotFoundException("Книга не найдена.");
+
+                // проверяем существование автора в БД
+                var author = _context.Authors.Find(authorId);
+                if (author == null) throw new KeyNotFoundException("Автор не найден.");
+
+                // проверяем, связан ли автор уже с книгой
+                if (book.Authors.Any(a => a.Id == authorId))
+                    throw new InvalidOperationException("Автор уже связан с этой книгой.");
+
+                // используем найденную отслеживаемую сущность
+                book.Authors.Add(author);
+
                 _context.SaveChanges();
                 _cache.Remove("autors");
+
                 return book.Id;
             }
         }
 
-       
+
         public IEnumerable<AutorDto> GetAuthorsByBook(int bookId)
         {
             using (_context)

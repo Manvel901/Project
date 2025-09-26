@@ -232,24 +232,8 @@
   },
   {
     "ContainingType": "Diplom.Controllers.BookController",
-    "Method": "SearchBooks",
-    "RelativePath": "Book/search",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "query",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Diplom.Controllers.BookAutorController",
-    "Method": "AddAuthorToBook",
-    "RelativePath": "BookAutor",
+    "Method": "ReserveBook",
+    "RelativePath": "Book/reserve",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -290,9 +274,62 @@
         "IsRequired": false
       },
       {
-        "Name": "autorDto",
-        "Type": "Diplom.Models.dto.AutorDto",
+        "Name": "userDto",
+        "Type": "Diplom.Models.dto.UserDto",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Diplom.Controllers.BookController",
+    "Method": "ReturnBook",
+    "RelativePath": "Book/return",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bookId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Diplom.Controllers.BookController",
+    "Method": "SearchBooks",
+    "RelativePath": "Book/search",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Diplom.Controllers.BookAutorController",
+    "Method": "AddAuthorToBook",
+    "RelativePath": "BookAutor",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bookDtoId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "autorDtoId",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -361,6 +398,85 @@
       {
         "Name": "reservationId",
         "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Diplom.Controllers.GenresController",
+    "Method": "Create",
+    "RelativePath": "Genres",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "genreDto",
+        "Type": "Diplom.Models.dto.GenresDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Diplom.Controllers.GenresController",
+    "Method": "GetAll",
+    "RelativePath": "Genres/All",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Diplom.Controllers.GenresController",
+    "Method": "GetById",
+    "RelativePath": "Genres/ById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Diplom.Controllers.GenresController",
+    "Method": "Delete",
+    "RelativePath": "Genres/Remove",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Diplom.Controllers.GenresController",
+    "Method": "Update",
+    "RelativePath": "Genres/Update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "genreDto",
+        "Type": "Diplom.Models.dto.GenresDto",
         "IsRequired": true
       }
     ],
