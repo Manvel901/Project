@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Diplom.Abstract
 {
-    public interface IReversition
+    public interface IReservation
     {
         ReservationDto CreateReservation(int userId, int bookId);
 

@@ -12,11 +12,11 @@ namespace Diplom.Controllers
     [Route("[controller]")] // Базовый маршрут: /reservations
     public class ReservationController : ControllerBase
     {
-        private readonly IReversition _reservationService;
+        private readonly IReservation _reservationService;
         private readonly ILogger<ReservationController> _logger;
 
         public ReservationController(
-            IReversition reservationService,
+            IReservation reservationService,
             ILogger<ReservationController> logger)
         {
             _reservationService = reservationService;

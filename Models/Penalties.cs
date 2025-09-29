@@ -11,7 +11,7 @@
         public DateTime? PaidAtUtc { get; set; }
 
         // Связь с бронированием
-        public int ReservationId { get; set; }
+        public int? ReservationId { get; set; }
         public virtual Reservation? Reservation { get; set; }
     }
 }

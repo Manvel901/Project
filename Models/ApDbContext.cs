@@ -78,7 +78,7 @@ namespace Diplom.Models
 
                 modelBuilder.Entity<Reservation>(entity =>
                 {
-                    entity.ToTable("Revervation");
+                    entity.ToTable("Reservation");
                     entity.HasKey(b => b.Id).HasName("rever_key");
                     
 
@@ -91,7 +91,8 @@ namespace Diplom.Models
                     entity.Property(b => b.IsBlocked).HasColumnName("ISblocked");
                     
 
-                    entity.HasOne(r => r.Penalty).WithOne(p => p.Reservation).HasForeignKey<Penalties>(p => p.ReservationId);
+                    entity.HasOne(r => r.Penalty).WithOne(p => p.Reservation).HasForeignKey<Reservation>(p => p.PenaltyId).IsRequired(false)
+    .OnDelete(DeleteBehavior.SetNull); 
                     entity.HasOne(p => p.Book).WithMany(rev => rev.Reservations).HasForeignKey(x=>x.BookId);
                     entity.HasOne(p => p.User).WithMany(rev => rev.Reservations).HasForeignKey(x => x.UserId);
 
@@ -138,7 +139,7 @@ namespace Diplom.Models
                     entity.Property(p => p.IsCancelled).HasColumnName("IsCancelled");
                     entity.Property(p => p.PaidAtUtc).HasColumnName("PaidAtUtc");
 
-                    entity.HasOne(rev => rev.Reservation).WithOne(p => p.Penalty).HasForeignKey<Reservation>(x=>x.PenaltyId);
+                    entity.HasOne(rev => rev.Reservation).WithOne(p => p.Penalty).HasForeignKey<Penalties>(x=>x.ReservationId) ;
                 });
 
                  base.OnModelCreating(modelBuilder);

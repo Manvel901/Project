@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Diplom.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250922183616_AddSomething")]
+    [Migration("20250927184145_AddSomething")]
     partial class AddSomething
     {
         /// <inheritdoc />
@@ -54,23 +54,16 @@ namespace Diplom.Migrations
                         .HasColumnType("text")
                         .HasColumnName("AutorBio");
 
-                    b.Property<string>("FirstName")
+                    b.Property<string>("FullName")
                         .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("AutorName");
 
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("AutorLastname");
-
-                    b.Property<string>("SurName")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("AutorSurname");
-
                     b.HasKey("Id")
                         .HasName("autor_key");
+
+                    b.HasIndex("FullName")
+                        .IsUnique();
 
                     b.ToTable("Autors", (string)null);
                 });
@@ -177,7 +170,7 @@ namespace Diplom.Migrations
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("PaidAtUtc");
 
-                    b.Property<int>("ReservationId")
+                    b.Property<int?>("ReservationId")
                         .HasColumnType("integer");
 
                     b.HasKey("Id")
@@ -202,7 +195,6 @@ namespace Diplom.Migrations
                         .HasColumnType("integer");
 
                     b.Property<string>("Comment")
-                        .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("Comment");
 
@@ -214,6 +206,9 @@ namespace Diplom.Migrations
                         .HasColumnType("boolean")
                         .HasColumnName("ISblocked");
 
+                    b.Property<int?>("PenaltyId")
+                        .HasColumnType("integer");
+
                     b.Property<DateTime>("ReservationDate")
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("ReservDate");
@@ -223,7 +218,6 @@ namespace Diplom.Migrations
                         .HasColumnName("ReturnDate");
 
                     b.Property<string>("Status")
-                        .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("ResrvStatusId");
 
@@ -237,7 +231,7 @@ namespace Diplom.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Revervation", (string)null);
+                    b.ToTable("Reservation", (string)null);
                 });
 
             modelBuilder.Entity("Diplom.Models.User", b =>
@@ -269,7 +263,7 @@ namespace Diplom.Migrations
                         .HasColumnType("character varying(255)")
                         .HasColumnName("UserPassword");
 
-                    b.Property<DateTime>("RegistrationDate")
+                    b.Property<DateTime?>("RegistrationDate")
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("DataRegistration");
 
@@ -321,8 +315,7 @@ namespace Diplom.Migrations
                     b.HasOne("Diplom.Models.Reservation", "Reservation")
                         .WithOne("Penalty")
                         .HasForeignKey("Diplom.Models.Penalties", "ReservationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.SetNull);
 
                     b.Navigation("Reservation");
                 });

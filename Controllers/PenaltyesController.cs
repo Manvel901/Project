@@ -8,10 +8,7 @@ namespace Diplom.Controllers
     public class PenaltyesController:ControllerBase
     {
         private readonly IPenaltyService _penaltyService;
-        public PenaltyesController()
-        {
-            
-        }
+      
         public PenaltyesController(IPenaltyService penaltyService)
         {
             _penaltyService = penaltyService;

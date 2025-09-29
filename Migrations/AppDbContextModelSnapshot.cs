@@ -167,11 +167,14 @@ namespace Diplom.Migrations
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("PaidAtUtc");
 
-                    b.Property<int>("ReservationId")
+                    b.Property<int?>("ReservationId")
                         .HasColumnType("integer");
 
                     b.HasKey("Id")
                         .HasName("PenaltiesId");
+
+                    b.HasIndex("ReservationId")
+                        .IsUnique();
 
                     b.ToTable("Penalties", (string)null);
                 });
@@ -200,7 +203,7 @@ namespace Diplom.Migrations
                         .HasColumnType("boolean")
                         .HasColumnName("ISblocked");
 
-                    b.Property<int>("PenaltyId")
+                    b.Property<int?>("PenaltyId")
                         .HasColumnType("integer");
 
                     b.Property<DateTime>("ReservationDate")
@@ -212,7 +215,6 @@ namespace Diplom.Migrations
                         .HasColumnName("ReturnDate");
 
                     b.Property<string>("Status")
-                        .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("ResrvStatusId");
 
@@ -224,12 +226,9 @@ namespace Diplom.Migrations
 
                     b.HasIndex("BookId");
 
-                    b.HasIndex("PenaltyId")
-                        .IsUnique();
-
                     b.HasIndex("UserId");
 
-                    b.ToTable("Revervation", (string)null);
+                    b.ToTable("Reservation", (string)null);
                 });
 
             modelBuilder.Entity("Diplom.Models.User", b =>
@@ -308,17 +307,21 @@ namespace Diplom.Migrations
                     b.Navigation("Genre");
                 });
 
+            modelBuilder.Entity("Diplom.Models.Penalties", b =>
+                {
+                    b.HasOne("Diplom.Models.Reservation", "Reservation")
+                        .WithOne("Penalty")
+                        .HasForeignKey("Diplom.Models.Penalties", "ReservationId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
+                    b.Navigation("Reservation");
+                });
+
             modelBuilder.Entity("Diplom.Models.Reservation", b =>
                 {
                     b.HasOne("Diplom.Models.Book", "Book")
                         .WithMany("Reservations")
                         .HasForeignKey("BookId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Diplom.Models.Penalties", "Penalty")
-                        .WithOne("Reservation")
-                        .HasForeignKey("Diplom.Models.Reservation", "PenaltyId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -329,8 +332,6 @@ namespace Diplom.Migrations
                         .IsRequired();
 
                     b.Navigation("Book");
-
-                    b.Navigation("Penalty");
 
                     b.Navigation("User");
                 });
@@ -345,9 +346,9 @@ namespace Diplom.Migrations
                     b.Navigation("Books");
                 });
 
-            modelBuilder.Entity("Diplom.Models.Penalties", b =>
+            modelBuilder.Entity("Diplom.Models.Reservation", b =>
                 {
-                    b.Navigation("Reservation");
+                    b.Navigation("Penalty");
                 });
 
             modelBuilder.Entity("Diplom.Models.User", b =>

@@ -19,8 +19,6 @@ namespace Diplom.Migrations
                     AutorId = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     AutorName = table.Column<string>(type: "text", nullable: false),
-                    AutorSurname = table.Column<string>(type: "text", nullable: false),
-                    AutorLastname = table.Column<string>(type: "text", nullable: false),
                     AutorBio = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
@@ -50,7 +48,7 @@ namespace Diplom.Migrations
                     FullName = table.Column<string>(type: "text", nullable: false),
                     UserEmail = table.Column<string>(type: "character varying(255)", maxLength: 255, nullable: false),
                     UserPassword = table.Column<string>(type: "character varying(255)", maxLength: 255, nullable: false),
-                    DataRegistration = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    DataRegistration = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     UserRole = table.Column<string>(type: "text", nullable: false),
                     UserBlocked = table.Column<bool>(type: "boolean", nullable: false)
                 },
@@ -108,7 +106,7 @@ namespace Diplom.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Revervation",
+                name: "Reservation",
                 columns: table => new
                 {
                     Reverid = table.Column<int>(type: "integer", nullable: false)
@@ -116,23 +114,24 @@ namespace Diplom.Migrations
                     ReservDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     DueDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     ReturnDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
-                    ResrvStatusId = table.Column<string>(type: "text", nullable: false),
-                    Comment = table.Column<string>(type: "text", nullable: false),
+                    ResrvStatusId = table.Column<string>(type: "text", nullable: true),
+                    Comment = table.Column<string>(type: "text", nullable: true),
                     ISblocked = table.Column<bool>(type: "boolean", nullable: false),
                     BookId = table.Column<int>(type: "integer", nullable: false),
-                    UserId = table.Column<int>(type: "integer", nullable: false)
+                    UserId = table.Column<int>(type: "integer", nullable: false),
+                    PenaltyId = table.Column<int>(type: "integer", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("rever_key", x => x.Reverid);
                     table.ForeignKey(
-                        name: "FK_Revervation_Books_BookId",
+                        name: "FK_Reservation_Books_BookId",
                         column: x => x.BookId,
                         principalTable: "Books",
                         principalColumn: "Bookid",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Revervation_Users_UserId",
+                        name: "FK_Reservation_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "UserId",
@@ -151,23 +150,29 @@ namespace Diplom.Migrations
                     AmountPaid = table.Column<decimal>(type: "numeric", nullable: false),
                     IsCancelled = table.Column<bool>(type: "boolean", nullable: false),
                     PaidAtUtc = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
-                    ReservationId = table.Column<int>(type: "integer", nullable: false)
+                    ReservationId = table.Column<int>(type: "integer", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PenaltiesId", x => x.Penaltiesid);
                     table.ForeignKey(
-                        name: "FK_Penalties_Revervation_ReservationId",
+                        name: "FK_Penalties_Reservation_ReservationId",
                         column: x => x.ReservationId,
-                        principalTable: "Revervation",
+                        principalTable: "Reservation",
                         principalColumn: "Reverid",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.SetNull);
                 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AuthorBooks_BooksId",
                 table: "AuthorBooks",
                 column: "BooksId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Autors_AutorName",
+                table: "Autors",
+                column: "AutorName",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Books_BookISBN",
@@ -193,13 +198,13 @@ namespace Diplom.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Revervation_BookId",
-                table: "Revervation",
+                name: "IX_Reservation_BookId",
+                table: "Reservation",
                 column: "BookId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Revervation_UserId",
-                table: "Revervation",
+                name: "IX_Reservation_UserId",
+                table: "Reservation",
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
@@ -228,7 +233,7 @@ namespace Diplom.Migrations
                 name: "Autors");
 
             migrationBuilder.DropTable(
-                name: "Revervation");
+                name: "Reservation");
 
             migrationBuilder.DropTable(
                 name: "Books");

@@ -58,7 +58,7 @@ namespace Diplom
             builder.Services.AddScoped<IUserServices, UserServices>();
             builder.Services.AddScoped<IBookServicrs, BookServices>();
             builder.Services.AddScoped<IGenresServices, GenresServices>();
-            builder.Services.AddScoped<IReversition, ResrvirionsServices>();
+            builder.Services.AddScoped<IReservation, ResrvirionsServices>();
             builder.Services.AddScoped<IBookAutor, BookAutorServices>();
             builder.Services.AddScoped<IAuthorsService, AuthorServices>();
             builder.Services.AddScoped<IAnalyticsService, AnaliticService>();

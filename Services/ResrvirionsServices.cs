@@ -9,7 +9,7 @@ using static Diplom.Models.AppDbContext;
 
 namespace Diplom.Services
 {
-    public class ResrvirionsServices : IReversition
+    public class ResrvirionsServices : IReservation
 
     {
         private readonly AppDbContext _context;
