@@ -13,10 +13,10 @@ namespace Diplom.Controllers
         {
             _penaltyService = penaltyService;
         }
-        [HttpPost]
-        public IActionResult Create([FromBody]  PenaltyDto penaltyDto)
+        [HttpPost("Create")]
+        public IActionResult Create([FromBody]  PenaltyDto penaltyDto, [FromQuery] int reservId)
         {
-            var id = _penaltyService.CreatePenalty(penaltyDto);
+            var id = _penaltyService.CreatePenalty(penaltyDto, reservId);
             return CreatedAtAction(nameof(GetById), new { penaltyId = id }, id);
         }
 
@@ -36,10 +36,6 @@ namespace Diplom.Controllers
             return Ok(p);
         }
 
-        [HttpGet("by-reservation/{reservationId}")]
-        public IActionResult GetByReservation(int reservationId)
-        {
-            return Ok(_penaltyService.GetPenaltiesByUserReservation(reservationId));
-        }
+        
     }
 }

@@ -57,12 +57,14 @@ namespace Diplom
             // Регистрация сервисов
             builder.Services.AddScoped<IUserServices, UserServices>();
             builder.Services.AddScoped<IBookServicrs, BookServices>();
+            builder.Services.AddScoped<IReservPenalty, ReservPenalty>();
+            builder.Services.AddScoped<IPenaltyService, PenaltyesServices>();
             builder.Services.AddScoped<IGenresServices, GenresServices>();
             builder.Services.AddScoped<IReservation, ResrvirionsServices>();
             builder.Services.AddScoped<IBookAutor, BookAutorServices>();
             builder.Services.AddScoped<IAuthorsService, AuthorServices>();
             builder.Services.AddScoped<IAnalyticsService, AnaliticService>();
-            builder.Services.AddScoped<IEmailService, EmailServices>();
+           // builder.Services.AddScoped<IEmailService, EmailServices>();
 
             // Настройка аутентификации JWT
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(o =>

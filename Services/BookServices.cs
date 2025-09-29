@@ -87,61 +87,13 @@ namespace Diplom.Services
             using (_context)
             {
 
-             var list =  _context.Reserv
-           .Where(r => r.BookId == bookId && r.DueDate < DateTime.Now && r.Status == "Active");
+               var list =  _context.Reserv
+               .Where(r => r.BookId == bookId && r.DueDate < DateTime.Now && r.Status == "Active");
 
-            return  list.Select(x=> _mapper.Map<ReservationDto>(x)).ToList();
+              return  list.Select(x=> _mapper.Map<ReservationDto>(x)).ToList();
             }
             
         }
-
-
-
-        public void ReserveBook(BookDto bookDto, UserDto userDto)
-        {
-            // не disopose контекст из DI
-            var book = _context.Books.Find(bookDto.Id);
-            if (book == null) throw new Exception("Книга не найдена.");
-            if (book.AvailableCopies < 1) throw new InvalidOperationException("Нет доступных экземпляров.");
-
-            var nowUtc = DateTime.UtcNow;
-
-            var reservation = new ReservationDto
-            {
-                BookId = bookDto.Id,
-                UserId = userDto.Id,
-                ReservationDate = nowUtc,
-                DueDate = nowUtc.AddDays(14),
-                Status = "Active"
-            };
-
-            book.AvailableCopies--;
-
-            var res = _mapper.Map<Reservation>(reservation);
-
-            // Если AutoMapper не устанавливает Kind, убедитесь, что в сущности даты тоже имеют Kind = Utc:
-            if (res.ReservationDate.Kind != DateTimeKind.Utc)
-                res.ReservationDate = DateTime.SpecifyKind(res.ReservationDate, DateTimeKind.Utc);
-            if (res.DueDate.Kind != DateTimeKind.Utc)
-                res.DueDate = DateTime.SpecifyKind(res.DueDate, DateTimeKind.Utc);
-
-            _context.Reserv.Add(res);
-            _context.SaveChanges();
-        }
-
-        public void ReturnBook(int bookId)
-        {
-            using (_context)
-            {
-                var book = _context.Books.Find(bookId);
-                if (book == null) throw new KeyNotFoundException("Книга не найдена.");
-
-                book.AvailableCopies++;
-                _context.SaveChanges();
-            }
-        }
-
-        
 
         public IEnumerable<BookDto> SearchBooksByTitle(string bookTitle)
         {

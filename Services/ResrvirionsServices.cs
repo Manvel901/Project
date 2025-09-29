@@ -16,33 +16,21 @@ namespace Diplom.Services
         private readonly IMapper _mapper;
         private readonly IMemoryCache _cache;
         private readonly IBookServicrs _bookService;
-        private readonly IEmailService _emailService;
+     
 
         public ResrvirionsServices(AppDbContext context, IBookServicrs bookService,
-            IEmailService emailService, IMapper mapper, IMemoryCache cache )
+             IMapper mapper, IMemoryCache cache )
         {
 
             _context = context;
             _bookService = bookService;
-            _emailService = emailService;
+            
             _mapper = mapper;
             _cache = cache;
         }
 
 
-        public decimal CalculatePenalty(int reservationId)
-        {
-            using (_context)
-            {
-                var reservation = _context.Reserv.Find(reservationId);
-                if (reservation == null || reservation.Status != "Overdue")
-                    return 0;
-
-                // Пример: 10 руб./день просрочки
-                var daysOverdue = (DateTime.UtcNow - reservation.DueDate).Days;
-                return daysOverdue * 10;
-            }
-        }
+      
 
         public void CancelReservation(int reservationId)
         {
@@ -67,48 +55,40 @@ namespace Diplom.Services
 
         public ReservationDto CreateReservation(int userId, int bookId)
         {
-            using (_context)
+            // не диспоузим _context, он из DI
+            var user = _context.Users.Find(userId);
+            var book = _context.Books.Find(bookId);
+            if (user == null || book == null)
+                throw new KeyNotFoundException("Пользователь или книга не найдены.");
+
+            if (book.AvailableCopies == null || book.AvailableCopies <= 0)
+                throw new InvalidOperationException("Книга недоступна для бронирования.");
+
+            var reservation = new Reservation
             {
-                // Проверка существования пользователя и книги
-                var user = _context.Users.Find(userId);
-                var book = _context.Books.Find(bookId);
-                if (user == null || book == null)
-                    throw new KeyNotFoundException("Пользователь или книга не найдены.");
+                UserId = userId,
+                BookId = bookId,
+                ReservationDate = DateTime.UtcNow,
+                DueDate = DateTime.UtcNow.AddDays(14),
+                Status = "Active"
+            };
 
-                // Проверка доступности книги
-                if (book.AvailableCopies == null)
-                    throw new InvalidOperationException("Книга недоступна для бронирования.");
+            // обновляем книгу
+            book.AvailableCopies--;
+            _context.Books.Update(book);
 
-                var reservation = new Reservation
-                {
-                    UserId = userId,
-                    BookId = bookId,
-                    ReservationDate = DateTime.UtcNow,
-                    DueDate = DateTime.UtcNow.AddDays(14), // Срок возврата: 14 дней
-                    Status = "Active",
+            // сохраняем сначала entity, чтобы получить Id
+            _context.Reserv.Add(reservation);
+            _context.SaveChanges();
 
-                };
+            // мапим DTO после SaveChanges и дополняем поля, которые не мапятся автоматически
+            var resDto = _mapper.Map<ReservationDto>(reservation);
+            resDto.BookTitle = book.BookTitle; // если DTO содержит BookTitle
+                                           // при необходимости заполните другие поля: resDto.UserName = user.Name;
 
-                user = _context.Users.Find(userId);
-                book = _context.Books.Find(bookId);
-
-                _emailService.SendReservationConfirmationAsync(
-                    user.Email,
-                    book.BookTitle,
-                    reservation.DueDate
-                ).ConfigureAwait(false); // Асинхронно без ожидания
-
-                var res = _mapper.Map<ReservationDto>(reservation);
-                // Уменьшаем количество доступных экземпляров
-                book.AvailableCopies--;
-                _context.Books.Update(book);
-
-                _context.Reserv.Add(reservation);
-                _context.SaveChanges();
-
-                return res;
-            }
+            return resDto;
         }
+        
 
         public IEnumerable<ReservationDto> GetBookReservations(int bookId)
         {

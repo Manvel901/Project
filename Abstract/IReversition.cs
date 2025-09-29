@@ -23,8 +23,7 @@ namespace Diplom.Abstract
         // Обновить статус бронирования (например, при возврате книги)
         void UpdateReservationStatus( ReservationDto reservationDto);
 
-        // Рассчитать штраф за просрочку
-        decimal CalculatePenalty(int reservationId);
+        
 
         // Получить все бронирования для книги
         IEnumerable<ReservationDto> GetBookReservations(int bookId);

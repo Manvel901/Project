@@ -232,73 +232,6 @@
   },
   {
     "ContainingType": "Diplom.Controllers.BookController",
-    "Method": "ReserveBook",
-    "RelativePath": "Book/reserve",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookTitle",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ISBN",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "GenreId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "TotalCopies",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "AvailableCopies",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Status",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "userDto",
-        "Type": "Diplom.Models.dto.UserDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Diplom.Controllers.BookController",
-    "Method": "ReturnBook",
-    "RelativePath": "Book/return",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "bookId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Diplom.Controllers.BookController",
     "Method": "SearchBooks",
     "RelativePath": "Book/search",
     "HttpMethod": "GET",
@@ -389,16 +322,21 @@
   },
   {
     "ContainingType": "Diplom.Controllers.PenaltyesController",
-    "Method": "GetByReservation",
-    "RelativePath": "by-reservation/{reservationId}",
-    "HttpMethod": "GET",
+    "Method": "Create",
+    "RelativePath": "Create",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "reservationId",
-        "Type": "System.Int32",
+        "Name": "penaltyDto",
+        "Type": "Diplom.Models.dto.PenaltyDto",
         "IsRequired": true
+      },
+      {
+        "Name": "reservId",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -569,6 +507,64 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Diplom.Controllers.ReservPenaltyController",
+    "Method": "GetByReservation",
+    "RelativePath": "ReservPenalty/by-reservation/{reservationId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "reservationId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Diplom.Controllers.ReservPenaltyController",
+    "Method": "GetPenalty",
+    "RelativePath": "ReservPenalty/Getpenalty",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "reservationId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Decimal",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Diplom.Controllers.ReservPenaltyController",
+    "Method": "ReturnBook",
+    "RelativePath": "ReservPenalty/return",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bookId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {

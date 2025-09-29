@@ -24,13 +24,6 @@ namespace Diplom.Abstract
         // Получение всех книг
         IEnumerable<BookDto> GetAllBooks();
 
-        // Бронирование книги (уменьшает AvailableCopies)
-        void ReserveBook(BookDto bookDto, UserDto userDto);
-
-        // Возврат книги (увеличивает AvailableCopies)
-        void ReturnBook(int bookId);
-
-        // Получение списка просроченных бронирований для книги
-        IEnumerable<ReservationDto> GetOverdueReservations(int bookId);
+       
     }
 }

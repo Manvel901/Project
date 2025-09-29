@@ -78,32 +78,10 @@ namespace Diplom.Controllers
             {
                 return Ok(_bookService.SearchBooksByTitle(query));
             }
-        [HttpPost("reserve")]
-        public IActionResult ReserveBook([FromQuery] BookDto bookDto, [FromBody] UserDto userDto  )
-        {
-            if (bookDto == null || userDto == null) return BadRequest();
+        
+       
 
-            try
-            {
-                _bookService.ReserveBook(bookDto ,userDto);
-                return Ok();
-            }
-            catch (KeyNotFoundException e) { return NotFound(e.Message); }
-            catch (InvalidOperationException e) { return Conflict(e.Message); }
-        }
-
-        // POST /Books/return/{bookId}
-        [HttpPost("return")]
-        public IActionResult ReturnBook([FromRoute] int bookId)
-        {
-            try
-            {
-                _bookService.ReturnBook(bookId);
-                return Ok();
-            }
-            catch (KeyNotFoundException e) { return NotFound(e.Message); }
-            catch (InvalidOperationException e) { return BadRequest(e.Message); }
-        }
+       
         public class ReserveRequestDto
         {
             public BookDto Book { get; set; }

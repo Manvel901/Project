@@ -2,7 +2,9 @@
 using Diplom.Abstract;
 using Diplom.Models;
 using Diplom.Models.dto;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
+using Org.BouncyCastle.Ocsp;
 using static Diplom.Models.AppDbContext;
 
 namespace Diplom.Services
@@ -13,33 +15,33 @@ namespace Diplom.Services
         private readonly IMapper _mapper;
         private readonly IMemoryCache _cache;
 
-        public PenaltyesServices()
-        {
-            
-        }
+
 
         public PenaltyesServices(AppDbContext context, IMapper mapper, IMemoryCache cache)
         {
             _context = context;
             _mapper = mapper;
-             _cache = cache;
+            _cache = cache;
         }
-        public int CreatePenalty(PenaltyDto penaltyDto )
+        public int CreatePenalty(PenaltyDto penaltyDto, int reservationId)
         {
-            using (_context)
-            {
-                if (penaltyDto.Amount <= 0) throw new ArgumentException("Amount must be positive.");
-                if (string.IsNullOrWhiteSpace(penaltyDto.BookTitle)) throw new ArgumentException("BookTitle required.");
-                var penalEntity = _context.Penalties.FirstOrDefault(x=> x.ReservationId == penaltyDto.ReservationId);
-                if (penalEntity == null)
-                {
-                     penalEntity = _mapper.Map<Penalties>(penalEntity);
-                    _context.Penalties.Add(penalEntity);
-                    _context.SaveChanges();
-                  
-                }
-                return penalEntity.Id;
-            }
+            if (penaltyDto.Amount <= 0) throw new ArgumentException("Amount must be positive.");
+            if (string.IsNullOrWhiteSpace(penaltyDto.BookTitle)) throw new ArgumentException("BookTitle required.");
+
+            var reservationExists = _context.Reserv.Any(r => r.Id == reservationId);
+            if (!reservationExists) throw new KeyNotFoundException("Reservation not found.");
+
+            var entity = _mapper.Map<Penalties>(penaltyDto);
+            if (entity.IssueDate == default) entity.IssueDate = DateTime.UtcNow;
+
+            _context.Penalties.Add(entity);
+            _context.SaveChanges();
+
+            // Добавляем связь в явную join-таблицу
+            _context.RservPenals.Add(new RservPenal { ReservationId = reservationId, PenaltyId = entity.Id });
+            _context.SaveChanges();
+
+            return entity.Id;
         }
 
         public bool PayPenalty(PenaltyDto penaltyDto)
@@ -66,23 +68,12 @@ namespace Diplom.Services
             using (_context)
             {
                 var penalEntity = _context.Penalties.FirstOrDefault(x => x.Id == penaltyId);
-               
+
                 return _mapper.Map<PenaltyDto>(penalEntity);
             }
         }
 
-        public IEnumerable<PenaltyDto> GetPenaltiesByUserReservation(int reservationId)
-        {
-            using (_context)
-            {
-               var list =  _context.Penalties
-                   .Where(x => x.ReservationId == reservationId)
-                   .OrderByDescending(x => x.IssueDate).ToList();
-
-                return list.Select(x=> _mapper.Map<PenaltyDto>(x)).ToList();
-                    
-            }
-        }
+      
 
         public IEnumerable<PenaltyDto> GetPenaltiesByBookTitle(string bookTitle)
         {
@@ -97,20 +88,13 @@ namespace Diplom.Services
             }
         }
 
-        public decimal GetOutstandingBalanceByReservation(int reservationId)
-        {
-            using (_context) {
-                return _context.Penalties
-                    .Where(x => x.ReservationId == reservationId && !x.IsCancelled)
-                    .Sum(x => Math.Max(0m, x.Amount - x.AmountPaid));
-            }
-        }
+        
 
-        public int ApplyOverduePenalties(DateTime asOfUtc)
-        {
-            // Требует интеграции с сущностью reservation/loan. В заглушке — 0.
-            return 0;
-        }
+        //public int ApplyOverduePenalties(DateTime asOfUtc)
+        //{
+        //    // Требует интеграции с сущностью reservation/loan. В заглушке — 0.
+        //    return 0;
+        //}
 
         //public bool CancelPenalty(PenaltyDto penaltyDto)
         //{
@@ -126,15 +110,6 @@ namespace Diplom.Services
         //        return true;
         //    }
         //}
-
-        public bool HasOutstandingPenaltiesByReservation(int reservationId)
-        {
-            using (_context)
-            {
-                return _context.Penalties.Any(x => x.ReservationId == reservationId
-                && !x.IsCancelled && x.Amount > x.AmountPaid);
-            }
-        }
 
       
     }

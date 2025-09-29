@@ -19,8 +19,8 @@ namespace Diplom.Models
         public int UserId { get; set; }
         public virtual User? User { get; set; }
        
-        public int? PenaltyId { get; set; }
-        public virtual Penalties? Penalty { get; set; }
+      
+        public virtual ICollection<RservPenal>? ResPen { get; set; }
        
     }
 }
