@@ -23,7 +23,7 @@ namespace Diplom.Controllers
 
         // Регистрация пользователя (доступно без авторизации)
         [AllowAnonymous]
-        [HttpPost("register")]
+        [HttpPost("RegisterUser")]
         public IActionResult Register([FromBody] UserDto userDto)
         {
             try
@@ -44,7 +44,7 @@ namespace Diplom.Controllers
 
         // Вход в систему (доступно без авторизации)
         [AllowAnonymous]
-        [HttpPost("login")]
+        [HttpPost("loginUser")]
         public IActionResult Login([FromBody] UserDto userDto)
         {
             try
@@ -66,17 +66,17 @@ namespace Diplom.Controllers
 
         // Получить текущего пользователя (требуется авторизация)
         [Authorize]
-        [HttpGet("me")]
-        public IActionResult GetCurrentUser()
+        [HttpGet("MyGetUserById")]
+        public IActionResult GetCurrentUser(int id)
         {
-            var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
-            var user = _userService.GetUserById(userId);
+           
+            var user = _userService.GetUserById(id);
             return user == null ? NotFound() : Ok(user);
         }
 
         // Получить пользователя по ID (только для администратора)
         [Authorize(Roles = "Admin")]
-        [HttpGet("{id}")]
+        [HttpGet("GetUser")]
         public IActionResult GetUser(int id)
         {
             var user = _userService.GetUserById(id);
@@ -85,7 +85,7 @@ namespace Diplom.Controllers
 
         // Обновить данные пользователя (только сам пользователь или администратор)
         [Authorize]
-        [HttpPut("me")]
+        [HttpPut("UpdateUser")]
         public IActionResult UpdateCurrentUser( [FromBody] UserDto userDto)
         {
             
@@ -102,12 +102,12 @@ namespace Diplom.Controllers
 
         // Удалить пользователя (только администратор)
         [Authorize(Roles = "Admin")]
-        [HttpDelete("{id}")]
-        public IActionResult DeleteUser(int id)
+        [HttpDelete("DeleteUser")]
+        public IActionResult DeleteUser(int adminId, int targetId)
         {
             try
             {
-                _userService.DeleteUser(id,0);
+                _userService.DeleteUser(adminId, targetId);
                 return NoContent();
             }
             catch (KeyNotFoundException ex)

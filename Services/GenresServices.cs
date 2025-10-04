@@ -81,7 +81,7 @@ namespace Diplom.Services
 
         public int UpdateGenre(GenresDto genreDto)
         {
-           var enttity = _context.Genres.FirstOrDefault(x=> x.Name == genreDto.Name);
+           var enttity = _context.Genres.FirstOrDefault(x=> x.Id == genreDto.Id);
             if (enttity != null)
             {
                 enttity.Id = genreDto.Id;

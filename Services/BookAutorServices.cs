@@ -54,14 +54,19 @@ namespace Diplom.Services
         {
             using (_context)
             {
+
+
                 return _context.Books
-                .Where(ba => ba.Id == bookId)
-                .Select(ba => _mupper.Map<AutorDto>(ba.Authors))
-                .ToList();
+                    .Where(b => b.Id == bookId)
+                    .SelectMany(b => b.Authors)          // раскрыть коллекцию
+                    .Select(a => _mupper.Map<AutorDto>(a))
+                    .ToList();
             }
 
-            
         }
+
+            
+        
 
         public IEnumerable<BookDto> GetBooksByAuthor(int authorId)
         {
@@ -69,8 +74,10 @@ namespace Diplom.Services
             {
                 return _context.Authors
                 .Where(ba => ba.Id == authorId)
-                .Select(ba => _mupper.Map<BookDto>(ba.Books))
-                .ToList();
+                .SelectMany(ba => ba.Books).Select(a=> _mupper.Map<BookDto>(a)).ToList();
+
+                
+                
             }
         }
 

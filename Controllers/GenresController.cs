@@ -13,7 +13,7 @@ namespace Diplom.Controllers
         {
             _genresServices = genresServices;
         }
-        [HttpPost]
+        [HttpPost("CreateGenres")]
         public IActionResult Create([FromBody] GenresDto genreDto)
         {
             if (genreDto == null) return BadRequest();
@@ -24,11 +24,11 @@ namespace Diplom.Controllers
         }
 
         // PUT /Genres/{id}
-        [HttpPut("Update")]
-        public IActionResult Update(int id, [FromBody] GenresDto genreDto)
+        [HttpPut("UpdateGenres")]
+        public IActionResult Update( [FromBody] GenresDto genreDto)
         {
             if (genreDto == null) return BadRequest();
-            if (id != genreDto.Id) return BadRequest("Id в пути и в теле не совпадают");
+            
 
             var updatedId = _genresServices.UpdateGenre(genreDto);
             if (updatedId == 0) return NotFound();
@@ -37,7 +37,7 @@ namespace Diplom.Controllers
         }
 
         // DELETE /Genres/{id}
-        [HttpDelete("Remove")]
+        [HttpDelete("RemoveGenres")]
         public IActionResult Delete(int id)
         {
             try
@@ -56,7 +56,7 @@ namespace Diplom.Controllers
         }
 
         // GET /Genres/{id}
-        [HttpGet("ById")]
+        [HttpGet("GetGenresById")]
         public IActionResult GetById(int id)
         {
             var genre = _genresServices.GetGenreById(id);
@@ -65,7 +65,7 @@ namespace Diplom.Controllers
         }
 
         // GET /Genres
-        [HttpGet("All")]
+        [HttpGet("AllGenres")]
         public IActionResult GetAll()
         {
             var list = _genresServices.GetAllGenres();

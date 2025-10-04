@@ -57,16 +57,21 @@ namespace Diplom.Services
             }
         }
        
-        public void ReturnBook(int bookId)
+        public void ReturnBook(int reservationId)
         {
-            using (_context)
-            {
-                var book = _context.Books.Find(bookId);
-                if (book == null) throw new KeyNotFoundException("Книга не найдена.");
 
-                book.AvailableCopies++;
-                _context.SaveChanges();
-            }
+              var reservation = _context.Reserv
+              .Include(r => r.Book)
+            .FirstOrDefault(r => r.Id == reservationId); // используйте id брони, не bookId
+
+            if (reservation == null) throw new KeyNotFoundException("Бронирование не найдено.");
+
+            var book = reservation.Book;
+            if (book == null) throw new KeyNotFoundException("Книга не найдена для этого бронирования.");
+
+            book.AvailableCopies++;
+            _context.SaveChanges();
+
         }
     }
 }

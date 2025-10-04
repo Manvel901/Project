@@ -17,7 +17,7 @@ namespace Diplom.Controllers
 
 
         [HttpGet("Getpenalty")]
-        public ActionResult<decimal> GetPenalty(int reservationId)
+        public IActionResult GetPenalty(int reservationId)
         {
             try
             {
@@ -30,19 +30,19 @@ namespace Diplom.Controllers
             }
         }
         // POST /Books/return/{bookId}
-        [HttpPost("return")]
-        public IActionResult ReturnBook([FromRoute] int bookId)
+        [HttpPost("returnBook")]
+        public IActionResult ReturnBook( int reservationId)
         {
             try
             {
-                _reservPenalty.ReturnBook(bookId);
+                _reservPenalty.ReturnBook(reservationId);
                 return Ok();
             }
             catch (KeyNotFoundException e) { return NotFound(e.Message); }
             catch (InvalidOperationException e) { return BadRequest(e.Message); }
         }
 
-        [HttpGet("by-reservation/{reservationId}")]
+        [HttpGet("GetPenalByReservation")]
         public IActionResult GetByReservation(int reservationId)
         {
             return Ok(_reservPenalty.GetPenaltiesByUserReservation(reservationId));

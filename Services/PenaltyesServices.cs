@@ -44,20 +44,20 @@ namespace Diplom.Services
             return entity.Id;
         }
 
-        public bool PayPenalty(PenaltyDto penaltyDto)
+        public bool PayPenalty(int id, int amountPaid, DateTime? paidAtUtc)
         {
             using (_context)
             {
-                if (penaltyDto.AmountPaid <= 0) throw new ArgumentException("Payment must be positive.");
-                var penal = _context.Penalties.FirstOrDefault(x => x.Id == penaltyDto.Id || x.IsCancelled);
+                if (amountPaid <= 0) throw new ArgumentException("Payment must be positive.");
+                var penal = _context.Penalties.FirstOrDefault(x => x.Id == id || x.IsCancelled);
                 if (penal == null) return false;
 
                 var remaining = penal.Amount - penal.AmountPaid;
-                var toApply = Math.Min(remaining, penaltyDto.AmountPaid);
+                var toApply = Math.Min(remaining, amountPaid);
                 if (toApply <= 0) return false;
 
                 penal.AmountPaid += toApply;
-                if (penal.AmountPaid >= penal.Amount) penal.PaidAtUtc = (penaltyDto.PaidAtUtc?.ToUniversalTime() ?? DateTime.UtcNow);
+                if (penal.AmountPaid >= penal.Amount) penal.PaidAtUtc = (paidAtUtc?.ToUniversalTime() ?? DateTime.UtcNow);
                 _context.SaveChanges();
                 return true;
             }

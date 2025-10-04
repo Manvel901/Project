@@ -20,7 +20,7 @@ namespace Diplom.Controllers
         // POST: /BookAuthor
         // Добавить автора к книге
         [Authorize(Roles = "Admin")]
-        [HttpPost]
+        [HttpPost("AddBookFromAuthor")]
         public IActionResult AddAuthorToBook(int  bookDtoId,  int autorDtoId)
         {
             
@@ -41,7 +41,7 @@ namespace Diplom.Controllers
 
         // GET: /BookAuthor/book/5/authors
         [AllowAnonymous]
-        [HttpGet("book/{bookId}/authors")]
+        [HttpGet("GetAuthorByBookId")]
         public IActionResult GetAuthorsByBook(int bookId)
         {
             var authors = _bookAutor.GetAuthorsByBook(bookId);
@@ -51,7 +51,7 @@ namespace Diplom.Controllers
 
         // GET: /BookAuthor/author/5/books
         [AllowAnonymous]
-        [HttpGet("author/{authorId}/books")]
+        [HttpGet("GetBookByAuthorId")]
         public IActionResult GetBooksByAuthor(int authorId)
         {
             var books = _bookAutor.GetBooksByAuthor(authorId);
@@ -61,7 +61,7 @@ namespace Diplom.Controllers
 
         // DELETE: /BookAuthor/book/5/author/3
         [Authorize(Roles = "Admin")]
-        [HttpDelete("book/{bookId}/author/{authorId}")]
+        [HttpDelete("DeleteAuthorFromBook")]
         public IActionResult RemoveAuthorFromBook(int bookId, int authorId)
         {
             try

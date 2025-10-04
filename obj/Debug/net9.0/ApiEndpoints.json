@@ -1,42 +1,5 @@
 [
   {
-    "ContainingType": "Diplom.Controllers.PenaltyesController",
-    "Method": "GetById",
-    "RelativePath": "{penaltyId}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "penaltyId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Diplom.Controllers.PenaltyesController",
-    "Method": "Pay",
-    "RelativePath": "{penaltyId}/pay",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "penaltyDto",
-        "Type": "Diplom.Models.dto.PenaltyDto",
-        "IsRequired": true
-      },
-      {
-        "Name": "penaltyId",
-        "Type": "",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "Diplom.Controllers.AnalyticsController",
     "Method": "GetTopBooks",
     "RelativePath": "Analytics/top-books",
@@ -74,18 +37,8 @@
   },
   {
     "ContainingType": "Diplom.Controllers.AuthorsController",
-    "Method": "GetAllAuthors",
-    "RelativePath": "Authors",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Diplom.Controllers.AuthorsController",
     "Method": "CreateAuthor",
-    "RelativePath": "Authors",
+    "RelativePath": "Authors/Create",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -100,45 +53,8 @@
   },
   {
     "ContainingType": "Diplom.Controllers.AuthorsController",
-    "Method": "GetAuthor",
-    "RelativePath": "Authors/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Diplom.Controllers.AuthorsController",
-    "Method": "UpdateAuthor",
-    "RelativePath": "Authors/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "autorDto",
-        "Type": "Diplom.Models.dto.AutorDto",
-        "IsRequired": true
-      },
-      {
-        "Name": "id",
-        "Type": "",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Diplom.Controllers.AuthorsController",
     "Method": "DeleteAuthor",
-    "RelativePath": "Authors/{id}",
+    "RelativePath": "Authors/Delete",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -146,6 +62,48 @@
       {
         "Name": "id",
         "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Diplom.Controllers.AuthorsController",
+    "Method": "GetAllAuthors",
+    "RelativePath": "Authors/GetAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Diplom.Controllers.AuthorsController",
+    "Method": "GetAuthor",
+    "RelativePath": "Authors/GetFromId",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Diplom.Controllers.AuthorsController",
+    "Method": "UpdateAuthor",
+    "RelativePath": "Authors/Update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "autorDto",
+        "Type": "Diplom.Models.dto.AutorDto",
         "IsRequired": true
       }
     ],
@@ -164,7 +122,7 @@
   {
     "ContainingType": "Diplom.Controllers.BookController",
     "Method": "AddBook",
-    "RelativePath": "Book",
+    "RelativePath": "Book/CreateBook",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -179,45 +137,8 @@
   },
   {
     "ContainingType": "Diplom.Controllers.BookController",
-    "Method": "GetBook",
-    "RelativePath": "Book/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Diplom.Controllers.BookController",
-    "Method": "UpdateBook",
-    "RelativePath": "Book/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "bookdto",
-        "Type": "Diplom.Models.dto.BookDto",
-        "IsRequired": true
-      },
-      {
-        "Name": "id",
-        "Type": "",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Diplom.Controllers.BookController",
     "Method": "DeleteBook",
-    "RelativePath": "Book/{id}",
+    "RelativePath": "Book/DeleteBook",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -225,7 +146,23 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": true
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Diplom.Controllers.BookController",
+    "Method": "GetBook",
+    "RelativePath": "Book/GetBookById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -233,7 +170,7 @@
   {
     "ContainingType": "Diplom.Controllers.BookController",
     "Method": "SearchBooks",
-    "RelativePath": "Book/search",
+    "RelativePath": "Book/SearchBook",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -247,9 +184,25 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Diplom.Controllers.BookController",
+    "Method": "UpdateBook",
+    "RelativePath": "Book/UpdateBook",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bookdto",
+        "Type": "Diplom.Models.dto.BookDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Diplom.Controllers.BookAutorController",
     "Method": "AddAuthorToBook",
-    "RelativePath": "BookAutor",
+    "RelativePath": "BookAutor/AddBookFromAuthor",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -269,24 +222,8 @@
   },
   {
     "ContainingType": "Diplom.Controllers.BookAutorController",
-    "Method": "GetBooksByAuthor",
-    "RelativePath": "BookAutor/author/{authorId}/books",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "authorId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Diplom.Controllers.BookAutorController",
     "Method": "RemoveAuthorFromBook",
-    "RelativePath": "BookAutor/book/{bookId}/author/{authorId}",
+    "RelativePath": "BookAutor/DeleteAuthorFromBook",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -294,12 +231,12 @@
       {
         "Name": "bookId",
         "Type": "System.Int32",
-        "IsRequired": true
+        "IsRequired": false
       },
       {
         "Name": "authorId",
         "Type": "System.Int32",
-        "IsRequired": true
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -307,7 +244,7 @@
   {
     "ContainingType": "Diplom.Controllers.BookAutorController",
     "Method": "GetAuthorsByBook",
-    "RelativePath": "BookAutor/book/{bookId}/authors",
+    "RelativePath": "BookAutor/GetAuthorByBookId",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -315,7 +252,23 @@
       {
         "Name": "bookId",
         "Type": "System.Int32",
-        "IsRequired": true
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Diplom.Controllers.BookAutorController",
+    "Method": "GetBooksByAuthor",
+    "RelativePath": "BookAutor/GetBookByAuthorId",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "authorId",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -323,7 +276,7 @@
   {
     "ContainingType": "Diplom.Controllers.PenaltyesController",
     "Method": "Create",
-    "RelativePath": "Create",
+    "RelativePath": "CreatePenalty",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -343,8 +296,18 @@
   },
   {
     "ContainingType": "Diplom.Controllers.GenresController",
+    "Method": "GetAll",
+    "RelativePath": "Genres/AllGenres",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Diplom.Controllers.GenresController",
     "Method": "Create",
-    "RelativePath": "Genres",
+    "RelativePath": "Genres/CreateGenres",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -359,18 +322,8 @@
   },
   {
     "ContainingType": "Diplom.Controllers.GenresController",
-    "Method": "GetAll",
-    "RelativePath": "Genres/All",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Diplom.Controllers.GenresController",
     "Method": "GetById",
-    "RelativePath": "Genres/ById",
+    "RelativePath": "Genres/GetGenresById",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -386,7 +339,7 @@
   {
     "ContainingType": "Diplom.Controllers.GenresController",
     "Method": "Delete",
-    "RelativePath": "Genres/Remove",
+    "RelativePath": "Genres/RemoveGenres",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -402,16 +355,11 @@
   {
     "ContainingType": "Diplom.Controllers.GenresController",
     "Method": "Update",
-    "RelativePath": "Genres/Update",
+    "RelativePath": "Genres/UpdateGenres",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
       {
         "Name": "genreDto",
         "Type": "Diplom.Models.dto.GenresDto",
@@ -421,17 +369,69 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Diplom.Controllers.ReservationController",
-    "Method": "CreateReservation",
-    "RelativePath": "Reservation",
+    "ContainingType": "Diplom.Controllers.PenaltyesController",
+    "Method": "GetById",
+    "RelativePath": "GetPenaltyById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "penaltyId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Diplom.Controllers.PenaltyesController",
+    "Method": "Pay",
+    "RelativePath": "PayPenalty",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "reservationDto",
-        "Type": "Diplom.Models.dto.ReservationDto",
-        "IsRequired": true
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "amountPaid",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "paidAtUtc",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Diplom.Controllers.ReservationController",
+    "Method": "CreateReservation",
+    "RelativePath": "Reservation/CreateReservation",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "bookId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "bookTitle",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -439,7 +439,7 @@
   {
     "ContainingType": "Diplom.Controllers.ReservationController",
     "Method": "CancelReservation",
-    "RelativePath": "Reservation/{id}",
+    "RelativePath": "Reservation/DeleteReservation",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -447,7 +447,7 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": true
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -455,7 +455,7 @@
   {
     "ContainingType": "Diplom.Controllers.ReservationController",
     "Method": "GetReservation",
-    "RelativePath": "Reservation/{id}",
+    "RelativePath": "Reservation/GetById",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -463,28 +463,7 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Diplom.Controllers.ReservationController",
-    "Method": "UpdateStatus",
-    "RelativePath": "Reservation/{id}/status",
-    "HttpMethod": "PATCH",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "reservationDto",
-        "Type": "Diplom.Models.dto.ReservationDto",
-        "IsRequired": true
-      },
-      {
-        "Name": "id",
-        "Type": "",
-        "IsRequired": true
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -492,11 +471,17 @@
   {
     "ContainingType": "Diplom.Controllers.ReservationController",
     "Method": "GetMyReservations",
-    "RelativePath": "Reservation/my",
+    "RelativePath": "Reservation/myRservetion",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -510,9 +495,25 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Diplom.Controllers.ReservationController",
+    "Method": "UpdateStatus",
+    "RelativePath": "Reservation/UpdateReservation",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "reservationDto",
+        "Type": "Diplom.Models.dto.ReservationDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Diplom.Controllers.ReservPenaltyController",
     "Method": "GetByReservation",
-    "RelativePath": "ReservPenalty/by-reservation/{reservationId}",
+    "RelativePath": "ReservPenalty/GetPenalByReservation",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -520,7 +521,7 @@
       {
         "Name": "reservationId",
         "Type": "System.Int32",
-        "IsRequired": true
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -539,28 +540,39 @@
         "IsRequired": false
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Decimal",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "Diplom.Controllers.ReservPenaltyController",
     "Method": "ReturnBook",
-    "RelativePath": "ReservPenalty/return",
+    "RelativePath": "ReservPenalty/returnBook",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "bookId",
+        "Name": "reservationId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Diplom.Controllers.UserController",
+    "Method": "DeleteUser",
+    "RelativePath": "User/DeleteUser",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "adminId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "targetId",
         "Type": "System.Int32",
         "IsRequired": false
       }
@@ -570,7 +582,7 @@
   {
     "ContainingType": "Diplom.Controllers.UserController",
     "Method": "GetUser",
-    "RelativePath": "User/{id}",
+    "RelativePath": "User/GetUser",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -578,23 +590,7 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Diplom.Controllers.UserController",
-    "Method": "DeleteUser",
-    "RelativePath": "User/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -602,7 +598,7 @@
   {
     "ContainingType": "Diplom.Controllers.UserController",
     "Method": "Login",
-    "RelativePath": "User/login",
+    "RelativePath": "User/loginUser",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -618,18 +614,24 @@
   {
     "ContainingType": "Diplom.Controllers.UserController",
     "Method": "GetCurrentUser",
-    "RelativePath": "User/me",
+    "RelativePath": "User/MyGetUserById",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
     "ContainingType": "Diplom.Controllers.UserController",
-    "Method": "UpdateCurrentUser",
-    "RelativePath": "User/me",
-    "HttpMethod": "PUT",
+    "Method": "Register",
+    "RelativePath": "User/RegisterUser",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -643,9 +645,9 @@
   },
   {
     "ContainingType": "Diplom.Controllers.UserController",
-    "Method": "Register",
-    "RelativePath": "User/register",
-    "HttpMethod": "POST",
+    "Method": "UpdateCurrentUser",
+    "RelativePath": "User/UpdateUser",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [

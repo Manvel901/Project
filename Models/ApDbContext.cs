@@ -83,6 +83,7 @@ namespace Diplom.Models
 
 
                 entity.Property(b => b.Id).HasColumnName("Reverid");
+                entity.Property(b => b.BookTitle).HasColumnName("BookTitle");
                 entity.Property(b => b.ReservationDate).HasColumnName("ReservDate");
                 entity.Property(b => b.DueDate).HasColumnName("DueDate");
                 entity.Property(b => b.ReturnDate).HasColumnName("ReturnDate");

@@ -28,7 +28,7 @@ namespace Diplom.Controllers
 
             // GET: api/books/5
             [AllowAnonymous]
-            [HttpGet("{id}")]
+            [HttpGet("GetBookById")]
             public IActionResult GetBook(int id)
             {
                 var book = _bookService.GetBookById(id);
@@ -37,7 +37,7 @@ namespace Diplom.Controllers
 
             // POST: api/books
             [Authorize(Roles = "Admin")]
-            [HttpPost]
+            [HttpPost("CreateBook")]
             public IActionResult AddBook([FromBody] BookDto bookDto)
             {
                 var createdBook = _bookService.AddBook(bookDto);
@@ -46,7 +46,7 @@ namespace Diplom.Controllers
 
             // PUT: api/books/5
             [Authorize(Roles = "Admin")]
-            [HttpPut("{id}")]
+            [HttpPut("UpdateBook")]
             public IActionResult UpdateBook([FromBody] BookDto bookdto)
             {
 
@@ -64,7 +64,7 @@ namespace Diplom.Controllers
 
             // DELETE: api/books/5
             [Authorize(Roles = "Admin")]
-            [HttpDelete("{id}")]
+            [HttpDelete("DeleteBook")]
             public IActionResult DeleteBook(int id)
             {
                 _bookService.DeleteBook(id);
@@ -73,7 +73,7 @@ namespace Diplom.Controllers
 
             // GET: api/books/search?query=...
             [AllowAnonymous]
-            [HttpGet("search")]
+            [HttpGet("SearchBook")]
             public IActionResult SearchBooks([FromQuery] string query)
             {
                 return Ok(_bookService.SearchBooksByTitle(query));

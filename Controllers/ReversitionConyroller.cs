@@ -25,16 +25,16 @@ namespace Diplom.Controllers
 
         // Создать бронирование (требуется авторизация)
         [Authorize]
-        [HttpPost]
-        public IActionResult CreateReservation([FromBody] ReservationDto reservationDto)
+        [HttpPost("CreateReservation")]
+        public IActionResult CreateReservation([FromQuery] int userId, int bookId, string bookTitle)
         {
             try
             {
                 if (!ModelState.IsValid)
                     return BadRequest("Некорректные данные");
 
-                var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
-                var reservation = _reservationService.CreateReservation(userId, reservationDto.BookId);
+               
+                var reservation = _reservationService.CreateReservation(userId, bookId, bookTitle);
 
                 _logger.LogInformation("Создано бронирование {ReservationId} для пользователя {UserId}", reservation.Id, userId);
                 return CreatedAtAction(nameof(GetReservation), new { id = reservation.Id }, reservation);
@@ -53,7 +53,7 @@ namespace Diplom.Controllers
 
         // Отменить бронирование (только владелец или администратор)
         [Authorize]
-        [HttpDelete("{id}")]
+        [HttpDelete("DeleteReservation")]
         public IActionResult CancelReservation(int id)
         {
             try
@@ -78,7 +78,7 @@ namespace Diplom.Controllers
 
         // Получить бронирование по ID (владелец или администратор)
         [Authorize]
-        [HttpGet("{id}")]
+        [HttpGet("GetById")]
         public IActionResult GetReservation(int id)
         {
             var reservation = _reservationService.GetReservationById(id);
@@ -93,10 +93,10 @@ namespace Diplom.Controllers
 
         // Получить все бронирования текущего пользователя
         [Authorize]
-        [HttpGet("my")]
-        public IActionResult GetMyReservations()
+        [HttpGet("myRservetion")]
+        public IActionResult GetMyReservations(int userId)
         {
-            var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+            
             var reservations = _reservationService.GetUserReservations(userId);
             return Ok(reservations);
         }
@@ -112,7 +112,7 @@ namespace Diplom.Controllers
 
         // Обновить статус бронирования (администратор)
         [Authorize(Roles = "Admin")]
-        [HttpPatch("{id}/status")]
+        [HttpPut("UpdateReservation")]
         public IActionResult UpdateStatus( [FromBody] ReservationDto reservationDto)
         {
             try

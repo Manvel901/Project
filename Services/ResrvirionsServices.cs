@@ -53,7 +53,7 @@ namespace Diplom.Services
             }
         }
 
-        public ReservationDto CreateReservation(int userId, int bookId)
+        public ReservationDto CreateReservation(int userId, int bookId, string bookTitle)
         {
             // не диспоузим _context, он из DI
             var user = _context.Users.Find(userId);
@@ -68,6 +68,7 @@ namespace Diplom.Services
             {
                 UserId = userId,
                 BookId = bookId,
+                BookTitle = bookTitle,
                 ReservationDate = DateTime.UtcNow,
                 DueDate = DateTime.UtcNow.AddDays(14),
                 Status = "Active"
@@ -131,8 +132,8 @@ namespace Diplom.Services
 
         public IEnumerable<ReservationDto> GetUserReservations(int userId)
         {
-            using (_context)
-            {
+           
+            
                 var list = _context.Reserv
                .Include(r => r.Book)
                .Where(r => r.UserId == userId);
@@ -140,7 +141,7 @@ namespace Diplom.Services
                 return list.Select(x=> _mapper.Map<ReservationDto>(x));
 
 
-            }
+            
         }
 
         public void RefreshReservationStatuses()

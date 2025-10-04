@@ -13,22 +13,22 @@ namespace Diplom.Controllers
         {
             _penaltyService = penaltyService;
         }
-        [HttpPost("Create")]
+        [HttpPost("CreatePenalty")]
         public IActionResult Create([FromBody]  PenaltyDto penaltyDto, [FromQuery] int reservId)
         {
             var id = _penaltyService.CreatePenalty(penaltyDto, reservId);
             return CreatedAtAction(nameof(GetById), new { penaltyId = id }, id);
         }
 
-        [HttpPost("{penaltyId}/pay")]
-        public IActionResult Pay( [FromBody] PenaltyDto penaltyDto)
+        [HttpPost("PayPenalty")]
+        public IActionResult Pay( [FromQuery] int id, int amountPaid, DateTime? paidAtUtc)
         {
-            var ok = _penaltyService.PayPenalty(penaltyDto);
+            var ok = _penaltyService.PayPenalty(id, amountPaid, paidAtUtc);
             if (!ok) return BadRequest();
             return NoContent();
         }
 
-        [HttpGet("{penaltyId}")]
+        [HttpGet("GetPenaltyById")]
         public IActionResult GetById(int penaltyId)
         {
             var p = _penaltyService.GetPenaltyById(penaltyId);

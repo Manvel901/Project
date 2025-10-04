@@ -13,6 +13,7 @@ namespace Diplom.Abstract
         decimal CalculatePenalty(int reservationId);
 
         public bool HasOutstandingPenaltiesByReservation(int reservationId);
+
         public IEnumerable<PenaltyDto> GetPenaltiesByUserReservation(int reservationId);
     }
 }

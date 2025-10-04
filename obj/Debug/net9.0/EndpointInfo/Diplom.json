@@ -70,7 +70,7 @@
         }
       }
     },
-    "/Authors": {
+    "/Authors/GetAll": {
       "get": {
         "tags": [
           "Authors"
@@ -80,7 +80,31 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/Authors/GetFromId": {
+      "get": {
+        "tags": [
+          "Authors"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Authors/Create": {
       "post": {
         "tags": [
           "Authors"
@@ -111,41 +135,10 @@
         }
       }
     },
-    "/Authors/{id}": {
-      "get": {
-        "tags": [
-          "Authors"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
+    "/Authors/Update": {
       "put": {
         "tags": [
           "Authors"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
         ],
         "requestBody": {
           "content": {
@@ -171,7 +164,9 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/Authors/Delete": {
       "delete": {
         "tags": [
           "Authors"
@@ -179,8 +174,7 @@
         "parameters": [
           {
             "name": "id",
-            "in": "path",
-            "required": true,
+            "in": "query",
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -204,7 +198,31 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/Book/GetBookById": {
+      "get": {
+        "tags": [
+          "Book"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Book/CreateBook": {
       "post": {
         "tags": [
           "Book"
@@ -235,41 +253,10 @@
         }
       }
     },
-    "/Book/{id}": {
-      "get": {
-        "tags": [
-          "Book"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
+    "/Book/UpdateBook": {
       "put": {
         "tags": [
           "Book"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
         ],
         "requestBody": {
           "content": {
@@ -295,7 +282,9 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/Book/DeleteBook": {
       "delete": {
         "tags": [
           "Book"
@@ -303,8 +292,7 @@
         "parameters": [
           {
             "name": "id",
-            "in": "path",
-            "required": true,
+            "in": "query",
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -318,7 +306,7 @@
         }
       }
     },
-    "/Book/search": {
+    "/Book/SearchBook": {
       "get": {
         "tags": [
           "Book"
@@ -339,7 +327,7 @@
         }
       }
     },
-    "/BookAutor": {
+    "/BookAutor/AddBookFromAuthor": {
       "post": {
         "tags": [
           "BookAutor"
@@ -369,7 +357,7 @@
         }
       }
     },
-    "/BookAutor/book/{bookId}/authors": {
+    "/BookAutor/GetAuthorByBookId": {
       "get": {
         "tags": [
           "BookAutor"
@@ -377,8 +365,7 @@
         "parameters": [
           {
             "name": "bookId",
-            "in": "path",
-            "required": true,
+            "in": "query",
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -392,7 +379,7 @@
         }
       }
     },
-    "/BookAutor/author/{authorId}/books": {
+    "/BookAutor/GetBookByAuthorId": {
       "get": {
         "tags": [
           "BookAutor"
@@ -400,8 +387,7 @@
         "parameters": [
           {
             "name": "authorId",
-            "in": "path",
-            "required": true,
+            "in": "query",
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -415,7 +401,7 @@
         }
       }
     },
-    "/BookAutor/book/{bookId}/author/{authorId}": {
+    "/BookAutor/DeleteAuthorFromBook": {
       "delete": {
         "tags": [
           "BookAutor"
@@ -423,8 +409,7 @@
         "parameters": [
           {
             "name": "bookId",
-            "in": "path",
-            "required": true,
+            "in": "query",
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -432,8 +417,7 @@
           },
           {
             "name": "authorId",
-            "in": "path",
-            "required": true,
+            "in": "query",
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -447,7 +431,7 @@
         }
       }
     },
-    "/Genres": {
+    "/Genres/CreateGenres": {
       "post": {
         "tags": [
           "Genres"
@@ -478,20 +462,10 @@
         }
       }
     },
-    "/Genres/Update": {
+    "/Genres/UpdateGenres": {
       "put": {
         "tags": [
           "Genres"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
         ],
         "requestBody": {
           "content": {
@@ -519,7 +493,7 @@
         }
       }
     },
-    "/Genres/Remove": {
+    "/Genres/RemoveGenres": {
       "delete": {
         "tags": [
           "Genres"
@@ -541,7 +515,7 @@
         }
       }
     },
-    "/Genres/ById": {
+    "/Genres/GetGenresById": {
       "get": {
         "tags": [
           "Genres"
@@ -563,7 +537,7 @@
         }
       }
     },
-    "/Genres/All": {
+    "/Genres/AllGenres": {
       "get": {
         "tags": [
           "Genres"
@@ -575,7 +549,7 @@
         }
       }
     },
-    "/Create": {
+    "/CreatePenalty": {
       "post": {
         "tags": [
           "Penaltyes"
@@ -616,40 +590,37 @@
         }
       }
     },
-    "/{penaltyId}/pay": {
+    "/PayPenalty": {
       "post": {
         "tags": [
           "Penaltyes"
         ],
         "parameters": [
           {
-            "name": "penaltyId",
-            "in": "path",
-            "required": true,
+            "name": "id",
+            "in": "query",
             "schema": {
-              "type": "string"
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "amountPaid",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "paidAtUtc",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
             }
           }
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PenaltyDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PenaltyDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/PenaltyDto"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "OK"
@@ -657,7 +628,7 @@
         }
       }
     },
-    "/{penaltyId}": {
+    "/GetPenaltyById": {
       "get": {
         "tags": [
           "Penaltyes"
@@ -665,8 +636,7 @@
         "parameters": [
           {
             "name": "penaltyId",
-            "in": "path",
-            "required": true,
+            "in": "query",
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -680,30 +650,36 @@
         }
       }
     },
-    "/Reservation": {
+    "/Reservation/CreateReservation": {
       "post": {
         "tags": [
           "Reservation"
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ReservationDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ReservationDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ReservationDto"
-              }
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "bookId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "bookTitle",
+            "in": "query",
+            "schema": {
+              "type": "string"
             }
           }
-        },
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -711,7 +687,7 @@
         }
       }
     },
-    "/Reservation/{id}": {
+    "/Reservation/DeleteReservation": {
       "delete": {
         "tags": [
           "Reservation"
@@ -719,29 +695,7 @@
         "parameters": [
           {
             "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "get": {
-        "tags": [
-          "Reservation"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
+            "in": "query",
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -755,10 +709,42 @@
         }
       }
     },
-    "/Reservation/my": {
+    "/Reservation/GetById": {
       "get": {
         "tags": [
           "Reservation"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Reservation/myRservetion": {
+      "get": {
+        "tags": [
+          "Reservation"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -779,20 +765,10 @@
         }
       }
     },
-    "/Reservation/{id}/status": {
-      "patch": {
+    "/Reservation/UpdateReservation": {
+      "put": {
         "tags": [
           "Reservation"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
         ],
         "requestBody": {
           "content": {
@@ -837,41 +813,20 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "number",
-                  "format": "double"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "number",
-                  "format": "double"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "number",
-                  "format": "double"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }
     },
-    "/ReservPenalty/return": {
+    "/ReservPenalty/returnBook": {
       "post": {
         "tags": [
           "ReservPenalty"
         ],
         "parameters": [
           {
-            "name": "bookId",
-            "in": "path",
-            "required": true,
+            "name": "reservationId",
+            "in": "query",
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -885,7 +840,7 @@
         }
       }
     },
-    "/ReservPenalty/by-reservation/{reservationId}": {
+    "/ReservPenalty/GetPenalByReservation": {
       "get": {
         "tags": [
           "ReservPenalty"
@@ -893,8 +848,7 @@
         "parameters": [
           {
             "name": "reservationId",
-            "in": "path",
-            "required": true,
+            "in": "query",
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -908,7 +862,7 @@
         }
       }
     },
-    "/User/register": {
+    "/User/RegisterUser": {
       "post": {
         "tags": [
           "User"
@@ -939,7 +893,7 @@
         }
       }
     },
-    "/User/login": {
+    "/User/loginUser": {
       "post": {
         "tags": [
           "User"
@@ -970,17 +924,51 @@
         }
       }
     },
-    "/User/me": {
+    "/User/MyGetUserById": {
       "get": {
         "tags": [
           "User"
         ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/User/GetUser": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/User/UpdateUser": {
       "put": {
         "tags": [
           "User"
@@ -1011,37 +999,23 @@
         }
       }
     },
-    "/User/{id}": {
-      "get": {
-        "tags": [
-          "User"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
+    "/User/DeleteUser": {
       "delete": {
         "tags": [
           "User"
         ],
         "parameters": [
           {
-            "name": "id",
-            "in": "path",
-            "required": true,
+            "name": "adminId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "targetId",
+            "in": "query",
             "schema": {
               "type": "integer",
               "format": "int32"

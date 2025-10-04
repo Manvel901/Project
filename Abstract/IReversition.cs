@@ -6,7 +6,7 @@ namespace Diplom.Abstract
 {
     public interface IReservation
     {
-        ReservationDto CreateReservation(int userId, int bookId);
+        ReservationDto CreateReservation(int userId, int bookId, string bookTitle);
 
         // Отменить бронирование
         void CancelReservation(int reservationId);

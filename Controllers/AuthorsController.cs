@@ -22,7 +22,7 @@ namespace Diplom.Controllers
         }
         // GET: /Authors
         [AllowAnonymous]
-        [HttpGet]
+        [HttpGet("GetAll")]
         public IActionResult GetAllAuthors()
         {
             var authors = _authorsService.GetAllAuthors();
@@ -31,7 +31,7 @@ namespace Diplom.Controllers
 
         // GET: /Authors/5
         [AllowAnonymous]
-        [HttpGet("{id}")]
+        [HttpGet("GetFromId")]
         public IActionResult GetAuthor(int id)
         {
             var author = _authorsService.GetAuthorById(id);
@@ -40,7 +40,7 @@ namespace Diplom.Controllers
 
         // POST: /Authors
         [Authorize(Roles = "Admin")]
-        [HttpPost]
+        [HttpPost("Create")]
         public IActionResult CreateAuthor([FromBody] AutorDto autorDto)
         {
             
@@ -62,7 +62,7 @@ namespace Diplom.Controllers
 
         // PUT: /Authors/5
         [Authorize(Roles = "Admin")]
-        [HttpPut("{id}")]
+        [HttpPut("Update")]
         public IActionResult UpdateAuthor( [FromBody] AutorDto autorDto)
         {
             
@@ -84,7 +84,7 @@ namespace Diplom.Controllers
 
         // DELETE: /Authors/5
         [Authorize(Roles = "Admin")]
-        [HttpDelete("{id}")]
+        [HttpDelete("Delete")]
         public IActionResult DeleteAuthor(int id)
         {
             try
