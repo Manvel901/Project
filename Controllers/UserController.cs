@@ -2,6 +2,7 @@
 using Diplom.Models;
 using Diplom.Models.dto;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
@@ -21,47 +22,84 @@ namespace Diplom.Controllers
             _logger = logger;
         }
 
-        // Регистрация пользователя (доступно без авторизации)
         [AllowAnonymous]
         [HttpPost("RegisterUser")]
-        public IActionResult Register([FromBody] UserDto userDto)
+        public IActionResult Register([FromBody] UserDto request)
         {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
             try
             {
-                if (!ModelState.IsValid)
-                    return BadRequest("Некорректные данные");
+                // Хешируем пароль перед передачей в сервис
+                request.PasswordHash = HashPassword(request.PasswordHash); // Если PasswordHash содержит открытый пароль
 
-                var user = _userService.Register(userDto);
-                _logger.LogInformation("Пользователь {Email} зарегистрирован", userDto.Email);
-                return Ok(user);
+                var id = _userService.Register(request); // Используем request, а не userDto
+                _logger.LogInformation("Пользователь {Email} зарегистрирован с id {Id}", request.Email, id);
+                return Ok(id);
             }
             catch (ArgumentException ex)
             {
-                _logger.LogError(ex, "Ошибка регистрации");
+                _logger.LogWarning(ex, "Некорректные данные при регистрации {Email}", request.Email);
                 return BadRequest(ex.Message);
             }
+            catch (InvalidOperationException ex)
+            {
+                _logger.LogWarning(ex, "Попытка регистрации с занятым email {Email}", request.Email);
+                return Conflict(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Ошибка при регистрации {Email}", request.Email);
+                return StatusCode(500, "Внутренняя ошибка сервера");
+            }
         }
+
+        // Метод для хеширования пароля
+        private string HashPassword(string password)
+        {
+            using var sha256 = System.Security.Cryptography.SHA256.Create();
+            var bytes = System.Text.Encoding.UTF8.GetBytes(password);
+            var hash = sha256.ComputeHash(bytes);
+            return Convert.ToBase64String(hash);
+        }
+
+
 
         // Вход в систему (доступно без авторизации)
         [AllowAnonymous]
         [HttpPost("loginUser")]
-        public IActionResult Login([FromBody] UserDto userDto)
+        public IActionResult Login([FromBody] LoginRequest request)
         {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
             try
             {
-                var token = _userService.Login(userDto);
-                _logger.LogInformation("Пользователь {Email} вошёл в систему", userDto.Email);
+                var token = _userService.Login(request.Email, request.Password);
+                _logger.LogInformation("Пользователь {Email} выполнил вход", request.Email);
                 return Ok(token);
             }
             catch (UnauthorizedAccessException ex)
             {
-                _logger.LogWarning("Неудачная попытка входа для {Email}", userDto.Email);
+                _logger.LogWarning("Неудачная попытка входа для {Email}", request.Email);
                 return Unauthorized(ex.Message);
             }
-            catch (InvalidOperationException ex)
+            catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                _logger.LogError(ex, "Ошибка при попытке входа для {Email}", request.Email);
+                return StatusCode(500, "Внутренняя ошибка сервера");
             }
+        }
+
+        [Authorize]
+        [HttpGet("Me")]
+        public IActionResult Me()
+        {
+            var idClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (!int.TryParse(idClaim, out var id)) return Unauthorized();
+            var user = _userService.GetUserById(id);
+            return user == null ? NotFound() : Ok(user);
         }
 
         // Получить текущего пользователя (требуется авторизация)
@@ -127,13 +165,13 @@ namespace Diplom.Controllers
 
             [Required(ErrorMessage = "Пароль обязателен")]
             [MinLength(6, ErrorMessage = "Пароль должен содержать минимум 6 символов")]
-            public string Password { get; set; }
+            public string PasswordHash { get; set; }
         }
 
         public class UserLoginRequest
         {
             [Required] public string Email { get; set; }
-            [Required] public string Password { get; set; }
+            [Required] public string PasswordHash { get; set; }
         }
 
         public class UserUpdateRequest

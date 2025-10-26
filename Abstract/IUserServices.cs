@@ -6,10 +6,10 @@ namespace Diplom.Abstract
     public interface IUserServices
     {
         // Регистрация пользователя
-        int Register(UserDto userDto);
+        int Register(UserDto request);
 
         // Аутентификация (вход в систему)
-        string Login(UserDto userDto);
+        string Login(string email, string password);
 
         // Получение пользователя по ID
         UserDto GetUserById(int userId);

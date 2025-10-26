@@ -15,7 +15,7 @@ namespace Diplom.Controllers
         private readonly ILogger _logger;
       
 
-        public AuthorsController(IAuthorsService authorsService, ILogger logger)
+        public AuthorsController(IAuthorsService authorsService, ILogger<AuthorsController> logger)
         {
             _authorsService = authorsService;
             _logger = logger;
@@ -52,11 +52,11 @@ namespace Diplom.Controllers
            
                 // При необходимости можно уточнить исключения в сервисе и вернуть более точные коды
                 catch (DbUpdateException ex)
-            {
+                {
                 var details = ex.InnerException?.Message ?? ex.Message;
                 _logger.LogError(ex, "Save failed: {Details}", details);
                 throw;
-            }
+                }
         }
         
 

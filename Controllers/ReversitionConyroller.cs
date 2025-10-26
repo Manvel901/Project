@@ -24,7 +24,7 @@ namespace Diplom.Controllers
         }
 
         // Создать бронирование (требуется авторизация)
-        [Authorize]
+        //[Authorize]
         [HttpPost("CreateReservation")]
         public IActionResult CreateReservation([FromQuery] int userId, int bookId, string bookTitle)
         {
@@ -51,6 +51,26 @@ namespace Diplom.Controllers
             }
         }
 
+        [HttpPost("CreateReservationNoAuth")]
+        public async Task<IActionResult> CreateReservationNoAuth([FromBody] ReservationDto dto)
+        {
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+
+            try
+            {
+                if (dto.AuthorsName == null || dto.AuthorsName.Count == 0)
+                    return BadRequest("Не указаны авторы книги.");
+
+                // Предполагается, что мы берем первого автора в списке
+                var authorName = dto.AuthorsName.First();
+
+                var reservation = await _reservationService.CreateReservationByTitle(dto.BookTitle, authorName); // Изменяем вызов метода, передаем имя автора
+                _logger.LogInformation("Создано бронирование {ReservationId} для книги {BookTitle}", reservation.Id, dto.BookTitle);
+                return CreatedAtAction(nameof(GetReservation), new { id = reservation.Id }, reservation);
+            }
+            catch (KeyNotFoundException ex) { return NotFound(ex.Message); }
+            catch (InvalidOperationException ex) { return BadRequest(ex.Message); }
+        }
         // Отменить бронирование (только владелец или администратор)
         [Authorize]
         [HttpDelete("DeleteReservation")]

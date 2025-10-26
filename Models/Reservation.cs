@@ -6,6 +6,7 @@ namespace Diplom.Models
     {
         public int Id { get; set; }
         public string? BookTitle { get; set; }
+        public List<string>? AuthorsName { get; set; }=  new List<string>();
         public DateTime ReservationDate { get; set; } = DateTime.UtcNow;
         public DateTime DueDate { get; set; } = DateTime.UtcNow.AddDays(14);
         public DateTime? ReturnDate { get; set; } = null;

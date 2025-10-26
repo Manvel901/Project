@@ -89,7 +89,43 @@ namespace Diplom.Services
 
             return resDto;
         }
-        
+
+        public async Task<ReservationDto> CreateReservationByTitle(string title, string author)
+        {
+            if (string.IsNullOrWhiteSpace(title) || string.IsNullOrWhiteSpace(author))
+                throw new InvalidOperationException("Title and author are required.");
+
+            // Нормализация для поиска
+            var normalizedTitle = title.Trim();
+            var normalizedAuthor = author.Trim();
+
+            // Поиск книги по названию и автору
+            var book = await _context.Books
+                .Include(b => b.Authors) // Подключаем Authors
+                .FirstOrDefaultAsync(b => b.BookTitle == normalizedTitle && b.Authors.Any(a => a.FullName == normalizedAuthor));
+
+            if (book == null)
+                throw new KeyNotFoundException("Книга не найдена");
+
+            // Дополнительная логика: проверка доступности, дубли, и т.п.
+            // Создаём DTO для бронирования
+            var reservationDto = new ReservationDto
+            {
+                BookId = book.Id,
+                BookTitle = book.BookTitle,
+                AuthorsName = book.Authors.Select(a => a.FullName).ToList(), // Получение списка имен авторов
+                ReservationDate = DateTime.UtcNow
+                // Поля GuestName и Email можно заполнить отдельно, если это необходимо
+            };
+
+            // Создание резервирования в контексте
+            var reservatEntity = _mapper.Map<Reservation>(reservationDto); // Преобразование DTO в сущность Reservation
+            _context.Reserv.Add(reservatEntity); // Добавление бронирования в контекст
+
+            await _context.SaveChangesAsync(); // Асинхронное сохранение изменений в базе данных
+
+            return reservationDto; // Возвращаем DTO бронирования
+        }
 
         public IEnumerable<ReservationDto> GetBookReservations(int bookId)
         {

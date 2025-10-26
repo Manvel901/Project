@@ -8,6 +8,8 @@ namespace Diplom.Abstract
     {
         ReservationDto CreateReservation(int userId, int bookId, string bookTitle);
 
+         Task<ReservationDto> CreateReservationByTitle(string title, string author);
+
         // Отменить бронирование
         void CancelReservation(int reservationId);
 

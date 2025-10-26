@@ -2,6 +2,7 @@
 using Diplom.Abstract;
 using Diplom.Models;
 using Diplom.Models.dto;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.IdentityModel.Tokens;
@@ -87,12 +88,12 @@ namespace Diplom.Services
             
         }
 
-        public string Login(UserDto userDto)
+        public string Login(string email, string password )
         {
             using (_context)
             {
-                var user = _context.Users.FirstOrDefault(u => u.Email == userDto.Email);
-                if (user == null || user.PasswordHash != userDto.PasswordHash) // Сравнение открытого пароля
+                var user = _context.Users.FirstOrDefault(u => u.Email == email);
+                if (user == null || user.PasswordHash != password) // Сравнение открытого пароля
                     throw new UnauthorizedAccessException("Неверный email или пароль.");
 
 
@@ -125,25 +126,33 @@ namespace Diplom.Services
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
-       
 
-        public int Register(UserDto userDto)
+
+        public int Register(UserDto request)
         {
             using (_context)
             {
-                var userEntity = (_context.Users.FirstOrDefault(u => u.Email.ToLower().Equals(userDto.Email.ToLower())));
+                // Проверяем, существует ли пользователь с таким email
+                var existingUser = _context.Users.FirstOrDefault(u => u.Email.ToLower().Equals(request.Email.ToLower()));
 
-                if (userEntity == null)
+                if (existingUser != null)
                 {
-                    userEntity = _mapper.Map<User>(userDto);
-                    _context.Users.Add(userEntity);
-                    _context.SaveChanges();
-                    _cache.Remove("users");
-
+                    throw new InvalidOperationException("Пользователь с таким email уже существует");
                 }
+
+                // Устанавливаем обязательные поля
+                request.IsBlocked = false;
+                request.RegistrationDate = DateTime.UtcNow;
+                request.Role = "User";
+
+                // Маппим и сохраняем
+                var userEntity = _mapper.Map<User>(request);
+                _context.Users.Add(userEntity);
+                _context.SaveChanges();
+                _cache.Remove("users");
+
                 return userEntity.Id;
             }
-
         }
 
         public void ToggleUserBlock(int adminUserId, int targetUserId, bool isBlocked)

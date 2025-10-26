@@ -438,6 +438,22 @@
   },
   {
     "ContainingType": "Diplom.Controllers.ReservationController",
+    "Method": "CreateReservationNoAuth",
+    "RelativePath": "Reservation/CreateReservationNoAuth",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Diplom.Models.dto.ReservationDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Diplom.Controllers.ReservationController",
     "Method": "CancelReservation",
     "RelativePath": "Reservation/DeleteReservation",
     "HttpMethod": "DELETE",
@@ -604,11 +620,21 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "userDto",
-        "Type": "Diplom.Models.dto.UserDto",
+        "Name": "request",
+        "Type": "Microsoft.AspNetCore.Identity.Data.LoginRequest",
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Diplom.Controllers.UserController",
+    "Method": "Me",
+    "RelativePath": "User/Me",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -636,7 +662,7 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "userDto",
+        "Name": "request",
         "Type": "Diplom.Models.dto.UserDto",
         "IsRequired": true
       }
