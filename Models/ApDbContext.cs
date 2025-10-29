@@ -23,6 +23,7 @@ namespace Diplom.Models
             public virtual DbSet<Genres> Genres { get; set; }
             public virtual DbSet<Autors> Authors { get; set; }
             public virtual DbSet<Penalties> Penalties { get; set; }
+           public virtual DbSet<EmailEntity> Comment { get; set; }
            
            
 
@@ -50,6 +51,7 @@ namespace Diplom.Models
 
 
                 entity.HasMany(res => res.Reservations).WithOne(e => e.User).HasForeignKey(x => x.UserId);
+                entity.HasMany(c => c.EmailEntities).WithMany(u => u.Users);
             });
 
 
@@ -98,6 +100,18 @@ namespace Diplom.Models
                 entity.HasOne(p => p.Book).WithMany(rev => rev.Reservations).HasForeignKey(x => x.BookId);
                 entity.HasOne(p => p.User).WithMany(rev => rev.Reservations).HasForeignKey(x => x.UserId);
 
+            });
+            modelBuilder.Entity<EmailEntity>(entity =>
+            {
+                entity.ToTable("Comment");
+                
+
+                entity.Property(c=> c.Id).HasColumnName("id");
+               entity.Property(c=> c.UserId).HasColumnName("user_id");
+                entity.Property(c=> c.Email).HasColumnName("email");
+                entity.Property(c=> c.Message).HasColumnName("Message");
+
+                entity.HasMany(u => u.Users).WithMany(c => c.EmailEntities);
             });
 
             modelBuilder.Entity<Autors>(entity =>

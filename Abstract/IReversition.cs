@@ -1,6 +1,7 @@
 ﻿using Diplom.Models;
 using Diplom.Models.dto;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace Diplom.Abstract
 {
@@ -8,7 +9,7 @@ namespace Diplom.Abstract
     {
         ReservationDto CreateReservation(int userId, int bookId, string bookTitle);
 
-         Task<ReservationDto> CreateReservationByTitle(string title, string author);
+        Task<ReservationDto> ReserveBookByTitleAndAuthor(string title, string author, ClaimsPrincipal user);
 
         // Отменить бронирование
         void CancelReservation(int reservationId);

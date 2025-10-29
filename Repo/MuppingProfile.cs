@@ -15,6 +15,7 @@ namespace Diplom.Repo
             CreateMap<Reservation, ReservationDto>(MemberList.Destination).ReverseMap();
             CreateMap<Penalties, PenaltyDto>(MemberList.Destination).ReverseMap();
             CreateMap<RservPenal, ReservPenalDto>(MemberList.Destination).ReverseMap();
+            CreateMap<EmailEntity, EmailDto>(MemberList.Destination).ReverseMap();
         }
     }
 }

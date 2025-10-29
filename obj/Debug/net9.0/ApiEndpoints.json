@@ -412,41 +412,15 @@
   },
   {
     "ContainingType": "Diplom.Controllers.ReservationController",
-    "Method": "CreateReservation",
-    "RelativePath": "Reservation/CreateReservation",
+    "Method": "CreateReservationByTitle",
+    "RelativePath": "Reservation/CreateReservationByTitle",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "userId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "bookId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "bookTitle",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Diplom.Controllers.ReservationController",
-    "Method": "CreateReservationNoAuth",
-    "RelativePath": "Reservation/CreateReservationNoAuth",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "Diplom.Models.dto.ReservationDto",
+        "Name": "request",
+        "Type": "Diplom.Controllers.ReservationController\u002BReservationRequest",
         "IsRequired": true
       }
     ],
@@ -455,7 +429,7 @@
   {
     "ContainingType": "Diplom.Controllers.ReservationController",
     "Method": "CancelReservation",
-    "RelativePath": "Reservation/DeleteReservation",
+    "RelativePath": "Reservation/DeleteReservation/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -463,7 +437,7 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -471,7 +445,7 @@
   {
     "ContainingType": "Diplom.Controllers.ReservationController",
     "Method": "GetReservation",
-    "RelativePath": "Reservation/GetById",
+    "RelativePath": "Reservation/GetById/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -479,7 +453,7 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -487,17 +461,11 @@
   {
     "ContainingType": "Diplom.Controllers.ReservationController",
     "Method": "GetMyReservations",
-    "RelativePath": "Reservation/myRservetion",
+    "RelativePath": "Reservation/myReservations",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "userId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -621,7 +589,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Microsoft.AspNetCore.Identity.Data.LoginRequest",
+        "Type": "Diplom.Controllers.UserController\u002BUserLoginRequest",
         "IsRequired": true
       }
     ],

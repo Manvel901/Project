@@ -5,6 +5,7 @@ using Diplom.Models.dto;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
+using System.Security.Claims;
 using static Diplom.Models.AppDbContext;
 
 namespace Diplom.Services
@@ -16,15 +17,16 @@ namespace Diplom.Services
         private readonly IMapper _mapper;
         private readonly IMemoryCache _cache;
         private readonly IBookServicrs _bookService;
+        private readonly ILogger<ResrvirionsServices> _logger;
      
 
         public ResrvirionsServices(AppDbContext context, IBookServicrs bookService,
-             IMapper mapper, IMemoryCache cache )
+             IMapper mapper, IMemoryCache cache, ILogger<ResrvirionsServices> logger)
         {
 
             _context = context;
             _bookService = bookService;
-            
+            _logger = logger;
             _mapper = mapper;
             _cache = cache;
         }
@@ -90,42 +92,54 @@ namespace Diplom.Services
             return resDto;
         }
 
-        public async Task<ReservationDto> CreateReservationByTitle(string title, string author)
+        public async Task<ReservationDto> ReserveBookByTitleAndAuthor(string title, string author, ClaimsPrincipal user)
         {
             if (string.IsNullOrWhiteSpace(title) || string.IsNullOrWhiteSpace(author))
                 throw new InvalidOperationException("Title and author are required.");
+
+            var userId = int.Parse(user.FindFirst(ClaimTypes.NameIdentifier)?.Value);
 
             // Нормализация для поиска
             var normalizedTitle = title.Trim();
             var normalizedAuthor = author.Trim();
 
+            // Логирование
+            _logger.LogInformation("Ищем книгу с титульником '{Title}' и автором '{Author}'", normalizedTitle, normalizedAuthor);
+
             // Поиск книги по названию и автору
             var book = await _context.Books
-                .Include(b => b.Authors) // Подключаем Authors
+                .Include(b => b.Authors)
                 .FirstOrDefaultAsync(b => b.BookTitle == normalizedTitle && b.Authors.Any(a => a.FullName == normalizedAuthor));
 
             if (book == null)
-                throw new KeyNotFoundException("Книга не найдена");
+                throw new KeyNotFoundException($"Книга '{title}' автор '{author}' не найдена.");
 
-            // Дополнительная логика: проверка доступности, дубли, и т.п.
-            // Создаём DTO для бронирования
+            // Проверка на существующее бронирование
+            var existingReservation = await _context.Reserv
+                .FirstOrDefaultAsync(r => r.BookId == book.Id && r.UserId == userId);
+
+            if (existingReservation != null)
+                throw new InvalidOperationException("Это бронирование уже существует.");
+
+            // Создаем DTO для бронирования
             var reservationDto = new ReservationDto
             {
                 BookId = book.Id,
                 BookTitle = book.BookTitle,
-                AuthorsName = book.Authors.Select(a => a.FullName).ToList(), // Получение списка имен авторов
+                AuthorsName = book.Authors.Select(a => a.FullName).ToList(),
                 ReservationDate = DateTime.UtcNow
-                // Поля GuestName и Email можно заполнить отдельно, если это необходимо
             };
 
             // Создание резервирования в контексте
             var reservatEntity = _mapper.Map<Reservation>(reservationDto); // Преобразование DTO в сущность Reservation
+            reservatEntity.UserId = userId; // Устанавливаем идентификатор пользователя
             _context.Reserv.Add(reservatEntity); // Добавление бронирования в контекст
 
             await _context.SaveChangesAsync(); // Асинхронное сохранение изменений в базе данных
 
             return reservationDto; // Возвращаем DTO бронирования
         }
+
 
         public IEnumerable<ReservationDto> GetBookReservations(int bookId)
         {

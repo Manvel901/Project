@@ -31,10 +31,10 @@ namespace Diplom.Controllers
 
             try
             {
-                // Хешируем пароль перед передачей в сервис
-                request.PasswordHash = HashPassword(request.PasswordHash); // Если PasswordHash содержит открытый пароль
+                // Хешируем пароль, который пришел в PasswordHash (на самом деле это открытый пароль)
+                request.PasswordHash = HashPassword(request.PasswordHash);
 
-                var id = _userService.Register(request); // Используем request, а не userDto
+                var id = _userService.Register(request);
                 _logger.LogInformation("Пользователь {Email} зарегистрирован с id {Id}", request.Email, id);
                 return Ok(id);
             }
@@ -55,29 +55,22 @@ namespace Diplom.Controllers
             }
         }
 
-        // Метод для хеширования пароля
-        private string HashPassword(string password)
-        {
-            using var sha256 = System.Security.Cryptography.SHA256.Create();
-            var bytes = System.Text.Encoding.UTF8.GetBytes(password);
-            var hash = sha256.ComputeHash(bytes);
-            return Convert.ToBase64String(hash);
-        }
-
-
-
-        // Вход в систему (доступно без авторизации)
         [AllowAnonymous]
         [HttpPost("loginUser")]
-        public IActionResult Login([FromBody] LoginRequest request)
+        public IActionResult Login([FromBody] UserLoginRequest request)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
             try
             {
-                var token = _userService.Login(request.Email, request.Password);
-                _logger.LogInformation("Пользователь {Email} выполнил вход", request.Email);
+                // Хешируем пароль для сравнения с базой
+                var hashedPassword = HashPassword(request.PasswordHash);
+
+                var token = _userService.Login(request.Email, hashedPassword);
+                _logger.LogInformation("Пользователь {Email} выполнил вход с токеном: {Token}", request.Email, token);
+
+                // Возвращаем просто строку токена, а не объект
                 return Ok(token);
             }
             catch (UnauthorizedAccessException ex)
@@ -96,10 +89,41 @@ namespace Diplom.Controllers
         [HttpGet("Me")]
         public IActionResult Me()
         {
-            var idClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            if (!int.TryParse(idClaim, out var id)) return Unauthorized();
-            var user = _userService.GetUserById(id);
-            return user == null ? NotFound() : Ok(user);
+            try
+            {
+                var idClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                _logger.LogInformation("Claim NameIdentifier: {IdClaim}", idClaim);
+
+                if (!int.TryParse(idClaim, out var id))
+                {
+                    _logger.LogWarning("Не удалось распарсить id из токена: {IdClaim}", idClaim);
+                    return Unauthorized("Invalid token");
+                }
+
+                var user = _userService.GetUserById(id);
+                if (user == null)
+                {
+                    _logger.LogWarning("Пользователь с id {Id} не найден", id);
+                    return NotFound("User not found");
+                }
+
+                _logger.LogInformation("Найден пользователь: {UserEmail}", user.Email);
+                return Ok(user);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Ошибка в методе Me");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        // Метод для хеширования пароля
+        private string HashPassword(string password)
+        {
+            using var sha256 = System.Security.Cryptography.SHA256.Create();
+            var bytes = System.Text.Encoding.UTF8.GetBytes(password);
+            var hash = sha256.ComputeHash(bytes);
+            return Convert.ToBase64String(hash);
         }
 
         // Получить текущего пользователя (требуется авторизация)

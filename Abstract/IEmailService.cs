@@ -2,6 +2,6 @@
 {
     public interface IEmailService
     {
-        Task SendReservationConfirmationAsync(string email, string bookTitle, DateTime dueDate);
+        int CreateComment(string name, string email, string message);
     }
 }

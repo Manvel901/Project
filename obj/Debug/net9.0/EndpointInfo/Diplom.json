@@ -650,44 +650,7 @@
         }
       }
     },
-    "/Reservation/CreateReservation": {
-      "post": {
-        "tags": [
-          "Reservation"
-        ],
-        "parameters": [
-          {
-            "name": "userId",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
-            "name": "bookId",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
-            "name": "bookTitle",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/Reservation/CreateReservationNoAuth": {
+    "/Reservation/CreateReservationByTitle": {
       "post": {
         "tags": [
           "Reservation"
@@ -696,17 +659,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ReservationDto"
+                "$ref": "#/components/schemas/ReservationRequest"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/ReservationDto"
+                "$ref": "#/components/schemas/ReservationRequest"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/ReservationDto"
+                "$ref": "#/components/schemas/ReservationRequest"
               }
             }
           }
@@ -718,7 +681,7 @@
         }
       }
     },
-    "/Reservation/DeleteReservation": {
+    "/Reservation/DeleteReservation/{id}": {
       "delete": {
         "tags": [
           "Reservation"
@@ -726,7 +689,8 @@
         "parameters": [
           {
             "name": "id",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -740,7 +704,7 @@
         }
       }
     },
-    "/Reservation/GetById": {
+    "/Reservation/GetById/{id}": {
       "get": {
         "tags": [
           "Reservation"
@@ -748,7 +712,8 @@
         "parameters": [
           {
             "name": "id",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -762,20 +727,10 @@
         }
       }
     },
-    "/Reservation/myRservetion": {
+    "/Reservation/myReservations": {
       "get": {
         "tags": [
           "Reservation"
-        ],
-        "parameters": [
-          {
-            "name": "userId",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
         ],
         "responses": {
           "200": {
@@ -933,17 +888,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/LoginRequest"
+                "$ref": "#/components/schemas/UserLoginRequest"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/LoginRequest"
+                "$ref": "#/components/schemas/UserLoginRequest"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/LoginRequest"
+                "$ref": "#/components/schemas/UserLoginRequest"
               }
             }
           }
@@ -1159,32 +1114,6 @@
         },
         "additionalProperties": false
       },
-      "LoginRequest": {
-        "required": [
-          "email",
-          "password"
-        ],
-        "type": "object",
-        "properties": {
-          "email": {
-            "type": "string",
-            "nullable": true
-          },
-          "password": {
-            "type": "string",
-            "nullable": true
-          },
-          "twoFactorCode": {
-            "type": "string",
-            "nullable": true
-          },
-          "twoFactorRecoveryCode": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "PenaltyDto": {
         "type": "object",
         "properties": {
@@ -1260,6 +1189,24 @@
         },
         "additionalProperties": false
       },
+      "ReservationRequest": {
+        "required": [
+          "authorName",
+          "bookTitle"
+        ],
+        "type": "object",
+        "properties": {
+          "bookTitle": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "authorName": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
       "UserDto": {
         "type": "object",
         "properties": {
@@ -1291,6 +1238,24 @@
           "isBlocked": {
             "type": "boolean",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserLoginRequest": {
+        "required": [
+          "email",
+          "passwordHash"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "passwordHash": {
+            "minLength": 1,
+            "type": "string"
           }
         },
         "additionalProperties": false

@@ -5,75 +5,53 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace Diplom.Controllers
 {
     [ApiController]
-    [Route("[controller]")] // Базовый маршрут: /reservations
+    [Route("[controller]")] // Base route: /reservations
     public class ReservationController : ControllerBase
     {
         private readonly IReservation _reservationService;
         private readonly ILogger<ReservationController> _logger;
 
-        public ReservationController(
-            IReservation reservationService,
-            ILogger<ReservationController> logger)
+        public ReservationController(IReservation reservationService, ILogger<ReservationController> logger)
         {
             _reservationService = reservationService;
             _logger = logger;
         }
 
-        // Создать бронирование (требуется авторизация)
-        //[Authorize]
-        [HttpPost("CreateReservation")]
-        public IActionResult CreateReservation([FromQuery] int userId, int bookId, string bookTitle)
+        // Create reservation (requires authorization)
+        [Authorize]
+        [HttpPost("CreateReservationByTitle")]
+        public async Task<IActionResult> CreateReservationByTitle([FromBody] ReservationRequest request)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest("Invalid data.");
+            }
+
             try
             {
-                if (!ModelState.IsValid)
-                    return BadRequest("Некорректные данные");
-
-               
-                var reservation = _reservationService.CreateReservation(userId, bookId, bookTitle);
-
-                _logger.LogInformation("Создано бронирование {ReservationId} для пользователя {UserId}", reservation.Id, userId);
-                return CreatedAtAction(nameof(GetReservation), new { id = reservation.Id }, reservation);
+                var reservation = await _reservationService.ReserveBookByTitleAndAuthor(request.BookTitle, request.AuthorName, User);
+                return CreatedAtAction(nameof(GetReservation), new { id = reservation.BookId }, reservation);
             }
             catch (KeyNotFoundException ex)
             {
-                _logger.LogError(ex, "Ошибка создания бронирования: книга или пользователь не найдены");
+                _logger.LogWarning(ex, "Book not found while creating reservation: {Title}, {Author}", request.BookTitle, request.AuthorName);
                 return NotFound(ex.Message);
             }
             catch (InvalidOperationException ex)
             {
-                _logger.LogError(ex, "Ошибка создания бронирования: книга недоступна");
+                _logger.LogError(ex, "Error creating reservation: {Title}, {Author}", request.BookTitle, request.AuthorName);
                 return BadRequest(ex.Message);
             }
         }
 
-        [HttpPost("CreateReservationNoAuth")]
-        public async Task<IActionResult> CreateReservationNoAuth([FromBody] ReservationDto dto)
-        {
-            if (!ModelState.IsValid) return BadRequest(ModelState);
-
-            try
-            {
-                if (dto.AuthorsName == null || dto.AuthorsName.Count == 0)
-                    return BadRequest("Не указаны авторы книги.");
-
-                // Предполагается, что мы берем первого автора в списке
-                var authorName = dto.AuthorsName.First();
-
-                var reservation = await _reservationService.CreateReservationByTitle(dto.BookTitle, authorName); // Изменяем вызов метода, передаем имя автора
-                _logger.LogInformation("Создано бронирование {ReservationId} для книги {BookTitle}", reservation.Id, dto.BookTitle);
-                return CreatedAtAction(nameof(GetReservation), new { id = reservation.Id }, reservation);
-            }
-            catch (KeyNotFoundException ex) { return NotFound(ex.Message); }
-            catch (InvalidOperationException ex) { return BadRequest(ex.Message); }
-        }
-        // Отменить бронирование (только владелец или администратор)
+        // Cancel reservation (only owner or admin)
         [Authorize]
-        [HttpDelete("DeleteReservation")]
+        [HttpDelete("DeleteReservation/{id}")]
         public IActionResult CancelReservation(int id)
         {
             try
@@ -81,24 +59,24 @@ namespace Diplom.Controllers
                 var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
                 var reservation = _reservationService.GetReservationById(id);
 
-                // Проверка прав: пользователь может отменить только своё бронирование
-                if (reservation.UserId != userId && !User.IsInRole("Admin"))
+                // Check permissions: user can only cancel their own reservation
+                if (reservation == null || (reservation.UserId != userId && !User.IsInRole("Admin")))
                     return Forbid();
 
                 _reservationService.CancelReservation(id);
-                _logger.LogInformation("Бронирование {ReservationId} отменено", id);
+                _logger.LogInformation("Reservation {ReservationId} canceled", id);
                 return NoContent();
             }
             catch (KeyNotFoundException ex)
             {
-                _logger.LogWarning("Попытка отмены несуществующего бронирования {ReservationId}", id);
+                _logger.LogWarning("Attempt to cancel non-existent reservation {ReservationId}", id);
                 return NotFound(ex.Message);
             }
         }
 
-        // Получить бронирование по ID (владелец или администратор)
+        // Get reservation by ID (owner or admin)
         [Authorize]
-        [HttpGet("GetById")]
+        [HttpGet("GetById/{id}")]
         public IActionResult GetReservation(int id)
         {
             var reservation = _reservationService.GetReservationById(id);
@@ -111,17 +89,17 @@ namespace Diplom.Controllers
             return Ok(reservation);
         }
 
-        // Получить все бронирования текущего пользователя
+        // Get all reservations for the current user
         [Authorize]
-        [HttpGet("myRservetion")]
-        public IActionResult GetMyReservations(int userId)
+        [HttpGet("myReservations")]
+        public IActionResult GetMyReservations()
         {
-            
+            var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
             var reservations = _reservationService.GetUserReservations(userId);
             return Ok(reservations);
         }
 
-        // Получить все просроченные бронирования (только администратор)
+        // Get all overdue reservations (admin only)
         [Authorize(Roles = "Admin")]
         [HttpGet("overdue")]
         public IActionResult GetOverdueReservations()
@@ -130,11 +108,16 @@ namespace Diplom.Controllers
             return Ok(reservations);
         }
 
-        // Обновить статус бронирования (администратор)
+        // Update reservation status (admin)
         [Authorize(Roles = "Admin")]
         [HttpPut("UpdateReservation")]
-        public IActionResult UpdateStatus( [FromBody] ReservationDto reservationDto)
+        public IActionResult UpdateStatus([FromBody] ReservationDto reservationDto)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest("Invalid data.");
+            }
+
             try
             {
                 _reservationService.UpdateReservationStatus(reservationDto);
@@ -145,11 +128,15 @@ namespace Diplom.Controllers
                 return NotFound(ex.Message);
             }
         }
-        public class ReservationCreateRequest
+
+        // Reservation request DTO
+        public class ReservationRequest
         {
-            [Required(ErrorMessage = "Идентификатор книги обязателен")]
-            [Range(1, int.MaxValue, ErrorMessage = "Некорректный BookId")]
-            public int BookId { get; set; }
+            [Required]
+            public string BookTitle { get; set; }
+
+            [Required]
+            public string AuthorName { get; set; }
         }
     }
 }

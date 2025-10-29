@@ -44,6 +44,7 @@ namespace Diplom
             builder.Services.AddScoped<IBookAutor, BookAutorServices>();
             builder.Services.AddScoped<IAuthorsService, AuthorServices>();
             builder.Services.AddScoped<IAnalyticsService, AnaliticService>();
+            builder.Services.AddScoped<IEmailService, EmailServices>();
 
             // Настройка CORS
             builder.Services.AddCors(options =>
