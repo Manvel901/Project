@@ -549,10 +549,10 @@
         }
       }
     },
-    "/CreatePenalty": {
+    "/Penalty/CreatePenalty": {
       "post": {
         "tags": [
-          "Penaltyes"
+          "Penalty"
         ],
         "parameters": [
           {
@@ -590,34 +590,31 @@
         }
       }
     },
-    "/PayPenalty": {
-      "post": {
+    "/Penalty/MyPenalties": {
+      "get": {
         "tags": [
-          "Penaltyes"
+          "Penalty"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Penalty/ByReservation/{reservationId}": {
+      "get": {
+        "tags": [
+          "Penalty"
         ],
         "parameters": [
           {
-            "name": "id",
-            "in": "query",
+            "name": "reservationId",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
-            }
-          },
-          {
-            "name": "amountPaid",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
-            "name": "paidAtUtc",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "format": "date-time"
             }
           }
         ],
@@ -628,15 +625,16 @@
         }
       }
     },
-    "/GetPenaltyById": {
+    "/Penalty/{penaltyId}": {
       "get": {
         "tags": [
-          "Penaltyes"
+          "Penalty"
         ],
         "parameters": [
           {
             "name": "penaltyId",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"

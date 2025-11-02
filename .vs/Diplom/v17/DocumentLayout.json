@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "D:\\Diplom\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\abstract\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:abstract\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -19,12 +15,56 @@
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:models\\apdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\models\\emailentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:models\\emailentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\models\\dto\\emaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:models\\dto\\emaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\models\\emailentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:models\\emailentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\controllers\\emailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:controllers\\emailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\abstract\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:abstract\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\controllers\\genrescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:controllers\\genrescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\services\\authorservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:services\\authorservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\controllers\\penaltyescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:controllers\\penaltyescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\services\\penaltyesservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:services\\penaltyesservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\abstract\\ipenaltyes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:abstract\\ipenaltyes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\models\\dto\\reservpenaldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:models\\dto\\reservpenaldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\models\\penalties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:models\\penalties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\services\\resrvirionsservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:services\\resrvirionsservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\services\\reservpenalty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:services\\reservpenalty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\models\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -51,10 +91,6 @@
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:services\\userservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\services\\resrvirionsservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:services\\resrvirionsservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -73,10 +109,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\services\\authorservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:services\\authorservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\controllers\\authorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -111,32 +143,12 @@
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\services\\penaltyesservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:services\\penaltyesservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\services\\reservpenalty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:services\\reservpenalty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\controllers\\penaltyescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:controllers\\penaltyescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\abstract\\ipenaltyes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:abstract\\ipenaltyes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\models\\dto\\penaltydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:models\\dto\\penaltydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\services\\genresservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:services\\genresservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\controllers\\genrescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:controllers\\genrescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\services\\bookautorservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -147,20 +159,12 @@
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:controllers\\bookcontrollercs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\controllers\\emailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:controllers\\emailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\controllers\\bookautorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:controllers\\bookautorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\abstract\\ireservpenalty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:abstract\\ireservpenalty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\models\\penalties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:models\\penalties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\controllers\\analyticscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -177,10 +181,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\models\\rservpenal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:models\\rservpenal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\models\\dto\\reservpenaldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:models\\dto\\reservpenaldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\models\\autors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -234,7 +234,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 27,
+          "SelectedChildIndex": 26,
           "Children": [
             {
               "$type": "Bookmark",
@@ -249,6 +249,14 @@
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "EmailDto.cs",
@@ -256,25 +264,27 @@
               "RelativeDocumentMoniker": "Models\\dto\\EmailDto.cs",
               "ToolTip": "D:\\Diplom\\Models\\dto\\EmailDto.cs",
               "RelativeToolTip": "Models\\dto\\EmailDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-29T15:15:09.681Z"
+              "WhenOpened": "2025-10-29T15:15:09.681Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "EmailEntity.cs",
               "DocumentMoniker": "D:\\Diplom\\Models\\EmailEntity.cs",
               "RelativeDocumentMoniker": "Models\\EmailEntity.cs",
               "ToolTip": "D:\\Diplom\\Models\\EmailEntity.cs",
               "RelativeToolTip": "Models\\EmailEntity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-29T15:14:53.99Z"
+              "WhenOpened": "2025-10-29T15:14:53.99Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 26,
               "Title": "launchSettings.json",
               "DocumentMoniker": "D:\\Diplom\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Properties\\launchSettings.json",
@@ -286,7 +296,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 31,
               "Title": "Dockerfile",
               "DocumentMoniker": "D:\\Diplom\\Dockerfile",
               "RelativeDocumentMoniker": "Dockerfile",
@@ -298,7 +308,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 34,
               "Title": "site.css",
               "DocumentMoniker": "D:\\Diplom\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
@@ -310,7 +320,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 12,
               "Title": "ReservPenalDto.cs",
               "DocumentMoniker": "D:\\Diplom\\Models\\dto\\ReservPenalDto.cs",
               "RelativeDocumentMoniker": "Models\\dto\\ReservPenalDto.cs",
@@ -318,11 +328,12 @@
               "RelativeToolTip": "Models\\dto\\ReservPenalDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-29T16:34:25.929Z"
+              "WhenOpened": "2025-09-29T16:34:25.929Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 44,
               "Title": "RservPenal.cs",
               "DocumentMoniker": "D:\\Diplom\\Models\\RservPenal.cs",
               "RelativeDocumentMoniker": "Models\\RservPenal.cs",
@@ -334,7 +345,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 23,
               "Title": "ReservPenaltyController.cs",
               "DocumentMoniker": "D:\\Diplom\\Controllers\\ReservPenaltyController.cs",
               "RelativeDocumentMoniker": "Controllers\\ReservPenaltyController.cs",
@@ -346,19 +357,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 15,
               "Title": "ReservPenalty.cs",
               "DocumentMoniker": "D:\\Diplom\\Services\\ReservPenalty.cs",
               "RelativeDocumentMoniker": "Services\\ReservPenalty.cs",
               "ToolTip": "D:\\Diplom\\Services\\ReservPenalty.cs",
               "RelativeToolTip": "Services\\ReservPenalty.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAADsAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAuwDsAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-29T15:49:45.488Z"
+              "WhenOpened": "2025-09-29T15:49:45.488Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 40,
               "Title": "IReservPenalty.cs",
               "DocumentMoniker": "D:\\Diplom\\Abstract\\IReservPenalty.cs",
               "RelativeDocumentMoniker": "Abstract\\IReservPenalty.cs",
@@ -370,19 +382,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 7,
               "Title": "GenresController.cs",
               "DocumentMoniker": "D:\\Diplom\\Controllers\\GenresController.cs",
               "RelativeDocumentMoniker": "Controllers\\GenresController.cs",
               "ToolTip": "D:\\Diplom\\Controllers\\GenresController.cs",
               "RelativeToolTip": "Controllers\\GenresController.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAAAB4AAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-26T15:14:28.219Z"
+              "WhenOpened": "2025-09-26T15:14:28.219Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 36,
               "Title": "GenresServices.cs",
               "DocumentMoniker": "D:\\Diplom\\Services\\GenresServices.cs",
               "RelativeDocumentMoniker": "Services\\GenresServices.cs",
@@ -406,7 +419,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 32,
               "Title": "postgres.yaml",
               "DocumentMoniker": "D:\\Diplom\\postgres.yaml",
               "RelativeDocumentMoniker": "postgres.yaml",
@@ -418,19 +431,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 9,
               "Title": "PenaltyesController.cs",
               "DocumentMoniker": "D:\\Diplom\\Controllers\\PenaltyesController.cs",
               "RelativeDocumentMoniker": "Controllers\\PenaltyesController.cs",
               "ToolTip": "D:\\Diplom\\Controllers\\PenaltyesController.cs",
               "RelativeToolTip": "Controllers\\PenaltyesController.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAAABcAAABZAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAmwEEAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-21T18:54:13.56Z"
+              "WhenOpened": "2025-09-21T18:54:13.56Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 27,
               "Title": "AuthorsController.cs",
               "DocumentMoniker": "D:\\Diplom\\Controllers\\AuthorsController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthorsController.cs",
@@ -442,7 +456,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 8,
               "Title": "AuthorServices.cs",
               "DocumentMoniker": "D:\\Diplom\\Services\\AuthorServices.cs",
               "RelativeDocumentMoniker": "Services\\AuthorServices.cs",
@@ -450,7 +464,8 @@
               "RelativeToolTip": "Services\\AuthorServices.cs",
               "ViewState": "AgIAABQAAAAAAAAAAAAAwBwAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-18T12:57:24.548Z"
+              "WhenOpened": "2025-09-18T12:57:24.548Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -466,7 +481,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 18,
               "Title": "MuppingProfile.cs",
               "DocumentMoniker": "D:\\Diplom\\Repo\\MuppingProfile.cs",
               "RelativeDocumentMoniker": "Repo\\MuppingProfile.cs",
@@ -490,7 +505,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 22,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Diplom\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -502,56 +517,59 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Diplom\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\Diplom\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAG0AAAAAAAAAAAAQwC4AAABHAAAAAAAAAA==",
+              "ViewState": "AgIAADQAAAAAAAAAAAAQwC4AAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T13:17:43.51Z"
+              "WhenOpened": "2025-05-02T13:17:43.51Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 5,
               "Title": "EmailController.cs",
               "DocumentMoniker": "D:\\Diplom\\Controllers\\EmailController.cs",
               "RelativeDocumentMoniker": "Controllers\\EmailController.cs",
               "ToolTip": "D:\\Diplom\\Controllers\\EmailController.cs",
               "RelativeToolTip": "Controllers\\EmailController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T13:07:33.543Z"
+              "WhenOpened": "2025-05-02T13:07:33.543Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "EmailServices.cs",
               "DocumentMoniker": "D:\\Diplom\\Services\\EmailServices.cs",
               "RelativeDocumentMoniker": "Services\\EmailServices.cs",
               "ToolTip": "D:\\Diplom\\Services\\EmailServices.cs",
               "RelativeToolTip": "Services\\EmailServices.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACgAAAAAAAAAAAAqwD4AAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T13:05:56.104Z"
+              "WhenOpened": "2025-05-02T13:05:56.104Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "IEmailService.cs",
               "DocumentMoniker": "D:\\Diplom\\Abstract\\IEmailService.cs",
               "RelativeDocumentMoniker": "Abstract\\IEmailService.cs",
               "ToolTip": "D:\\Diplom\\Abstract\\IEmailService.cs",
               "RelativeToolTip": "Abstract\\IEmailService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-02T13:05:03.597Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 41,
               "Title": "AnalyticsController.cs",
               "DocumentMoniker": "D:\\Diplom\\Controllers\\AnalyticsController.cs",
               "RelativeDocumentMoniker": "Controllers\\AnalyticsController.cs",
@@ -563,7 +581,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 43,
               "Title": "AnaliticService.cs",
               "DocumentMoniker": "D:\\Diplom\\Services\\AnaliticService.cs",
               "RelativeDocumentMoniker": "Services\\AnaliticService.cs",
@@ -599,7 +617,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 39,
               "Title": "BookAutorController.cs",
               "DocumentMoniker": "D:\\Diplom\\Controllers\\BookAutorController.cs",
               "RelativeDocumentMoniker": "Controllers\\BookAutorController.cs",
@@ -611,7 +629,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 19,
               "Title": "ReversitionConyroller.cs",
               "DocumentMoniker": "D:\\Diplom\\Controllers\\ReversitionConyroller.cs",
               "RelativeDocumentMoniker": "Controllers\\ReversitionConyroller.cs",
@@ -623,7 +641,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 38,
               "Title": "BookControllercs.cs",
               "DocumentMoniker": "D:\\Diplom\\Controllers\\BookControllercs.cs",
               "RelativeDocumentMoniker": "Controllers\\BookControllercs.cs",
@@ -635,31 +653,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "ResrvirionsServices.cs",
               "DocumentMoniker": "D:\\Diplom\\Services\\ResrvirionsServices.cs",
               "RelativeDocumentMoniker": "Services\\ResrvirionsServices.cs",
               "ToolTip": "D:\\Diplom\\Services\\ResrvirionsServices.cs",
               "RelativeToolTip": "Services\\ResrvirionsServices.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAAABwAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAACUAAAAAAAAAAAAAABwAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T17:13:31.738Z"
+              "WhenOpened": "2025-05-01T17:13:31.738Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 10,
               "Title": "PenaltyesServices.cs",
               "DocumentMoniker": "D:\\Diplom\\Services\\PenaltyesServices.cs",
               "RelativeDocumentMoniker": "Services\\PenaltyesServices.cs",
               "ToolTip": "D:\\Diplom\\Services\\PenaltyesServices.cs",
               "RelativeToolTip": "Services\\PenaltyesServices.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAADYAAAAAAAAAAAAqwEMAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T17:13:11.74Z"
+              "WhenOpened": "2025-05-01T17:13:11.74Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 37,
               "Title": "BookAutorServices.cs",
               "DocumentMoniker": "D:\\Diplom\\Services\\BookAutorServices.cs",
               "RelativeDocumentMoniker": "Services\\BookAutorServices.cs",
@@ -671,19 +691,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 11,
               "Title": "IPenaltyes.cs",
               "DocumentMoniker": "D:\\Diplom\\Abstract\\IPenaltyes.cs",
               "RelativeDocumentMoniker": "Abstract\\IPenaltyes.cs",
               "ToolTip": "D:\\Diplom\\Abstract\\IPenaltyes.cs",
               "RelativeToolTip": "Abstract\\IPenaltyes.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAAAAgAAABFAAAAAAAAAA==",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAAAwAAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T17:12:00.135Z"
+              "WhenOpened": "2025-05-01T17:12:00.135Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 24,
               "Title": "IReversition.cs",
               "DocumentMoniker": "D:\\Diplom\\Abstract\\IReversition.cs",
               "RelativeDocumentMoniker": "Abstract\\IReversition.cs",
@@ -707,7 +728,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 42,
               "Title": "BookServices.cs",
               "DocumentMoniker": "D:\\Diplom\\Services\\BookServices.cs",
               "RelativeDocumentMoniker": "Services\\BookServices.cs",
@@ -731,7 +752,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 35,
               "Title": "PenaltyDto.cs",
               "DocumentMoniker": "D:\\Diplom\\Models\\dto\\PenaltyDto.cs",
               "RelativeDocumentMoniker": "Models\\dto\\PenaltyDto.cs",
@@ -767,7 +788,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 13,
               "Title": "Penalties.cs",
               "DocumentMoniker": "D:\\Diplom\\Models\\Penalties.cs",
               "RelativeDocumentMoniker": "Models\\Penalties.cs",
@@ -775,7 +796,8 @@
               "RelativeToolTip": "Models\\Penalties.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T11:56:28.118Z"
+              "WhenOpened": "2025-05-01T11:56:28.118Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -803,7 +825,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 20,
               "Title": "UserController.cs",
               "DocumentMoniker": "D:\\Diplom\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Controllers\\UserController.cs",
@@ -815,7 +837,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 21,
               "Title": "UserServices.cs",
               "DocumentMoniker": "D:\\Diplom\\Services\\UserServices.cs",
               "RelativeDocumentMoniker": "Services\\UserServices.cs",
@@ -827,19 +849,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "ApDbContext.cs",
               "DocumentMoniker": "D:\\Diplom\\Models\\ApDbContext.cs",
               "RelativeDocumentMoniker": "Models\\ApDbContext.cs",
               "ToolTip": "D:\\Diplom\\Models\\ApDbContext.cs",
               "RelativeToolTip": "Models\\ApDbContext.cs",
-              "ViewState": "AgIAAFEAAAAAAAAAAAAiwF8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAiwHYAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T11:37:14.393Z"
+              "WhenOpened": "2025-05-01T11:37:14.393Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 25,
               "Title": "IUserServices.cs",
               "DocumentMoniker": "D:\\Diplom\\Abstract\\IUserServices.cs",
               "RelativeDocumentMoniker": "Abstract\\IUserServices.cs",
@@ -851,7 +874,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 28,
               "Title": "ReservationDto.cs",
               "DocumentMoniker": "D:\\Diplom\\Models\\dto\\ReservationDto.cs",
               "RelativeDocumentMoniker": "Models\\dto\\ReservationDto.cs",
@@ -863,7 +886,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 16,
               "Title": "UserDto.cs",
               "DocumentMoniker": "D:\\Diplom\\Models\\dto\\UserDto.cs",
               "RelativeDocumentMoniker": "Models\\dto\\UserDto.cs",
@@ -875,7 +898,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 33,
               "Title": "BookDto.cs",
               "DocumentMoniker": "D:\\Diplom\\Models\\dto\\BookDto.cs",
               "RelativeDocumentMoniker": "Models\\dto\\BookDto.cs",
@@ -887,7 +910,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 29,
               "Title": "Reservation.cs",
               "DocumentMoniker": "D:\\Diplom\\Models\\Reservation.cs",
               "RelativeDocumentMoniker": "Models\\Reservation.cs",
@@ -899,7 +922,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 17,
               "Title": "User.cs",
               "DocumentMoniker": "D:\\Diplom\\Models\\User.cs",
               "RelativeDocumentMoniker": "Models\\User.cs",
@@ -911,7 +934,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 30,
               "Title": "Book.cs",
               "DocumentMoniker": "D:\\Diplom\\Models\\Book.cs",
               "RelativeDocumentMoniker": "Models\\Book.cs",
@@ -920,14 +943,6 @@
               "ViewState": "AgIAAAEAAAAAAAAAAAAAAAcAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-01T11:33:35.94Z"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             }
           ]
         }

@@ -109,6 +109,7 @@ namespace Diplom.Models
                 entity.Property(c=> c.Id).HasColumnName("id");
                entity.Property(c=> c.UserId).HasColumnName("user_id");
                 entity.Property(c=> c.Email).HasColumnName("email");
+                entity.Property(c => c.CreatedDate).HasColumnName("Date");
                 entity.Property(c=> c.Message).HasColumnName("Message");
 
                 entity.HasMany(u => u.Users).WithMany(c => c.EmailEntities);

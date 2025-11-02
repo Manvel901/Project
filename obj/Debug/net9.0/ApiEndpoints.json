@@ -274,27 +274,6 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Diplom.Controllers.PenaltyesController",
-    "Method": "Create",
-    "RelativePath": "CreatePenalty",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "penaltyDto",
-        "Type": "Diplom.Models.dto.PenaltyDto",
-        "IsRequired": true
-      },
-      {
-        "Name": "reservId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "Diplom.Controllers.GenresController",
     "Method": "GetAll",
     "RelativePath": "Genres/AllGenres",
@@ -369,9 +348,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Diplom.Controllers.PenaltyesController",
+    "ContainingType": "Diplom.Controllers.PenaltyController",
     "Method": "GetById",
-    "RelativePath": "GetPenaltyById",
+    "RelativePath": "Penalty/{penaltyId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -379,35 +358,56 @@
       {
         "Name": "penaltyId",
         "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Diplom.Controllers.PenaltyController",
+    "Method": "GetByReservation",
+    "RelativePath": "Penalty/ByReservation/{reservationId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "reservationId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Diplom.Controllers.PenaltyController",
+    "Method": "Create",
+    "RelativePath": "Penalty/CreatePenalty",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "penaltyDto",
+        "Type": "Diplom.Models.dto.PenaltyDto",
+        "IsRequired": true
+      },
+      {
+        "Name": "reservId",
+        "Type": "System.Int32",
         "IsRequired": false
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Diplom.Controllers.PenaltyesController",
-    "Method": "Pay",
-    "RelativePath": "PayPenalty",
-    "HttpMethod": "POST",
+    "ContainingType": "Diplom.Controllers.PenaltyController",
+    "Method": "GetUserPenalties",
+    "RelativePath": "Penalty/MyPenalties",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "amountPaid",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "paidAtUtc",
-        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": []
   },
   {

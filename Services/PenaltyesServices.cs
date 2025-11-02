@@ -43,7 +43,41 @@ namespace Diplom.Services
 
             return entity.Id;
         }
+        public IEnumerable<PenaltyDto> GetUserPenalties(int userId)
+        {
+            // Находим все бронирования пользователя
+            var userReservations = _context.Reserv
+                .Where(r => r.UserId == userId)
+                .Select(r => r.Id)
+                .ToList();
 
+            // Находим все связи бронирований и штрафов
+            var penaltyIds = _context.RservPenals
+                .Where(rp => userReservations.Contains(rp.ReservationId))
+                .Select(rp => rp.PenaltyId)
+                .ToList();
+
+            // Получаем штрафы
+            var penalties = _context.Penalties
+                .Where(p => penaltyIds.Contains(p.Id))
+                .ToList();
+
+            return _mapper.Map<IEnumerable<PenaltyDto>>(penalties);
+        }
+
+        public IEnumerable<PenaltyDto> GetPenaltiesByReservation(int reservationId)
+        {
+            var penaltyIds = _context.RservPenals
+                .Where(rp => rp.ReservationId == reservationId)
+                .Select(rp => rp.PenaltyId)
+                .ToList();
+
+            var penalties = _context.Penalties
+                .Where(p => penaltyIds.Contains(p.Id))
+                .ToList();
+
+            return _mapper.Map<IEnumerable<PenaltyDto>>(penalties);
+        }
         public bool PayPenalty(int id, int amountPaid, DateTime? paidAtUtc)
         {
             using (_context)
