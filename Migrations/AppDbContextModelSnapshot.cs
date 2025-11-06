@@ -112,6 +112,37 @@ namespace Diplom.Migrations
                     b.ToTable("Books", (string)null);
                 });
 
+            modelBuilder.Entity("Diplom.Models.EmailEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("Date");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("Message");
+
+                    b.Property<int>("Rating")
+                        .HasColumnType("integer")
+                        .HasColumnName("Rating");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer")
+                        .HasColumnName("user_id");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Comment", (string)null);
+                });
+
             modelBuilder.Entity("Diplom.Models.Genres", b =>
                 {
                     b.Property<int>("Id")
@@ -266,7 +297,7 @@ namespace Diplom.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<bool>("IsBlocked")
+                    b.Property<bool?>("IsBlocked")
                         .HasColumnType("boolean")
                         .HasColumnName("UserBlocked");
 
@@ -281,7 +312,6 @@ namespace Diplom.Migrations
                         .HasColumnName("DataRegistration");
 
                     b.Property<string>("Role")
-                        .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("UserRole");
 
@@ -295,6 +325,21 @@ namespace Diplom.Migrations
                         .IsUnique();
 
                     b.ToTable("Users", (string)null);
+                });
+
+            modelBuilder.Entity("EmailEntityUser", b =>
+                {
+                    b.Property<int>("EmailEntitiesId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("UsersId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("EmailEntitiesId", "UsersId");
+
+                    b.HasIndex("UsersId");
+
+                    b.ToTable("EmailEntityUser");
                 });
 
             modelBuilder.Entity("AutorsBook", b =>
@@ -359,6 +404,21 @@ namespace Diplom.Migrations
                     b.Navigation("Penalty");
 
                     b.Navigation("Reservation");
+                });
+
+            modelBuilder.Entity("EmailEntityUser", b =>
+                {
+                    b.HasOne("Diplom.Models.EmailEntity", null)
+                        .WithMany()
+                        .HasForeignKey("EmailEntitiesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Diplom.Models.User", null)
+                        .WithMany()
+                        .HasForeignKey("UsersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Diplom.Models.Book", b =>

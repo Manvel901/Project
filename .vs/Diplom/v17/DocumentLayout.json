@@ -1,229 +1,229 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Diplom\\",
+  "WorkspaceRootPath": "D:\\Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\services\\emailservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:services\\emailservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\models\\apdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\models\\apdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:models\\apdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\models\\emailentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\models\\emailentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:models\\emailentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\models\\dto\\emaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\models\\dto\\emaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:models\\dto\\emaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\controllers\\emailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:controllers\\emailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\services\\emailservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:services\\emailservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\abstract\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:abstract\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\controllers\\genrescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:controllers\\genrescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\services\\authorservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:services\\authorservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\controllers\\penaltyescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:controllers\\penaltyescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\services\\penaltyesservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:services\\penaltyesservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\abstract\\ipenaltyes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:abstract\\ipenaltyes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\models\\dto\\reservpenaldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:models\\dto\\reservpenaldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\models\\penalties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:models\\penalties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\services\\resrvirionsservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:services\\resrvirionsservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\services\\reservpenalty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:services\\reservpenalty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\models\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:models\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\repo\\muppingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:repo\\muppingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\controllers\\reversitionconyroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:controllers\\reversitionconyroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\services\\userservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:services\\userservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\controllers\\reservpenaltycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\controllers\\emailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:controllers\\emailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\abstract\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:abstract\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\controllers\\genrescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:controllers\\genrescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\services\\authorservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:services\\authorservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\controllers\\penaltyescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:controllers\\penaltyescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\services\\penaltyesservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:services\\penaltyesservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\abstract\\ipenaltyes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:abstract\\ipenaltyes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\models\\dto\\reservpenaldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:models\\dto\\reservpenaldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\models\\penalties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:models\\penalties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\services\\resrvirionsservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:services\\resrvirionsservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\services\\reservpenalty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:services\\reservpenalty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\models\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:models\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\repo\\muppingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:repo\\muppingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\controllers\\reversitionconyroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:controllers\\reversitionconyroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\services\\userservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:services\\userservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\controllers\\reservpenaltycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:controllers\\reservpenaltycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\abstract\\ireversition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\abstract\\ireversition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:abstract\\ireversition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\abstract\\iuserservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\abstract\\iuserservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:abstract\\iuserservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\controllers\\authorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\controllers\\authorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:controllers\\authorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\models\\dto\\reservationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\models\\dto\\reservationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:models\\dto\\reservationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\models\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\models\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:models\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\postgres.yaml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\postgres.yaml||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:postgres.yaml||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\models\\dto\\bookdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\models\\dto\\bookdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:models\\dto\\bookdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\models\\dto\\penaltydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\models\\dto\\penaltydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:models\\dto\\penaltydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\services\\genresservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\services\\genresservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:services\\genresservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\services\\bookautorservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\services\\bookautorservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:services\\bookautorservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\controllers\\bookcontrollercs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\controllers\\bookcontrollercs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:controllers\\bookcontrollercs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\controllers\\bookautorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\controllers\\bookautorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:controllers\\bookautorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\abstract\\ireservpenalty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\abstract\\ireservpenalty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:abstract\\ireservpenalty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\controllers\\analyticscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\controllers\\analyticscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:controllers\\analyticscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\services\\bookservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\services\\bookservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:services\\bookservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\services\\analiticservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\services\\analiticservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:services\\analiticservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\models\\rservpenal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\models\\rservpenal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:models\\rservpenal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\models\\autors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\models\\autors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:models\\autors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\abstract\\ibookservicrs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\abstract\\ibookservicrs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:abstract\\ibookservicrs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\abstract\\ibookautor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\abstract\\ibookautor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:abstract\\ibookautor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\abstract\\iauthorsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\abstract\\iauthorsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:abstract\\iauthorsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\abstract\\igenresservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\abstract\\igenresservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:abstract\\igenresservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\models\\dto\\genresdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\models\\dto\\genresdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:models\\dto\\genresdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\models\\genres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\models\\genres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:models\\genres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\models\\dto\\autordto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\models\\dto\\autordto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:models\\dto\\autordto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\models\\bookstatistic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\models\\bookstatistic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:models\\bookstatistic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\diplom.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\diplom.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:diplom.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\diplom\\abstract\\ianalyticsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|d:\\project\\abstract\\ianalyticsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38E15417-AD99-4848-9F2C-65D19B81BE43}|Diplom.csproj|solutionrelative:abstract\\ianalyticsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -234,7 +234,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 26,
+          "SelectedChildIndex": 53,
           "Children": [
             {
               "$type": "Bookmark",
@@ -258,37 +258,35 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "EmailDto.cs",
-              "DocumentMoniker": "D:\\Diplom\\Models\\dto\\EmailDto.cs",
+              "DocumentMoniker": "D:\\Project\\Models\\dto\\EmailDto.cs",
               "RelativeDocumentMoniker": "Models\\dto\\EmailDto.cs",
-              "ToolTip": "D:\\Diplom\\Models\\dto\\EmailDto.cs",
+              "ToolTip": "D:\\Project\\Models\\dto\\EmailDto.cs",
               "RelativeToolTip": "Models\\dto\\EmailDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-29T15:15:09.681Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-29T15:15:09.681Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "EmailEntity.cs",
-              "DocumentMoniker": "D:\\Diplom\\Models\\EmailEntity.cs",
+              "DocumentMoniker": "D:\\Project\\Models\\EmailEntity.cs",
               "RelativeDocumentMoniker": "Models\\EmailEntity.cs",
-              "ToolTip": "D:\\Diplom\\Models\\EmailEntity.cs",
+              "ToolTip": "D:\\Project\\Models\\EmailEntity.cs",
               "RelativeToolTip": "Models\\EmailEntity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-29T15:14:53.99Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-29T15:14:53.99Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 26,
               "Title": "launchSettings.json",
-              "DocumentMoniker": "D:\\Diplom\\Properties\\launchSettings.json",
+              "DocumentMoniker": "D:\\Project\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Properties\\launchSettings.json",
-              "ToolTip": "D:\\Diplom\\Properties\\launchSettings.json",
+              "ToolTip": "D:\\Project\\Properties\\launchSettings.json",
               "RelativeToolTip": "Properties\\launchSettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
@@ -298,9 +296,9 @@
               "$type": "Document",
               "DocumentIndex": 31,
               "Title": "Dockerfile",
-              "DocumentMoniker": "D:\\Diplom\\Dockerfile",
+              "DocumentMoniker": "D:\\Project\\Dockerfile",
               "RelativeDocumentMoniker": "Dockerfile",
-              "ToolTip": "D:\\Diplom\\Dockerfile",
+              "ToolTip": "D:\\Project\\Dockerfile",
               "RelativeToolTip": "Dockerfile",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
@@ -310,9 +308,9 @@
               "$type": "Document",
               "DocumentIndex": 34,
               "Title": "site.css",
-              "DocumentMoniker": "D:\\Diplom\\wwwroot\\css\\site.css",
+              "DocumentMoniker": "D:\\Project\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
-              "ToolTip": "D:\\Diplom\\wwwroot\\css\\site.css",
+              "ToolTip": "D:\\Project\\wwwroot\\css\\site.css",
               "RelativeToolTip": "wwwroot\\css\\site.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
@@ -320,24 +318,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "ReservPenalDto.cs",
-              "DocumentMoniker": "D:\\Diplom\\Models\\dto\\ReservPenalDto.cs",
+              "DocumentMoniker": "D:\\Project\\Models\\dto\\ReservPenalDto.cs",
               "RelativeDocumentMoniker": "Models\\dto\\ReservPenalDto.cs",
-              "ToolTip": "D:\\Diplom\\Models\\dto\\ReservPenalDto.cs",
+              "ToolTip": "D:\\Project\\Models\\dto\\ReservPenalDto.cs",
               "RelativeToolTip": "Models\\dto\\ReservPenalDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-29T16:34:25.929Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-29T16:34:25.929Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 44,
               "Title": "RservPenal.cs",
-              "DocumentMoniker": "D:\\Diplom\\Models\\RservPenal.cs",
+              "DocumentMoniker": "D:\\Project\\Models\\RservPenal.cs",
               "RelativeDocumentMoniker": "Models\\RservPenal.cs",
-              "ToolTip": "D:\\Diplom\\Models\\RservPenal.cs",
+              "ToolTip": "D:\\Project\\Models\\RservPenal.cs",
               "RelativeToolTip": "Models\\RservPenal.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -347,9 +344,9 @@
               "$type": "Document",
               "DocumentIndex": 23,
               "Title": "ReservPenaltyController.cs",
-              "DocumentMoniker": "D:\\Diplom\\Controllers\\ReservPenaltyController.cs",
+              "DocumentMoniker": "D:\\Project\\Controllers\\ReservPenaltyController.cs",
               "RelativeDocumentMoniker": "Controllers\\ReservPenaltyController.cs",
-              "ToolTip": "D:\\Diplom\\Controllers\\ReservPenaltyController.cs",
+              "ToolTip": "D:\\Project\\Controllers\\ReservPenaltyController.cs",
               "RelativeToolTip": "Controllers\\ReservPenaltyController.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAACcAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -357,24 +354,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "ReservPenalty.cs",
-              "DocumentMoniker": "D:\\Diplom\\Services\\ReservPenalty.cs",
+              "DocumentMoniker": "D:\\Project\\Services\\ReservPenalty.cs",
               "RelativeDocumentMoniker": "Services\\ReservPenalty.cs",
-              "ToolTip": "D:\\Diplom\\Services\\ReservPenalty.cs",
+              "ToolTip": "D:\\Project\\Services\\ReservPenalty.cs",
               "RelativeToolTip": "Services\\ReservPenalty.cs",
               "ViewState": "AgIAACEAAAAAAAAAAAAuwDsAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-29T15:49:45.488Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-29T15:49:45.488Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 40,
               "Title": "IReservPenalty.cs",
-              "DocumentMoniker": "D:\\Diplom\\Abstract\\IReservPenalty.cs",
+              "DocumentMoniker": "D:\\Project\\Abstract\\IReservPenalty.cs",
               "RelativeDocumentMoniker": "Abstract\\IReservPenalty.cs",
-              "ToolTip": "D:\\Diplom\\Abstract\\IReservPenalty.cs",
+              "ToolTip": "D:\\Project\\Abstract\\IReservPenalty.cs",
               "RelativeToolTip": "Abstract\\IReservPenalty.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -382,24 +378,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "GenresController.cs",
-              "DocumentMoniker": "D:\\Diplom\\Controllers\\GenresController.cs",
+              "DocumentMoniker": "D:\\Project\\Controllers\\GenresController.cs",
               "RelativeDocumentMoniker": "Controllers\\GenresController.cs",
-              "ToolTip": "D:\\Diplom\\Controllers\\GenresController.cs",
+              "ToolTip": "D:\\Project\\Controllers\\GenresController.cs",
               "RelativeToolTip": "Controllers\\GenresController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-26T15:14:28.219Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-26T15:14:28.219Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 36,
               "Title": "GenresServices.cs",
-              "DocumentMoniker": "D:\\Diplom\\Services\\GenresServices.cs",
+              "DocumentMoniker": "D:\\Project\\Services\\GenresServices.cs",
               "RelativeDocumentMoniker": "Services\\GenresServices.cs",
-              "ToolTip": "D:\\Diplom\\Services\\GenresServices.cs",
+              "ToolTip": "D:\\Project\\Services\\GenresServices.cs",
               "RelativeToolTip": "Services\\GenresServices.cs",
               "ViewState": "AgIAAEkAAAAAAAAAAAAgwFkAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -409,9 +404,9 @@
               "$type": "Document",
               "DocumentIndex": 49,
               "Title": "IGenresServices.cs",
-              "DocumentMoniker": "D:\\Diplom\\Abstract\\IGenresServices.cs",
+              "DocumentMoniker": "D:\\Project\\Abstract\\IGenresServices.cs",
               "RelativeDocumentMoniker": "Abstract\\IGenresServices.cs",
-              "ToolTip": "D:\\Diplom\\Abstract\\IGenresServices.cs",
+              "ToolTip": "D:\\Project\\Abstract\\IGenresServices.cs",
               "RelativeToolTip": "Abstract\\IGenresServices.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -421,9 +416,9 @@
               "$type": "Document",
               "DocumentIndex": 32,
               "Title": "postgres.yaml",
-              "DocumentMoniker": "D:\\Diplom\\postgres.yaml",
+              "DocumentMoniker": "D:\\Project\\postgres.yaml",
               "RelativeDocumentMoniker": "postgres.yaml",
-              "ToolTip": "D:\\Diplom\\postgres.yaml",
+              "ToolTip": "D:\\Project\\postgres.yaml",
               "RelativeToolTip": "postgres.yaml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
@@ -431,24 +426,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "PenaltyesController.cs",
-              "DocumentMoniker": "D:\\Diplom\\Controllers\\PenaltyesController.cs",
+              "DocumentMoniker": "D:\\Project\\Controllers\\PenaltyesController.cs",
               "RelativeDocumentMoniker": "Controllers\\PenaltyesController.cs",
-              "ToolTip": "D:\\Diplom\\Controllers\\PenaltyesController.cs",
+              "ToolTip": "D:\\Project\\Controllers\\PenaltyesController.cs",
               "RelativeToolTip": "Controllers\\PenaltyesController.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAmwEEAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-21T18:54:13.56Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-21T18:54:13.56Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 27,
               "Title": "AuthorsController.cs",
-              "DocumentMoniker": "D:\\Diplom\\Controllers\\AuthorsController.cs",
+              "DocumentMoniker": "D:\\Project\\Controllers\\AuthorsController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthorsController.cs",
-              "ToolTip": "D:\\Diplom\\Controllers\\AuthorsController.cs",
+              "ToolTip": "D:\\Project\\Controllers\\AuthorsController.cs",
               "RelativeToolTip": "Controllers\\AuthorsController.cs",
               "ViewState": "AgIAACAAAAAAAAAAAAAAADwAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -456,24 +450,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "AuthorServices.cs",
-              "DocumentMoniker": "D:\\Diplom\\Services\\AuthorServices.cs",
+              "DocumentMoniker": "D:\\Project\\Services\\AuthorServices.cs",
               "RelativeDocumentMoniker": "Services\\AuthorServices.cs",
-              "ToolTip": "D:\\Diplom\\Services\\AuthorServices.cs",
+              "ToolTip": "D:\\Project\\Services\\AuthorServices.cs",
               "RelativeToolTip": "Services\\AuthorServices.cs",
               "ViewState": "AgIAABQAAAAAAAAAAAAAwBwAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-18T12:57:24.548Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-18T12:57:24.548Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 48,
               "Title": "IAuthorsService.cs",
-              "DocumentMoniker": "D:\\Diplom\\Abstract\\IAuthorsService.cs",
+              "DocumentMoniker": "D:\\Project\\Abstract\\IAuthorsService.cs",
               "RelativeDocumentMoniker": "Abstract\\IAuthorsService.cs",
-              "ToolTip": "D:\\Diplom\\Abstract\\IAuthorsService.cs",
+              "ToolTip": "D:\\Project\\Abstract\\IAuthorsService.cs",
               "RelativeToolTip": "Abstract\\IAuthorsService.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -481,11 +474,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "MuppingProfile.cs",
-              "DocumentMoniker": "D:\\Diplom\\Repo\\MuppingProfile.cs",
+              "DocumentMoniker": "D:\\Project\\Repo\\MuppingProfile.cs",
               "RelativeDocumentMoniker": "Repo\\MuppingProfile.cs",
-              "ToolTip": "D:\\Diplom\\Repo\\MuppingProfile.cs",
+              "ToolTip": "D:\\Project\\Repo\\MuppingProfile.cs",
               "RelativeToolTip": "Repo\\MuppingProfile.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABSAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -495,9 +488,9 @@
               "$type": "Document",
               "DocumentIndex": 54,
               "Title": "Diplom.csproj",
-              "DocumentMoniker": "D:\\Diplom\\Diplom.csproj",
+              "DocumentMoniker": "D:\\Project\\Diplom.csproj",
               "RelativeDocumentMoniker": "Diplom.csproj",
-              "ToolTip": "D:\\Diplom\\Diplom.csproj",
+              "ToolTip": "D:\\Project\\Diplom.csproj",
               "RelativeToolTip": "Diplom.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
@@ -505,75 +498,71 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 4,
               "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Diplom\\appsettings.json",
+              "DocumentMoniker": "D:\\Project\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "D:\\Diplom\\appsettings.json",
+              "ToolTip": "D:\\Project\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAABTAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-05-02T13:31:56.33Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Diplom\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\Diplom\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAQwC4AAABHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T13:17:43.51Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "EmailController.cs",
-              "DocumentMoniker": "D:\\Diplom\\Controllers\\EmailController.cs",
-              "RelativeDocumentMoniker": "Controllers\\EmailController.cs",
-              "ToolTip": "D:\\Diplom\\Controllers\\EmailController.cs",
-              "RelativeToolTip": "Controllers\\EmailController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGEAAAABAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Project\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Project\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T13:07:33.543Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "EmailServices.cs",
-              "DocumentMoniker": "D:\\Diplom\\Services\\EmailServices.cs",
-              "RelativeDocumentMoniker": "Services\\EmailServices.cs",
-              "ToolTip": "D:\\Diplom\\Services\\EmailServices.cs",
-              "RelativeToolTip": "Services\\EmailServices.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAqwD4AAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T13:05:56.104Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-02T13:17:43.51Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "EmailController.cs",
+              "DocumentMoniker": "D:\\Project\\Controllers\\EmailController.cs",
+              "RelativeDocumentMoniker": "Controllers\\EmailController.cs",
+              "ToolTip": "D:\\Project\\Controllers\\EmailController.cs",
+              "RelativeToolTip": "Controllers\\EmailController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T13:07:33.543Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EmailServices.cs",
+              "DocumentMoniker": "D:\\Project\\Services\\EmailServices.cs",
+              "RelativeDocumentMoniker": "Services\\EmailServices.cs",
+              "ToolTip": "D:\\Project\\Services\\EmailServices.cs",
+              "RelativeToolTip": "Services\\EmailServices.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAmwD4AAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T13:05:56.104Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "IEmailService.cs",
-              "DocumentMoniker": "D:\\Diplom\\Abstract\\IEmailService.cs",
+              "DocumentMoniker": "D:\\Project\\Abstract\\IEmailService.cs",
               "RelativeDocumentMoniker": "Abstract\\IEmailService.cs",
-              "ToolTip": "D:\\Diplom\\Abstract\\IEmailService.cs",
+              "ToolTip": "D:\\Project\\Abstract\\IEmailService.cs",
               "RelativeToolTip": "Abstract\\IEmailService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T13:05:03.597Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-02T13:05:03.597Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 41,
               "Title": "AnalyticsController.cs",
-              "DocumentMoniker": "D:\\Diplom\\Controllers\\AnalyticsController.cs",
+              "DocumentMoniker": "D:\\Project\\Controllers\\AnalyticsController.cs",
               "RelativeDocumentMoniker": "Controllers\\AnalyticsController.cs",
-              "ToolTip": "D:\\Diplom\\Controllers\\AnalyticsController.cs",
+              "ToolTip": "D:\\Project\\Controllers\\AnalyticsController.cs",
               "RelativeToolTip": "Controllers\\AnalyticsController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -583,9 +572,9 @@
               "$type": "Document",
               "DocumentIndex": 43,
               "Title": "AnaliticService.cs",
-              "DocumentMoniker": "D:\\Diplom\\Services\\AnaliticService.cs",
+              "DocumentMoniker": "D:\\Project\\Services\\AnaliticService.cs",
               "RelativeDocumentMoniker": "Services\\AnaliticService.cs",
-              "ToolTip": "D:\\Diplom\\Services\\AnaliticService.cs",
+              "ToolTip": "D:\\Project\\Services\\AnaliticService.cs",
               "RelativeToolTip": "Services\\AnaliticService.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAAlwCMAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -595,9 +584,9 @@
               "$type": "Document",
               "DocumentIndex": 55,
               "Title": "IAnalyticsService.cs",
-              "DocumentMoniker": "D:\\Diplom\\Abstract\\IAnalyticsService.cs",
+              "DocumentMoniker": "D:\\Project\\Abstract\\IAnalyticsService.cs",
               "RelativeDocumentMoniker": "Abstract\\IAnalyticsService.cs",
-              "ToolTip": "D:\\Diplom\\Abstract\\IAnalyticsService.cs",
+              "ToolTip": "D:\\Project\\Abstract\\IAnalyticsService.cs",
               "RelativeToolTip": "Abstract\\IAnalyticsService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -607,9 +596,9 @@
               "$type": "Document",
               "DocumentIndex": 53,
               "Title": "BookStatistic.cs",
-              "DocumentMoniker": "D:\\Diplom\\Models\\BookStatistic.cs",
+              "DocumentMoniker": "D:\\Project\\Models\\BookStatistic.cs",
               "RelativeDocumentMoniker": "Models\\BookStatistic.cs",
-              "ToolTip": "D:\\Diplom\\Models\\BookStatistic.cs",
+              "ToolTip": "D:\\Project\\Models\\BookStatistic.cs",
               "RelativeToolTip": "Models\\BookStatistic.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -619,9 +608,9 @@
               "$type": "Document",
               "DocumentIndex": 39,
               "Title": "BookAutorController.cs",
-              "DocumentMoniker": "D:\\Diplom\\Controllers\\BookAutorController.cs",
+              "DocumentMoniker": "D:\\Project\\Controllers\\BookAutorController.cs",
               "RelativeDocumentMoniker": "Controllers\\BookAutorController.cs",
-              "ToolTip": "D:\\Diplom\\Controllers\\BookAutorController.cs",
+              "ToolTip": "D:\\Project\\Controllers\\BookAutorController.cs",
               "RelativeToolTip": "Controllers\\BookAutorController.cs",
               "ViewState": "AgIAADgAAAAAAAAAAAAAAD8AAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -629,11 +618,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "ReversitionConyroller.cs",
-              "DocumentMoniker": "D:\\Diplom\\Controllers\\ReversitionConyroller.cs",
+              "DocumentMoniker": "D:\\Project\\Controllers\\ReversitionConyroller.cs",
               "RelativeDocumentMoniker": "Controllers\\ReversitionConyroller.cs",
-              "ToolTip": "D:\\Diplom\\Controllers\\ReversitionConyroller.cs",
+              "ToolTip": "D:\\Project\\Controllers\\ReversitionConyroller.cs",
               "RelativeToolTip": "Controllers\\ReversitionConyroller.cs",
               "ViewState": "AgIAADMAAAAAAAAAAAAYwI4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -643,9 +632,9 @@
               "$type": "Document",
               "DocumentIndex": 38,
               "Title": "BookControllercs.cs",
-              "DocumentMoniker": "D:\\Diplom\\Controllers\\BookControllercs.cs",
+              "DocumentMoniker": "D:\\Project\\Controllers\\BookControllercs.cs",
               "RelativeDocumentMoniker": "Controllers\\BookControllercs.cs",
-              "ToolTip": "D:\\Diplom\\Controllers\\BookControllercs.cs",
+              "ToolTip": "D:\\Project\\Controllers\\BookControllercs.cs",
               "RelativeToolTip": "Controllers\\BookControllercs.cs",
               "ViewState": "AgIAADEAAAAAAAAAAAAAAEsAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -653,37 +642,35 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "ResrvirionsServices.cs",
-              "DocumentMoniker": "D:\\Diplom\\Services\\ResrvirionsServices.cs",
+              "DocumentMoniker": "D:\\Project\\Services\\ResrvirionsServices.cs",
               "RelativeDocumentMoniker": "Services\\ResrvirionsServices.cs",
-              "ToolTip": "D:\\Diplom\\Services\\ResrvirionsServices.cs",
+              "ToolTip": "D:\\Project\\Services\\ResrvirionsServices.cs",
               "RelativeToolTip": "Services\\ResrvirionsServices.cs",
               "ViewState": "AgIAACUAAAAAAAAAAAAAABwAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T17:13:31.738Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-01T17:13:31.738Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "PenaltyesServices.cs",
-              "DocumentMoniker": "D:\\Diplom\\Services\\PenaltyesServices.cs",
+              "DocumentMoniker": "D:\\Project\\Services\\PenaltyesServices.cs",
               "RelativeDocumentMoniker": "Services\\PenaltyesServices.cs",
-              "ToolTip": "D:\\Diplom\\Services\\PenaltyesServices.cs",
+              "ToolTip": "D:\\Project\\Services\\PenaltyesServices.cs",
               "RelativeToolTip": "Services\\PenaltyesServices.cs",
               "ViewState": "AgIAADYAAAAAAAAAAAAqwEMAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T17:13:11.74Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-01T17:13:11.74Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 37,
               "Title": "BookAutorServices.cs",
-              "DocumentMoniker": "D:\\Diplom\\Services\\BookAutorServices.cs",
+              "DocumentMoniker": "D:\\Project\\Services\\BookAutorServices.cs",
               "RelativeDocumentMoniker": "Services\\BookAutorServices.cs",
-              "ToolTip": "D:\\Diplom\\Services\\BookAutorServices.cs",
+              "ToolTip": "D:\\Project\\Services\\BookAutorServices.cs",
               "RelativeToolTip": "Services\\BookAutorServices.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEQAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -691,24 +678,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "IPenaltyes.cs",
-              "DocumentMoniker": "D:\\Diplom\\Abstract\\IPenaltyes.cs",
+              "DocumentMoniker": "D:\\Project\\Abstract\\IPenaltyes.cs",
               "RelativeDocumentMoniker": "Abstract\\IPenaltyes.cs",
-              "ToolTip": "D:\\Diplom\\Abstract\\IPenaltyes.cs",
+              "ToolTip": "D:\\Project\\Abstract\\IPenaltyes.cs",
               "RelativeToolTip": "Abstract\\IPenaltyes.cs",
               "ViewState": "AgIAAAIAAAAAAAAAAAAAAAwAAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T17:12:00.135Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-01T17:12:00.135Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 24,
               "Title": "IReversition.cs",
-              "DocumentMoniker": "D:\\Diplom\\Abstract\\IReversition.cs",
+              "DocumentMoniker": "D:\\Project\\Abstract\\IReversition.cs",
               "RelativeDocumentMoniker": "Abstract\\IReversition.cs",
-              "ToolTip": "D:\\Diplom\\Abstract\\IReversition.cs",
+              "ToolTip": "D:\\Project\\Abstract\\IReversition.cs",
               "RelativeToolTip": "Abstract\\IReversition.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAABsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -718,9 +704,9 @@
               "$type": "Document",
               "DocumentIndex": 47,
               "Title": "IBookAutor.cs",
-              "DocumentMoniker": "D:\\Diplom\\Abstract\\IBookAutor.cs",
+              "DocumentMoniker": "D:\\Project\\Abstract\\IBookAutor.cs",
               "RelativeDocumentMoniker": "Abstract\\IBookAutor.cs",
-              "ToolTip": "D:\\Diplom\\Abstract\\IBookAutor.cs",
+              "ToolTip": "D:\\Project\\Abstract\\IBookAutor.cs",
               "RelativeToolTip": "Abstract\\IBookAutor.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -730,9 +716,9 @@
               "$type": "Document",
               "DocumentIndex": 42,
               "Title": "BookServices.cs",
-              "DocumentMoniker": "D:\\Diplom\\Services\\BookServices.cs",
+              "DocumentMoniker": "D:\\Project\\Services\\BookServices.cs",
               "RelativeDocumentMoniker": "Services\\BookServices.cs",
-              "ToolTip": "D:\\Diplom\\Services\\BookServices.cs",
+              "ToolTip": "D:\\Project\\Services\\BookServices.cs",
               "RelativeToolTip": "Services\\BookServices.cs",
               "ViewState": "AgIAABoAAAAAAAAAAAAAABgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -742,9 +728,9 @@
               "$type": "Document",
               "DocumentIndex": 46,
               "Title": "IBookServicrs.cs",
-              "DocumentMoniker": "D:\\Diplom\\Abstract\\IBookServicrs.cs",
+              "DocumentMoniker": "D:\\Project\\Abstract\\IBookServicrs.cs",
               "RelativeDocumentMoniker": "Abstract\\IBookServicrs.cs",
-              "ToolTip": "D:\\Diplom\\Abstract\\IBookServicrs.cs",
+              "ToolTip": "D:\\Project\\Abstract\\IBookServicrs.cs",
               "RelativeToolTip": "Abstract\\IBookServicrs.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAAABoAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -754,9 +740,9 @@
               "$type": "Document",
               "DocumentIndex": 35,
               "Title": "PenaltyDto.cs",
-              "DocumentMoniker": "D:\\Diplom\\Models\\dto\\PenaltyDto.cs",
+              "DocumentMoniker": "D:\\Project\\Models\\dto\\PenaltyDto.cs",
               "RelativeDocumentMoniker": "Models\\dto\\PenaltyDto.cs",
-              "ToolTip": "D:\\Diplom\\Models\\dto\\PenaltyDto.cs",
+              "ToolTip": "D:\\Project\\Models\\dto\\PenaltyDto.cs",
               "RelativeToolTip": "Models\\dto\\PenaltyDto.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAA+wAoAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -766,9 +752,9 @@
               "$type": "Document",
               "DocumentIndex": 52,
               "Title": "AutorDto.cs",
-              "DocumentMoniker": "D:\\Diplom\\Models\\dto\\AutorDto.cs",
+              "DocumentMoniker": "D:\\Project\\Models\\dto\\AutorDto.cs",
               "RelativeDocumentMoniker": "Models\\dto\\AutorDto.cs",
-              "ToolTip": "D:\\Diplom\\Models\\dto\\AutorDto.cs",
+              "ToolTip": "D:\\Project\\Models\\dto\\AutorDto.cs",
               "RelativeToolTip": "Models\\dto\\AutorDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -778,9 +764,9 @@
               "$type": "Document",
               "DocumentIndex": 50,
               "Title": "GenresDto.cs",
-              "DocumentMoniker": "D:\\Diplom\\Models\\dto\\GenresDto.cs",
+              "DocumentMoniker": "D:\\Project\\Models\\dto\\GenresDto.cs",
               "RelativeDocumentMoniker": "Models\\dto\\GenresDto.cs",
-              "ToolTip": "D:\\Diplom\\Models\\dto\\GenresDto.cs",
+              "ToolTip": "D:\\Project\\Models\\dto\\GenresDto.cs",
               "RelativeToolTip": "Models\\dto\\GenresDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -788,24 +774,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "Penalties.cs",
-              "DocumentMoniker": "D:\\Diplom\\Models\\Penalties.cs",
+              "DocumentMoniker": "D:\\Project\\Models\\Penalties.cs",
               "RelativeDocumentMoniker": "Models\\Penalties.cs",
-              "ToolTip": "D:\\Diplom\\Models\\Penalties.cs",
+              "ToolTip": "D:\\Project\\Models\\Penalties.cs",
               "RelativeToolTip": "Models\\Penalties.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T11:56:28.118Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-01T11:56:28.118Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 45,
               "Title": "Autors.cs",
-              "DocumentMoniker": "D:\\Diplom\\Models\\Autors.cs",
+              "DocumentMoniker": "D:\\Project\\Models\\Autors.cs",
               "RelativeDocumentMoniker": "Models\\Autors.cs",
-              "ToolTip": "D:\\Diplom\\Models\\Autors.cs",
+              "ToolTip": "D:\\Project\\Models\\Autors.cs",
               "RelativeToolTip": "Models\\Autors.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -815,9 +800,9 @@
               "$type": "Document",
               "DocumentIndex": 51,
               "Title": "Genres.cs",
-              "DocumentMoniker": "D:\\Diplom\\Models\\Genres.cs",
+              "DocumentMoniker": "D:\\Project\\Models\\Genres.cs",
               "RelativeDocumentMoniker": "Models\\Genres.cs",
-              "ToolTip": "D:\\Diplom\\Models\\Genres.cs",
+              "ToolTip": "D:\\Project\\Models\\Genres.cs",
               "RelativeToolTip": "Models\\Genres.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -825,11 +810,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "UserController.cs",
-              "DocumentMoniker": "D:\\Diplom\\Controllers\\UserController.cs",
+              "DocumentMoniker": "D:\\Project\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Controllers\\UserController.cs",
-              "ToolTip": "D:\\Diplom\\Controllers\\UserController.cs",
+              "ToolTip": "D:\\Project\\Controllers\\UserController.cs",
               "RelativeToolTip": "Controllers\\UserController.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAAAwH4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -837,11 +822,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "UserServices.cs",
-              "DocumentMoniker": "D:\\Diplom\\Services\\UserServices.cs",
+              "DocumentMoniker": "D:\\Project\\Services\\UserServices.cs",
               "RelativeDocumentMoniker": "Services\\UserServices.cs",
-              "ToolTip": "D:\\Diplom\\Services\\UserServices.cs",
+              "ToolTip": "D:\\Project\\Services\\UserServices.cs",
               "RelativeToolTip": "Services\\UserServices.cs",
               "ViewState": "AgIAAF8AAAAAAAAAAAAAAHoAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -849,13 +834,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "ApDbContext.cs",
-              "DocumentMoniker": "D:\\Diplom\\Models\\ApDbContext.cs",
+              "DocumentMoniker": "D:\\Project\\Models\\ApDbContext.cs",
               "RelativeDocumentMoniker": "Models\\ApDbContext.cs",
-              "ToolTip": "D:\\Diplom\\Models\\ApDbContext.cs",
+              "ToolTip": "D:\\Project\\Models\\ApDbContext.cs",
               "RelativeToolTip": "Models\\ApDbContext.cs",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAiwHYAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAiwG4AAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-01T11:37:14.393Z",
               "EditorCaption": ""
@@ -864,9 +849,9 @@
               "$type": "Document",
               "DocumentIndex": 25,
               "Title": "IUserServices.cs",
-              "DocumentMoniker": "D:\\Diplom\\Abstract\\IUserServices.cs",
+              "DocumentMoniker": "D:\\Project\\Abstract\\IUserServices.cs",
               "RelativeDocumentMoniker": "Abstract\\IUserServices.cs",
-              "ToolTip": "D:\\Diplom\\Abstract\\IUserServices.cs",
+              "ToolTip": "D:\\Project\\Abstract\\IUserServices.cs",
               "RelativeToolTip": "Abstract\\IUserServices.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -876,9 +861,9 @@
               "$type": "Document",
               "DocumentIndex": 28,
               "Title": "ReservationDto.cs",
-              "DocumentMoniker": "D:\\Diplom\\Models\\dto\\ReservationDto.cs",
+              "DocumentMoniker": "D:\\Project\\Models\\dto\\ReservationDto.cs",
               "RelativeDocumentMoniker": "Models\\dto\\ReservationDto.cs",
-              "ToolTip": "D:\\Diplom\\Models\\dto\\ReservationDto.cs",
+              "ToolTip": "D:\\Project\\Models\\dto\\ReservationDto.cs",
               "RelativeToolTip": "Models\\dto\\ReservationDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -886,11 +871,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "UserDto.cs",
-              "DocumentMoniker": "D:\\Diplom\\Models\\dto\\UserDto.cs",
+              "DocumentMoniker": "D:\\Project\\Models\\dto\\UserDto.cs",
               "RelativeDocumentMoniker": "Models\\dto\\UserDto.cs",
-              "ToolTip": "D:\\Diplom\\Models\\dto\\UserDto.cs",
+              "ToolTip": "D:\\Project\\Models\\dto\\UserDto.cs",
               "RelativeToolTip": "Models\\dto\\UserDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -900,9 +885,9 @@
               "$type": "Document",
               "DocumentIndex": 33,
               "Title": "BookDto.cs",
-              "DocumentMoniker": "D:\\Diplom\\Models\\dto\\BookDto.cs",
+              "DocumentMoniker": "D:\\Project\\Models\\dto\\BookDto.cs",
               "RelativeDocumentMoniker": "Models\\dto\\BookDto.cs",
-              "ToolTip": "D:\\Diplom\\Models\\dto\\BookDto.cs",
+              "ToolTip": "D:\\Project\\Models\\dto\\BookDto.cs",
               "RelativeToolTip": "Models\\dto\\BookDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -912,9 +897,9 @@
               "$type": "Document",
               "DocumentIndex": 29,
               "Title": "Reservation.cs",
-              "DocumentMoniker": "D:\\Diplom\\Models\\Reservation.cs",
+              "DocumentMoniker": "D:\\Project\\Models\\Reservation.cs",
               "RelativeDocumentMoniker": "Models\\Reservation.cs",
-              "ToolTip": "D:\\Diplom\\Models\\Reservation.cs",
+              "ToolTip": "D:\\Project\\Models\\Reservation.cs",
               "RelativeToolTip": "Models\\Reservation.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -922,11 +907,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "User.cs",
-              "DocumentMoniker": "D:\\Diplom\\Models\\User.cs",
+              "DocumentMoniker": "D:\\Project\\Models\\User.cs",
               "RelativeDocumentMoniker": "Models\\User.cs",
-              "ToolTip": "D:\\Diplom\\Models\\User.cs",
+              "ToolTip": "D:\\Project\\Models\\User.cs",
               "RelativeToolTip": "Models\\User.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -936,9 +921,9 @@
               "$type": "Document",
               "DocumentIndex": 30,
               "Title": "Book.cs",
-              "DocumentMoniker": "D:\\Diplom\\Models\\Book.cs",
+              "DocumentMoniker": "D:\\Project\\Models\\Book.cs",
               "RelativeDocumentMoniker": "Models\\Book.cs",
-              "ToolTip": "D:\\Diplom\\Models\\Book.cs",
+              "ToolTip": "D:\\Project\\Models\\Book.cs",
               "RelativeToolTip": "Models\\Book.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAAAAAAcAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "W0zwViPWjj0=",
+  "dgSpecHash": "dx9uAnrtwgw=",
   "success": true,
-  "projectFilePath": "D:\\Diplom\\Diplom.csproj",
+  "projectFilePath": "D:\\Project\\Diplom.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\autofac\\8.0.0\\autofac.8.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\autofac.extensions.dependencyinjection\\9.0.0\\autofac.extensions.dependencyinjection.9.0.0.nupkg.sha512",

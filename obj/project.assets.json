@@ -5181,11 +5181,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Diplom\\Diplom.csproj",
+      "projectUniqueName": "D:\\Project\\Diplom.csproj",
       "projectName": "Diplom",
-      "projectPath": "D:\\Diplom\\Diplom.csproj",
+      "projectPath": "D:\\Project\\Diplom.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\Diplom\\obj\\",
+      "outputPath": "D:\\Project\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

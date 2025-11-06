@@ -274,6 +274,42 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Diplom.Controllers.Diplom.Controllers.EmailController",
+    "Method": "CreateComment",
+    "RelativePath": "Email/CreateComment",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "emailDto",
+        "Type": "Diplom.Models.dto.EmailDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Diplom.Controllers.Diplom.Controllers.EmailController",
+    "Method": "GetAllComments",
+    "RelativePath": "Email/GetAllComments",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Diplom.Controllers.Diplom.Controllers.EmailController",
+    "Method": "GetMyComments",
+    "RelativePath": "Email/MyComments",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Diplom.Controllers.GenresController",
     "Method": "GetAll",
     "RelativePath": "Genres/AllGenres",
