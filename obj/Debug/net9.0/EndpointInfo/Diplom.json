@@ -604,6 +604,65 @@
         }
       }
     },
+    "/Notification/MyNotifications": {
+      "get": {
+        "tags": [
+          "Notification"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Notification/MarkAsRead/{notificationId}": {
+      "post": {
+        "tags": [
+          "Notification"
+        ],
+        "parameters": [
+          {
+            "name": "notificationId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Notification/UnreadCount": {
+      "get": {
+        "tags": [
+          "Notification"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Notification/MarkAllAsRead": {
+      "post": {
+        "tags": [
+          "Notification"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/Penalty/CreatePenalty": {
       "post": {
         "tags": [
@@ -638,6 +697,40 @@
             }
           }
         },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Penalty/CreateOverduePenalty": {
+      "post": {
+        "tags": [
+          "Penalty"
+        ],
+        "parameters": [
+          {
+            "name": "reservationId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Penalty/CheckOverduePenalties": {
+      "post": {
+        "tags": [
+          "Penalty"
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -696,6 +789,37 @@
             }
           }
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Penalty/PayPenalty": {
+      "post": {
+        "tags": [
+          "Penalty"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PayPenaltyRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PayPenaltyRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PayPenaltyRequest"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -1120,6 +1244,10 @@
             "type": "integer",
             "format": "int32"
           },
+          "price": {
+            "type": "integer",
+            "format": "int32"
+          },
           "totalCopies": {
             "type": "integer",
             "format": "int32"
@@ -1193,10 +1321,33 @@
         },
         "additionalProperties": false
       },
+      "PayPenaltyRequest": {
+        "type": "object",
+        "properties": {
+          "penaltyId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "amountPaid": {
+            "type": "number",
+            "format": "double"
+          },
+          "paidAtUtc": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "PenaltyDto": {
         "type": "object",
         "properties": {
           "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "userId": {
             "type": "integer",
             "format": "int32"
           },

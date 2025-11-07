@@ -15,5 +15,7 @@ namespace Diplom.Abstract
         public bool HasOutstandingPenaltiesByReservation(int reservationId);
 
         public IEnumerable<PenaltyDto> GetPenaltiesByUserReservation(int reservationId);
+
+        
     }
 }

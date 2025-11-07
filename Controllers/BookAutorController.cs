@@ -19,7 +19,7 @@ namespace Diplom.Controllers
 
         // POST: /BookAuthor
         // Добавить автора к книге
-        [Authorize(Roles = "Admin")]
+        [AllowAnonymous]
         [HttpPost("AddBookFromAuthor")]
         public IActionResult AddAuthorToBook(int  bookDtoId,  int autorDtoId)
         {

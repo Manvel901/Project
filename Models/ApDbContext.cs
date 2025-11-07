@@ -24,6 +24,7 @@ namespace Diplom.Models
             public virtual DbSet<Autors> Authors { get; set; }
             public virtual DbSet<Penalties> Penalties { get; set; }
            public virtual DbSet<EmailEntity> Comment { get; set; }
+          public virtual DbSet<Notification> Notification { get; set; }
            
            
 
@@ -31,9 +32,25 @@ namespace Diplom.Models
             {
                 optionsBuilder.UseNpgsql(_conectionstring);
             }
-
+         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Notification>(entity =>
+            {
+                entity.ToTable("Notification");
+                entity.HasKey(e => e.Id).HasName("Id");
+
+                entity.Property(entity => entity.Id).HasColumnName("Id");
+                entity.Property(e=> e.UserId).HasColumnName("UserId");
+                entity.Property(e=> e.Type).HasColumnName("Type");
+                entity.Property(e => e.BookTitle).HasColumnName("BookTitle");
+                entity.Property(e=> e.Message).HasColumnName("Message");
+                entity.Property(e => e.CreatedDate).HasColumnName("Date");
+                entity.Property(e => e.IsRead).HasColumnName("IsRead");
+
+                entity.HasOne(e=> e.User).WithMany(o=> o.Notifications).HasForeignKey(e => e.UserId);
+            });
+             
             modelBuilder.Entity<User>(entity =>
             {
                 entity.ToTable("Users");
@@ -52,6 +69,8 @@ namespace Diplom.Models
 
                 entity.HasMany(res => res.Reservations).WithOne(e => e.User).HasForeignKey(x => x.UserId);
                 entity.HasMany(c => c.EmailEntities).WithMany(u => u.Users);
+                entity.HasMany(x=> x.Penalties).WithOne(x => x.User).HasForeignKey(y => y.UserId);
+                entity.HasMany(x=> x.Notifications).WithOne(x=> x.User).HasForeignKey(x=> x.UserId);
             });
 
 
@@ -64,6 +83,7 @@ namespace Diplom.Models
                 entity.Property(b => b.Id).HasColumnName("Bookid");
                 entity.Property(b => b.BookTitle).HasColumnName("BookTitle");
                 entity.Property(b => b.ISBN).HasColumnName("BookISBN");
+                entity.Property(b => b.Price).HasColumnName("Price");
                 entity.Property(b => b.TotalCopies).HasColumnName("BookTotal");
                 entity.Property(b => b.AvailableCopies).HasColumnName("BookAvailable");
                 entity.Property(b => b.Status).HasColumnName("BookStatus");
@@ -151,11 +171,14 @@ namespace Diplom.Models
                 entity.HasKey(p => p.Id).HasName("PenaltiesId");
 
                 entity.Property(p => p.Id).HasColumnName("Penaltiesid");
+                entity.Property(p=> p.UserId).HasColumnName("user_id");
                 entity.Property(p => p.Amount).HasColumnName("Amount");
                 entity.Property(p => p.IssueDate).HasColumnName("IssueDate");
                 entity.Property(p => p.AmountPaid).HasColumnName("AmountPaid");
                 entity.Property(p => p.IsCancelled).HasColumnName("IsCancelled");
                 entity.Property(p => p.PaidAtUtc).HasColumnName("PaidAtUtc");
+
+                entity.HasOne(x=> x.User).WithMany(x=> x.Penalties).HasForeignKey(x=>x.UserId);
 
             });
             modelBuilder.Entity<RservPenal>(entity =>

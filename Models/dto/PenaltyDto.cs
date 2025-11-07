@@ -3,6 +3,7 @@
     public class PenaltyDto
     {
         public int Id { get; set; }
+        public int UserId { get; set; }
         public decimal Amount { get; set; }
       
         public string? BookTitle { get; set; }     // Для связи с книгой

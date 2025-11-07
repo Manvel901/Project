@@ -16,6 +16,8 @@
 
         // Связь с бронированиями
         public virtual ICollection<Reservation>? Reservations { get; set; }
-        public virtual ICollection<EmailEntity> EmailEntities { get; set; }
+        public virtual ICollection<EmailEntity>? EmailEntities { get; set; }
+        public virtual ICollection<Penalties>? Penalties { get; set; }
+        public virtual ICollection<Notification>? Notifications { get; set; }
     }
 }

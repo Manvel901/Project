@@ -7,6 +7,8 @@
         public string ISBN { get; set; }
        
         public int GenreId { get; set; }
+         
+        public int Price { get; set; }
         public int TotalCopies { get; set; }
         public int AvailableCopies { get; set; }
         public string Status { get; set; }

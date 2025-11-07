@@ -5,8 +5,11 @@ namespace Diplom.Abstract
 {
     public interface IPenaltyService
     {
-        int CreatePenalty(PenaltyDto penaltyDto,int reservationId);
-        bool PayPenalty(int id, int amountPaid, DateTime? paidAtUtc);
+        int CreatePenalty(PenaltyDto penaltyDto, int reservationId);
+        int CreateOverduePenalty(int reservationId);
+        public int CheckAndCreateOverduePenalties();
+        
+        bool PayPenalty(int id, decimal amountPaid, DateTime? paidAtUtc);
         PenaltyDto? GetPenaltyById(int penaltyId);
         IEnumerable<PenaltyDto> GetUserPenalties(int userId);
         IEnumerable<PenaltyDto> GetPenaltiesByBookTitle(string bookTitle);

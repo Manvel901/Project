@@ -36,7 +36,7 @@ namespace Diplom.Controllers
             }
 
             // POST: api/books
-            [Authorize(Roles = "Admin")]
+            
             [HttpPost("CreateBook")]
             public IActionResult AddBook([FromBody] BookDto bookDto)
             {

@@ -39,7 +39,7 @@ namespace Diplom.Controllers
         }
 
         // POST: /Authors
-        [Authorize(Roles = "Admin")]
+       
         [HttpPost("Create")]
         public IActionResult CreateAuthor([FromBody] AutorDto autorDto)
         {

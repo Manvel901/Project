@@ -45,6 +45,8 @@ namespace Diplom
             builder.Services.AddScoped<IAuthorsService, AuthorServices>();
             builder.Services.AddScoped<IAnalyticsService, AnaliticService>();
             builder.Services.AddScoped<IEmailService, EmailServices>();
+            builder.Services.AddScoped<INotificationServices, NotificationServices>();
+            builder.Services.AddHostedService<OverduePenaltyBackgroundService>();
 
             // Настройка CORS
             builder.Services.AddCors(options =>

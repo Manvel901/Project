@@ -384,6 +384,52 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Diplom.Controllers.NotificationController",
+    "Method": "MarkAllAsRead",
+    "RelativePath": "Notification/MarkAllAsRead",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Diplom.Controllers.NotificationController",
+    "Method": "MarkAsRead",
+    "RelativePath": "Notification/MarkAsRead/{notificationId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "notificationId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Diplom.Controllers.NotificationController",
+    "Method": "GetMyNotifications",
+    "RelativePath": "Notification/MyNotifications",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Diplom.Controllers.NotificationController",
+    "Method": "GetUnreadCount",
+    "RelativePath": "Notification/UnreadCount",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Diplom.Controllers.PenaltyController",
     "Method": "GetById",
     "RelativePath": "Penalty/{penaltyId}",
@@ -417,6 +463,32 @@
   },
   {
     "ContainingType": "Diplom.Controllers.PenaltyController",
+    "Method": "CheckOverduePenalties",
+    "RelativePath": "Penalty/CheckOverduePenalties",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Diplom.Controllers.PenaltyController",
+    "Method": "CreateOverduePenalty",
+    "RelativePath": "Penalty/CreateOverduePenalty",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "reservationId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Diplom.Controllers.PenaltyController",
     "Method": "Create",
     "RelativePath": "Penalty/CreatePenalty",
     "HttpMethod": "POST",
@@ -444,6 +516,22 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Diplom.Controllers.PenaltyController",
+    "Method": "PayPenalty",
+    "RelativePath": "Penalty/PayPenalty",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Diplom.Controllers.PenaltyController\u002BPayPenaltyRequest",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
